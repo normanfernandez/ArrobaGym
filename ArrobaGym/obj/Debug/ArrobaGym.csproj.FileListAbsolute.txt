@@ -37,3 +37,15 @@ C:\Users\elnor\Desktop\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Login.resources
 C:\Users\elnor\Desktop\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.MenuAdmin.resources
 C:\Users\elnor\Desktop\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Properties.Resources.resources
 C:\Users\elnor\Desktop\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.csproj.GenerateResource.Cache
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\bin\Debug\ArrobaGym.exe.config
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.exe
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.pdb
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\bin\Debug\ArrobaGym.exe
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\bin\Debug\ArrobaGym.pdb
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\bin\Debug\EntityFramework.dll
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\bin\Debug\EntityFramework.xml
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.csprojResolveAssemblyReference.cache
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Login.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.MenuAdmin.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Properties.Resources.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.csproj.GenerateResource.Cache
