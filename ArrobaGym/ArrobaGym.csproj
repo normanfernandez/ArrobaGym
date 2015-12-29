@@ -76,6 +76,12 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clientes_Membresias_Inscribir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Membresias_Inscribir.Designer.cs">
+      <DependentUpon>Clientes_Membresias_Inscribir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Clientes_Membresias_Inscribir.resx">
+      <DependentUpon>Clientes_Membresias_Inscribir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

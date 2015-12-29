@@ -54,6 +54,7 @@ namespace ArrobaGym
         {
             lblTime.Text = Convert.ToString(DateTime.Now);
             lblTimeCal.Text = Convert.ToString(DateTime.Now);
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -99,6 +100,12 @@ namespace ArrobaGym
         private void label17_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnInscribir_Click(object sender, EventArgs e)
+        {
+            Clientes_Membresias_Inscribir inscribir = new Clientes_Membresias_Inscribir();
+            inscribir.Visible = true; 
         }
 
        
