@@ -50,3 +50,5 @@ C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Properties.Resources.resources
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.csproj.GenerateResource.Cache
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Clientes_Membresias_Inscribir.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Clientes_Membresias_Cobrar.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Clientes_Membresias_Consultar.resources

@@ -108,6 +108,18 @@ namespace ArrobaGym
             inscribir.Visible = true; 
         }
 
+        private void bntCobrar_Click(object sender, EventArgs e)
+        {
+            Clientes_Membresias_Cobrar cobro = new Clientes_Membresias_Cobrar();
+            cobro.Visible = true;
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            Clientes_Membresias_Consultar consulta = new Clientes_Membresias_Consultar();
+            consulta.Visible = true;
+        }
+
        
                 
             

@@ -17,10 +17,7 @@ namespace ArrobaGym
             InitializeComponent();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            
-        }
+
 
         private void label13_Click(object sender, EventArgs e)
         {
@@ -84,7 +81,7 @@ namespace ArrobaGym
 
         private void label22_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox15_TextChanged(object sender, EventArgs e)

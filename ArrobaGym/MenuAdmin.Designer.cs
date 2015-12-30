@@ -87,9 +87,7 @@
             this.tabReportes = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -108,6 +106,8 @@
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.tbcAdminMain.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.TabClientesCont.SuspendLayout();
@@ -259,11 +259,11 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(786, 328);
+            this.label2.Location = new System.Drawing.Point(732, 328);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.Size = new System.Drawing.Size(137, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Eliminar Clientes";
+            this.label2.Text = "Modificar o Eliminar Clientes";
             // 
             // pictureBox1
             // 
@@ -288,6 +288,7 @@
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // bntCobrar
             // 
@@ -301,6 +302,7 @@
             this.bntCobrar.TabIndex = 3;
             this.bntCobrar.Text = "Cobrar";
             this.bntCobrar.UseVisualStyleBackColor = false;
+            this.bntCobrar.Click += new System.EventHandler(this.bntCobrar_Click);
             // 
             // btnInscribir
             // 
@@ -364,7 +366,7 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(25, 170);
+            this.label22.Location = new System.Drawing.Point(25, 176);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(133, 13);
             this.label22.TabIndex = 19;
@@ -381,7 +383,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(569, 351);
+            this.pictureBox2.Location = new System.Drawing.Point(569, 357);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(300, 300);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -393,7 +395,7 @@
             this.lblCalPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalPrecio.AutoSize = true;
             this.lblCalPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalPrecio.Location = new System.Drawing.Point(22, 266);
+            this.lblCalPrecio.Location = new System.Drawing.Point(22, 272);
             this.lblCalPrecio.Name = "lblCalPrecio";
             this.lblCalPrecio.Size = new System.Drawing.Size(152, 25);
             this.lblCalPrecio.TabIndex = 16;
@@ -404,7 +406,7 @@
             this.lblCalMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalMonto.AutoSize = true;
             this.lblCalMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalMonto.Location = new System.Drawing.Point(22, 316);
+            this.lblCalMonto.Location = new System.Drawing.Point(22, 322);
             this.lblCalMonto.Name = "lblCalMonto";
             this.lblCalMonto.Size = new System.Drawing.Size(156, 25);
             this.lblCalMonto.TabIndex = 15;
@@ -416,7 +418,7 @@
             this.lblCalReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalReg.AutoSize = true;
             this.lblCalReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalReg.Location = new System.Drawing.Point(22, 291);
+            this.lblCalReg.Location = new System.Drawing.Point(22, 297);
             this.lblCalReg.Name = "lblCalReg";
             this.lblCalReg.Size = new System.Drawing.Size(352, 25);
             this.lblCalReg.TabIndex = 14;
@@ -429,7 +431,7 @@
             this.lblTimeCal.AutoSize = true;
             this.lblTimeCal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeCal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTimeCal.Location = new System.Drawing.Point(22, 625);
+            this.lblTimeCal.Location = new System.Drawing.Point(22, 631);
             this.lblTimeCal.Name = "lblTimeCal";
             this.lblTimeCal.Size = new System.Drawing.Size(90, 25);
             this.lblTimeCal.TabIndex = 13;
@@ -804,9 +806,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Location = new System.Drawing.Point(429, 60);
             this.groupBox3.Name = "groupBox3";
@@ -814,13 +816,6 @@
             this.groupBox3.TabIndex = 17;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reporte Personalizado";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(21, 82);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(183, 23);
-            this.textBox4.TabIndex = 19;
             // 
             // label18
             // 
@@ -831,13 +826,6 @@
             this.label18.Size = new System.Drawing.Size(92, 20);
             this.label18.TabIndex = 18;
             this.label18.Text = "Fecha Final";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(21, 142);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(183, 23);
-            this.textBox3.TabIndex = 17;
             // 
             // label17
             // 
@@ -937,11 +925,11 @@
             this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(779, 210);
+            this.label21.Location = new System.Drawing.Point(724, 210);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 13);
+            this.label21.Size = new System.Drawing.Size(145, 13);
             this.label21.TabIndex = 19;
-            this.label21.Text = "Eliminar Programa";
+            this.label21.Text = "Modificar o Eliminar Programa";
             // 
             // button5
             // 
@@ -1039,6 +1027,20 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(21, 79);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(257, 23);
+            this.dateTimePicker1.TabIndex = 19;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(21, 142);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(257, 23);
+            this.dateTimePicker2.TabIndex = 20;
             // 
             // MenuAdmin
             // 
@@ -1162,9 +1164,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
@@ -1179,6 +1179,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
 
     }
 }
