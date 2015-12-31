@@ -120,6 +120,27 @@ namespace ArrobaGym
             consulta.Visible = true;
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Clientes_Pendientes pendientes = new Clientes_Pendientes();
+            pendientes.Visible = true;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Clientes_Membresias_Administrar admin = new Clientes_Membresias_Administrar();
+            admin.Visible = true; 
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+            Cliente_calentamientos_administrar calentamientos = new Cliente_calentamientos_administrar();
+            calentamientos.Visible = true;
+          
+
+        }
+        
+
        
                 
             

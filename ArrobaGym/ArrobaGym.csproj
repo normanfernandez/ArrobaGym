@@ -76,6 +76,18 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clientes_Membresias_Administrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Membresias_Administrar.Designer.cs">
+      <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes_Pendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Pendientes.Designer.cs">
+      <DependentUpon>Clientes_Pendientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes_Membresias_Cobrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,12 @@
     </Compile>
     <Compile Include="Clientes_Membresias_Consultar.Designer.cs">
       <DependentUpon>Clientes_Membresias_Consultar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente_calentamientos_administrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente_calentamientos_administrar.Designer.cs">
+      <DependentUpon>Cliente_calentamientos_administrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -132,6 +150,12 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Clientes_Membresias_Administrar.resx">
+      <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Pendientes.resx">
+      <DependentUpon>Clientes_Pendientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes_Membresias_Cobrar.resx">
       <DependentUpon>Clientes_Membresias_Cobrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes_Membresias_Consultar.resx">
       <DependentUpon>Clientes_Membresias_Consultar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente_calentamientos_administrar.resx">
+      <DependentUpon>Cliente_calentamientos_administrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

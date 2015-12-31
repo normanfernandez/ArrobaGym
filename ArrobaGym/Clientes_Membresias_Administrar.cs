@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace ArrobaGym
 {
-    public partial class Clientes_Membresias_Cobrar : Form
+    public partial class Clientes_Membresias_Administrar : Form
     {
-        public Clientes_Membresias_Cobrar()
+        public Clientes_Membresias_Administrar()
         {
             InitializeComponent();
-
         }
 
-        private void label20_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-            Clientes_Pendientes pendientes = new Clientes_Pendientes();
-            pendientes.Visible = true;
-            
+            this.Close();
         }
     }
 }
