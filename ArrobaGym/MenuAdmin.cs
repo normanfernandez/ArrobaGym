@@ -89,7 +89,8 @@ namespace ArrobaGym
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Personal_Agregar pa = new Personal_Agregar();
+            pa.Visible = true;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -138,6 +139,30 @@ namespace ArrobaGym
             calentamientos.Visible = true;
           
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Modificar_Personal ModPer = new Modificar_Personal();
+            ModPer.Visible = true;
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Programa_Agregar PrAg = new Programa_Agregar();
+            PrAg.Visible = true;
+        }
+
+        private void tabProgramas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Programas_Administrar PrgAdmin = new Programas_Administrar();
+            PrgAdmin.Visible = true; 
         }
         
 

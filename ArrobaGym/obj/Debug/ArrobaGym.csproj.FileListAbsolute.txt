@@ -55,3 +55,7 @@ C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Clientes_Pendientes.resources
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Clientes_Membresias_Administrar.resources
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Cliente_calentamientos_administrar.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Personal_Agregar.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Modificar_Personal.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Programa_Agregar.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Programas_Administrar.resources

@@ -124,8 +124,20 @@
     <Compile Include="MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modificar Personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modificar Personal.Designer.cs">
+      <DependentUpon>Modificar Personal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personal.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Personal_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personal_Agregar.Designer.cs">
+      <DependentUpon>Personal_Agregar.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
@@ -133,6 +145,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Programa.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Programas_Administrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programas_Administrar.Designer.cs">
+      <DependentUpon>Programas_Administrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Programa_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Programa_Agregar.Designer.cs">
+      <DependentUpon>Programa_Agregar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro_Productos.cs">
@@ -174,6 +198,18 @@
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modificar Personal.resx">
+      <DependentUpon>Modificar Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal_Agregar.resx">
+      <DependentUpon>Personal_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programas_Administrar.resx">
+      <DependentUpon>Programas_Administrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Programa_Agregar.resx">
+      <DependentUpon>Programa_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -195,6 +231,7 @@
       <DependentUpon>AtGymModel.edmx</DependentUpon>
       <LastGenOutput>AtGymModel.cs</LastGenOutput>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
