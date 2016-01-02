@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
+using ArrobaGym.DAO;
 
 namespace ArrobaGym
 {
     public partial class MenuAdmin : Form
     {
-      
+
+        Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>();
         
         AtGymEntities AtGymddb = new AtGymEntities();
         public MenuAdmin()
@@ -24,8 +26,7 @@ namespace ArrobaGym
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
-
-           
+            this.dataGridView1.DataSource = ClienteDAO.SelectAll();
         }
 
        

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.25" name="AtGymLINQ">
+  <DataContextMoniker Name="/AtGymLINQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="50115a8a-5b3c-4aa4-a262-4f00772e9a16" absoluteBounds="3.5, 4.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Calentamiento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="137b6949-f15c-45b6-a4f5-a140543832bc" absoluteBounds="3.515, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="338858b7-2951-4bd0-94a5-75e39fedf42d" absoluteBounds="3.75, 8.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9586f30-999c-4900-813a-71a00efac95c" absoluteBounds="3.765, 9.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67d140cb-1675-408f-9650-0320d253b459" absoluteBounds="0.625, 4.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Personal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10174c36-0438-4b06-88d1-9397fb16194f" absoluteBounds="0.64, 5.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f721454e-f1fe-47e5-8863-e67c6f879c71" absoluteBounds="0.75, 0.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b377f7e3-3758-4bc5-b1e1-ec98e8ca47c6" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50df607e-01aa-43cb-8bb2-f232a544462d" absoluteBounds="1, 9.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Programa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dfd339aa-9152-4c42-9d76-a6a83e491290" absoluteBounds="1.0150000000000001, 10.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4d2096de-bf33-4361-97ed-f6618f517e39" absoluteBounds="3.5, 1.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Registro_Producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5f8a8ad-9dd2-411e-b9cf-7665b4b08137" absoluteBounds="3.515, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5114e40a-c7f4-41c6-b976-2e4ca6bab690" absoluteBounds="6.5, 3.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Seguimiento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cc8b99c-b159-4c7d-a0e4-9e4a9d24023c" absoluteBounds="6.515, 4.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.625 : 5.47679768880208); (3.5 : 5.47679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AtGymLINQDataContext/Personal/Personal_Calentamiento" />
+      <nodes>
+        <classShapeMoniker Id="67d140cb-1675-408f-9650-0320d253b459" />
+        <classShapeMoniker Id="50115a8a-5b3c-4aa4-a262-4f00772e9a16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 10.4142976888021); (3.75 : 10.4142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AtGymLINQDataContext/Programa/Programa_Cliente" />
+      <nodes>
+        <classShapeMoniker Id="50df607e-01aa-43cb-8bb2-f232a544462d" />
+        <classShapeMoniker Id="338858b7-2951-4bd0-94a5-75e39fedf42d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.65625 : 4.75); (0.65625 : 2.73484537760417); (3.5 : 2.73484537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AtGymLINQDataContext/Personal/Personal_Registro_Producto" />
+      <nodes>
+        <classShapeMoniker Id="67d140cb-1675-408f-9650-0320d253b459" />
+        <classShapeMoniker Id="4d2096de-bf33-4361-97ed-f6618f517e39" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.81814697265625); (3.5 : 1.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AtGymLINQDataContext/Producto/Producto_Registro_Producto" />
+      <nodes>
+        <classShapeMoniker Id="f721454e-f1fe-47e5-8863-e67c6f879c71" />
+        <classShapeMoniker Id="4d2096de-bf33-4361-97ed-f6618f517e39" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 8.75); (5.65625 : 6.7588525390625); (6.5 : 6.7588525390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AtGymLINQDataContext/Cliente/Cliente_Seguimiento" />
+      <nodes>
+        <classShapeMoniker Id="338858b7-2951-4bd0-94a5-75e39fedf42d" />
+        <classShapeMoniker Id="5114e40a-c7f4-41c6-b976-2e4ca6bab690" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.625 : 6.44997395833333); (6.5 : 6.44997395833333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AtGymLINQDataContext/Personal/Personal_Seguimiento" />
+      <nodes>
+        <classShapeMoniker Id="67d140cb-1675-408f-9650-0320d253b459" />
+        <classShapeMoniker Id="5114e40a-c7f4-41c6-b976-2e4ca6bab690" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

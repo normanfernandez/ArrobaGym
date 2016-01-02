@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AtGym" Class="AtGymLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NULLPTR\SQLEXPRESS;Initial Catalog=AtGym;Integrated Security=True" SettingsObjectName="ArrobaGym.Properties.Settings" SettingsPropertyName="AtGymConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Calentamientos" Member="Calentamientos">
+    <Type Name="Calentamiento">
+      <Column Name="Num_registro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaYHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EmpleadoDeTurno" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Association Name="Personal_Calentamiento" Member="Personal" ThisKey="EmpleadoDeTurno" OtherKey="Cedula" Type="Personal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cliente" Member="Clientes">
+    <Type Name="Cliente">
+      <Column Name="Codigo" Type="System.String" DbType="NChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Factores_de_riesgos" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Objetivos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Fecha_Inscripcion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Ultimo_Pago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdPrograma" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Cliente_Seguimiento" Member="Seguimientos" ThisKey="Codigo" OtherKey="Id_Cliente" Type="Seguimiento" />
+      <Association Name="Programa_Cliente" Member="Programa" ThisKey="IdPrograma" OtherKey="Id" Type="Programa" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Personal" Member="Personals">
+    <Type Name="Personal">
+      <Column Name="Cedula" Type="System.String" DbType="NChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Salario" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Horario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Fecha_Contratacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Personal_Calentamiento" Member="Calentamientos" ThisKey="Cedula" OtherKey="EmpleadoDeTurno" Type="Calentamiento" />
+      <Association Name="Personal_Registro_Producto" Member="Registro_Productos" ThisKey="Cedula" OtherKey="Empleado_Turno" Type="Registro_Producto" />
+      <Association Name="Personal_Seguimiento" Member="Seguimientos" ThisKey="Cedula" OtherKey="Empleado_turno" Type="Seguimiento" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Productos" Member="Productos">
+    <Type Name="Producto">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Producto_Registro_Producto" Member="Registro_Productos" ThisKey="Id" OtherKey="Id_Producto" Type="Registro_Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Programas" Member="Programas">
+    <Type Name="Programa">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Precio_Inscripcion" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Precio_periodo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Programa_Cliente" Member="Clientes" ThisKey="Id" OtherKey="IdPrograma" Type="Cliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Registro_Productos" Member="Registro_Productos">
+    <Type Name="Registro_Producto">
+      <Column Name="IdRegistro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad_Vendida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaYHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Empleado_Turno" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Association Name="Personal_Registro_Producto" Member="Personal" ThisKey="Empleado_Turno" OtherKey="Cedula" Type="Personal" IsForeignKey="true" />
+      <Association Name="Producto_Registro_Producto" Member="Producto" ThisKey="Id_Producto" OtherKey="Id" Type="Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Seguimiento" Member="Seguimientos">
+    <Type Name="Seguimiento">
+      <Column Name="Id_registro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id_Cliente" Type="System.String" DbType="NChar(6)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Peso" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Caja_Toracica" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cintura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Abdomen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cadera" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Muslo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Gastronomio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Biceps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Flexibilidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Saldo_Mes" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Empleado_turno" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Association Name="Cliente_Seguimiento" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Codigo" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Personal_Seguimiento" Member="Personal" ThisKey="Empleado_turno" OtherKey="Cedula" Type="Personal" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

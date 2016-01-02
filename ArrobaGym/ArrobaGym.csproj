@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ArrobaGym.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -41,6 +44,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -112,6 +116,8 @@
     <Compile Include="Cliente_calentamientos_administrar.Designer.cs">
       <DependentUpon>Cliente_calentamientos_administrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="DAO\Repository.cs" />
+    <Compile Include="DAO\IRepository.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,11 @@
     </Compile>
     <Compile Include="MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AtGymLINQ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AtGymLINQ.dbml</DependentUpon>
     </Compile>
     <Compile Include="Modificar Personal.cs">
       <SubType>Form</SubType>
@@ -198,6 +209,9 @@
     <EmbeddedResource Include="MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Models\AtGymLINQ.dbml.layout">
+      <DependentUpon>AtGymLINQ.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Modificar Personal.resx">
       <DependentUpon>Modificar Personal.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +246,11 @@
       <LastGenOutput>AtGymModel.cs</LastGenOutput>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="Models\AtGymLINQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>AtGymLINQ.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -250,6 +269,7 @@
     <None Include="Resources\%40GYM5.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
