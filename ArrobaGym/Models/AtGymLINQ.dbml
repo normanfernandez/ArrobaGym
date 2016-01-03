@@ -46,6 +46,7 @@
       <Association Name="Personal_Calentamiento" Member="Calentamientos" ThisKey="Cedula" OtherKey="EmpleadoDeTurno" Type="Calentamiento" />
       <Association Name="Personal_Registro_Producto" Member="Registro_Productos" ThisKey="Cedula" OtherKey="Empleado_Turno" Type="Registro_Producto" />
       <Association Name="Personal_Seguimiento" Member="Seguimientos" ThisKey="Cedula" OtherKey="Empleado_turno" Type="Seguimiento" />
+      <Association Name="Users_Personal" Member="Users" ThisKey="Usuario" OtherKey="User" Type="Users" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Productos" Member="Productos">
@@ -62,6 +63,7 @@
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Precio_Inscripcion" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Precio_periodo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Member="Status" Type="System.String" CanBeNull="false" />
       <Association Name="Programa_Cliente" Member="Clientes" ThisKey="Id" OtherKey="IdPrograma" Type="Cliente" />
     </Type>
   </Table>
@@ -90,10 +92,18 @@
       <Column Name="Gastronomio" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Biceps" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Flexibilidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Saldo_Mes" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Saldo_Mes" Member="Deposito_Mes" Storage="_Saldo_Mes" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Empleado_turno" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
       <Association Name="Cliente_Seguimiento" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Codigo" Type="Cliente" IsForeignKey="true" />
       <Association Name="Personal_Seguimiento" Member="Personal" ThisKey="Empleado_turno" OtherKey="Cedula" Type="Personal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="Users">
+    <Type Name="Users">
+      <Column Member="User" Type="System.String" CanBeNull="false" />
+      <Column Member="Password" Type="System.String" CanBeNull="false" />
+      <Column Member="Type" Type="System.String" CanBeNull="false" />
+      <Association Name="Users_Personal" Member="Personal" ThisKey="User" OtherKey="Usuario" Type="Personal" />
     </Type>
   </Table>
 </Database>

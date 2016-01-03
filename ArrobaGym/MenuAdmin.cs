@@ -16,21 +16,23 @@ namespace ArrobaGym
     public partial class MenuAdmin : Form
     {
 
-        Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>();
+        Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>(); // <------ esta linea da error 
         
         AtGymEntities AtGymddb = new AtGymEntities();
         public MenuAdmin()
         {
             InitializeComponent();
-            Clientes_Pendientes pendientes = new Clientes_Pendientes();
-            pendientes.Visible = true;
             
 
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
-            this.dataGridView1.DataSource = ClienteDAO.SelectAll();
+           
+
+             
+            
+
         }
 
        
