@@ -42,7 +42,7 @@
             this.textBox6.Location = new System.Drawing.Point(179, 45);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(180, 20);
-            this.textBox6.TabIndex = 22;
+            this.textBox6.TabIndex = 1;
             // 
             // label5
             // 
@@ -60,7 +60,7 @@
             this.textBox1.Location = new System.Drawing.Point(179, 71);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 18;
+            this.textBox1.TabIndex = 2;
             // 
             // label1
             // 
@@ -78,7 +78,7 @@
             this.textBox2.Location = new System.Drawing.Point(179, 97);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 23;
+            this.textBox2.TabIndex = 3;
             // 
             // label2
             // 
@@ -100,9 +100,10 @@
             this.button2.Location = new System.Drawing.Point(179, 136);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(180, 40);
-            this.button2.TabIndex = 45;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Agregar Programa";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Programa_Agregar
             // 
@@ -121,7 +122,6 @@
             this.Name = "Programa_Agregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Programa";
-            this.Load += new System.EventHandler(this.Programa_Agregar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
