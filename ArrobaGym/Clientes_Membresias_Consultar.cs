@@ -33,5 +33,11 @@ namespace ArrobaGym
             cobro.Visible = true;
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Clientes_Membresias_Cobrar_Historial history = new Clientes_Membresias_Cobrar_Historial();
+            history.Visible = true; 
+        }
     }
 }

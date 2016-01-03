@@ -15,6 +15,7 @@ namespace ArrobaGym
         public Clientes_Pendientes()
         {
             InitializeComponent();
+           
         }
 
         private void Clientes_Pendientes_Load(object sender, EventArgs e)

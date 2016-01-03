@@ -22,6 +22,10 @@ namespace ArrobaGym
         public MenuAdmin()
         {
             InitializeComponent();
+            Clientes_Pendientes pendientes = new Clientes_Pendientes();
+            pendientes.Visible = true;
+            
+
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)

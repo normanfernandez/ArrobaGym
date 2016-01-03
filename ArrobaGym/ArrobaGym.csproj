@@ -86,6 +86,12 @@
     <Compile Include="Clientes_Membresias_Administrar.Designer.cs">
       <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clientes_Membresias_Cobrar_Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Membresias_Cobrar_Historial.Designer.cs">
+      <DependentUpon>Clientes_Membresias_Cobrar_Historial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clientes_Pendientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </Compile>
     <EmbeddedResource Include="Clientes_Membresias_Administrar.resx">
       <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Membresias_Cobrar_Historial.resx">
+      <DependentUpon>Clientes_Membresias_Cobrar_Historial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes_Pendientes.resx">
       <DependentUpon>Clientes_Pendientes.cs</DependentUpon>

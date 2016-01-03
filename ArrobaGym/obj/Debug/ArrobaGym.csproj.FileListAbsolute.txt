@@ -59,3 +59,4 @@ C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Modificar_Personal.resources
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Programa_Agregar.resources
 C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Programas_Administrar.resources
+C:\Users\Hector\Desktop\ProyectoFinal\Application\ArrobaGym\ArrobaGym\obj\Debug\ArrobaGym.Clientes_Membresias_Cobrar_Historial.resources
