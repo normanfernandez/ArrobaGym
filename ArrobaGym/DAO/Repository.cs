@@ -30,9 +30,12 @@ namespace ArrobaGym.DAO
 
         public T SelectSingle(Func<T, bool> exp)
         {
-            var query = from t in context.GetTable<T>().Where(exp)
-                        select t;
-            return query.AsEnumerable<T>().First();
+            var query = (from t in context.GetTable<T>()
+                         select t);
+            if (query.Any(exp))
+                return query.First(exp);
+            else
+                return null;
         }
 
         public void Insert(T obj)

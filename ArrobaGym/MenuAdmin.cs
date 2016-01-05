@@ -16,22 +16,25 @@ namespace ArrobaGym
     public partial class MenuAdmin : Form
     {
 
-        Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>(); // <------ esta linea da error 
+        Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>();
+        Repository<Models.Programas> ProgramaDAO = new Repository<Models.Programas>();
         
         AtGymEntities AtGymddb = new AtGymEntities();
         public MenuAdmin()
         {
             InitializeComponent();
+            DataTable dt = new DataTable();
             
+       
 
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
-           
 
-             
-            
+
+            dataGridView1.DataSource = ClienteDAO.SelectAll();
+            dataGridView3.DataSource = ProgramaDAO.SelectAll();
 
         }
 
@@ -171,7 +174,50 @@ namespace ArrobaGym
             Programas_Administrar PrgAdmin = new Programas_Administrar();
             PrgAdmin.Visible = true; 
         }
-        
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            if (validatorProducto())
+            {
+                try
+                {
+                    Models.Productos producto = new Models.Productos
+                    {
+
+                        Nombre = textBoxNombreProducto.Text,
+                        Precio = int.Parse(textBoxprecioProducto.Text),
+
+                    };
+                    DAO.Repository<Models.Productos> productoDAO = new Repository<Models.Productos>();
+                    productoDAO.Insert(producto);
+                    productoDAO.SaveAll();
+                    MessageBox.Show("Producto Registrado con éxito");
+                }
+                catch (Exception exep) 
+                { 
+                    MessageBox.Show("Error al insertar Producto"); 
+                }
+            }
+            else 
+                MessageBox.Show("Error de validación");
+
+        }
+        public bool validatorProducto() 
+        {
+            DAO.Repository<Models.Productos> productosDAO = new Repository<Models.Productos>();
+            Decimal d;
+            if (!Decimal.TryParse(textBoxprecioProducto.Text, out d)) 
+                return false;
+            if (productosDAO.SelectSingle(p => p.Nombre == textBoxNombreProducto.Text) != null)
+                return false;
+            return true;
+        }
 
        
                 

@@ -29,45 +29,47 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnInscribir = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtfoto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.txtRiesgos = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtObetivos = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPrograma = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtFlexibilidad = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtBiceps = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.TxtGastronomio = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txtMuslo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCadera = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtAbdomen = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtCintura = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtCajaToracica = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.txtDeposito = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -81,20 +83,22 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.btnInscribir);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtfoto);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.richTextBox2);
+            this.groupBox1.Controls.Add(this.txtRiesgos);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.richTextBox1);
+            this.groupBox1.Controls.Add(this.txtObetivos);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtDireccion);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(23, 63);
             this.groupBox1.Name = "groupBox1";
@@ -102,6 +106,22 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion Personal";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 293);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(106, 13);
+            this.label23.TabIndex = 16;
+            this.label23.Text = "Fecha de Inscripcion";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(117, 293);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(180, 20);
+            this.dateTimePicker1.TabIndex = 15;
             // 
             // btnInscribir
             // 
@@ -116,12 +136,12 @@
             this.btnInscribir.Text = "Subir Foto";
             this.btnInscribir.UseVisualStyleBackColor = false;
             // 
-            // textBox5
+            // txtfoto
             // 
-            this.textBox5.Location = new System.Drawing.Point(117, 267);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 20);
-            this.textBox5.TabIndex = 13;
+            this.txtfoto.Location = new System.Drawing.Point(117, 267);
+            this.txtfoto.Name = "txtfoto";
+            this.txtfoto.Size = new System.Drawing.Size(180, 20);
+            this.txtfoto.TabIndex = 13;
             // 
             // label7
             // 
@@ -132,13 +152,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Foto";
             // 
-            // richTextBox2
+            // txtRiesgos
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(117, 222);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(180, 39);
-            this.richTextBox2.TabIndex = 11;
-            this.richTextBox2.Text = "";
+            this.txtRiesgos.Location = new System.Drawing.Point(117, 222);
+            this.txtRiesgos.Name = "txtRiesgos";
+            this.txtRiesgos.Size = new System.Drawing.Size(180, 39);
+            this.txtRiesgos.TabIndex = 11;
+            this.txtRiesgos.Text = "";
             // 
             // label6
             // 
@@ -149,13 +169,13 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Factoress de Riesgo";
             // 
-            // richTextBox1
+            // txtObetivos
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(117, 151);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(180, 65);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.txtObetivos.Location = new System.Drawing.Point(117, 151);
+            this.txtObetivos.Name = "txtObetivos";
+            this.txtObetivos.Size = new System.Drawing.Size(180, 65);
+            this.txtObetivos.TabIndex = 9;
+            this.txtObetivos.Text = "";
             // 
             // label5
             // 
@@ -166,12 +186,12 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Objetivos";
             // 
-            // textBox4
+            // txtDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 124);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtDireccion.Location = new System.Drawing.Point(117, 124);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(180, 20);
+            this.txtDireccion.TabIndex = 7;
             // 
             // label4
             // 
@@ -182,12 +202,12 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Dirección";
             // 
-            // textBox3
+            // txtTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 98);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtTelefono.Location = new System.Drawing.Point(117, 98);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(180, 20);
+            this.txtTelefono.TabIndex = 5;
             // 
             // label3
             // 
@@ -198,12 +218,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Teléfono";
             // 
-            // textBox2
+            // txtApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtApellido.Location = new System.Drawing.Point(117, 72);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(180, 20);
+            this.txtApellido.TabIndex = 3;
             // 
             // label2
             // 
@@ -214,12 +234,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Apellido";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtNombre.Location = new System.Drawing.Point(117, 46);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(180, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -239,34 +259,34 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Programa";
             // 
-            // comboBox1
+            // cbPrograma
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 21);
-            this.comboBox1.TabIndex = 16;
+            this.cbPrograma.FormattingEnabled = true;
+            this.cbPrograma.Location = new System.Drawing.Point(117, 53);
+            this.cbPrograma.Name = "cbPrograma";
+            this.cbPrograma.Size = new System.Drawing.Size(180, 21);
+            this.cbPrograma.TabIndex = 16;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.textBox14);
+            this.groupBox2.Controls.Add(this.txtFlexibilidad);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.textBox13);
+            this.groupBox2.Controls.Add(this.txtBiceps);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.textBox12);
+            this.groupBox2.Controls.Add(this.TxtGastronomio);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox11);
+            this.groupBox2.Controls.Add(this.txtMuslo);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.txtCadera);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.txtAbdomen);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.txtCintura);
             this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.txtCajaToracica);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.textBox10);
+            this.groupBox2.Controls.Add(this.txtPeso);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Location = new System.Drawing.Point(489, 63);
             this.groupBox2.Name = "groupBox2";
@@ -275,12 +295,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion Corporal";
             // 
-            // textBox14
+            // txtFlexibilidad
             // 
-            this.textBox14.Location = new System.Drawing.Point(291, 124);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(73, 20);
-            this.textBox14.TabIndex = 17;
+            this.txtFlexibilidad.Location = new System.Drawing.Point(291, 124);
+            this.txtFlexibilidad.Name = "txtFlexibilidad";
+            this.txtFlexibilidad.Size = new System.Drawing.Size(73, 20);
+            this.txtFlexibilidad.TabIndex = 17;
             // 
             // label17
             // 
@@ -291,13 +311,13 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Flexiblidad";
             // 
-            // textBox13
+            // txtBiceps
             // 
-            this.textBox13.Location = new System.Drawing.Point(291, 98);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(73, 20);
-            this.textBox13.TabIndex = 15;
-            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
+            this.txtBiceps.Location = new System.Drawing.Point(291, 98);
+            this.txtBiceps.Name = "txtBiceps";
+            this.txtBiceps.Size = new System.Drawing.Size(73, 20);
+            this.txtBiceps.TabIndex = 15;
+            this.txtBiceps.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // label12
             // 
@@ -309,13 +329,13 @@
             this.label12.Text = "Biceps";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // textBox12
+            // TxtGastronomio
             // 
-            this.textBox12.Location = new System.Drawing.Point(291, 72);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(73, 20);
-            this.textBox12.TabIndex = 13;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.TxtGastronomio.Location = new System.Drawing.Point(291, 72);
+            this.TxtGastronomio.Name = "TxtGastronomio";
+            this.TxtGastronomio.Size = new System.Drawing.Size(73, 20);
+            this.TxtGastronomio.TabIndex = 13;
+            this.TxtGastronomio.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // label11
             // 
@@ -326,13 +346,13 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Gastronomio";
             // 
-            // textBox11
+            // txtMuslo
             // 
-            this.textBox11.Location = new System.Drawing.Point(291, 46);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(73, 20);
-            this.textBox11.TabIndex = 11;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
+            this.txtMuslo.Location = new System.Drawing.Point(291, 46);
+            this.txtMuslo.Name = "txtMuslo";
+            this.txtMuslo.Size = new System.Drawing.Size(73, 20);
+            this.txtMuslo.TabIndex = 11;
+            this.txtMuslo.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // label10
             // 
@@ -343,13 +363,13 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Muslo";
             // 
-            // textBox6
+            // txtCadera
             // 
-            this.textBox6.Location = new System.Drawing.Point(117, 150);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(73, 20);
-            this.textBox6.TabIndex = 9;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.txtCadera.Location = new System.Drawing.Point(117, 150);
+            this.txtCadera.Name = "txtCadera";
+            this.txtCadera.Size = new System.Drawing.Size(73, 20);
+            this.txtCadera.TabIndex = 9;
+            this.txtCadera.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label9
             // 
@@ -360,13 +380,13 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Cadera";
             // 
-            // textBox7
+            // txtAbdomen
             // 
-            this.textBox7.Location = new System.Drawing.Point(117, 124);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(73, 20);
-            this.textBox7.TabIndex = 7;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.txtAbdomen.Location = new System.Drawing.Point(117, 124);
+            this.txtAbdomen.Name = "txtAbdomen";
+            this.txtAbdomen.Size = new System.Drawing.Size(73, 20);
+            this.txtAbdomen.TabIndex = 7;
+            this.txtAbdomen.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label13
             // 
@@ -378,13 +398,13 @@
             this.label13.Text = "Abdomen";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // textBox8
+            // txtCintura
             // 
-            this.textBox8.Location = new System.Drawing.Point(117, 98);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(73, 20);
-            this.textBox8.TabIndex = 5;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.txtCintura.Location = new System.Drawing.Point(117, 98);
+            this.txtCintura.Name = "txtCintura";
+            this.txtCintura.Size = new System.Drawing.Size(73, 20);
+            this.txtCintura.TabIndex = 5;
+            this.txtCintura.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // label14
             // 
@@ -395,13 +415,13 @@
             this.label14.TabIndex = 4;
             this.label14.Text = "Cintura";
             // 
-            // textBox9
+            // txtCajaToracica
             // 
-            this.textBox9.Location = new System.Drawing.Point(117, 72);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(73, 20);
-            this.textBox9.TabIndex = 3;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.txtCajaToracica.Location = new System.Drawing.Point(117, 72);
+            this.txtCajaToracica.Name = "txtCajaToracica";
+            this.txtCajaToracica.Size = new System.Drawing.Size(73, 20);
+            this.txtCajaToracica.TabIndex = 3;
+            this.txtCajaToracica.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // label15
             // 
@@ -412,13 +432,13 @@
             this.label15.TabIndex = 2;
             this.label15.Text = "Caja Torácica";
             // 
-            // textBox10
+            // txtPeso
             // 
-            this.textBox10.Location = new System.Drawing.Point(117, 46);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(73, 20);
-            this.textBox10.TabIndex = 1;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            this.txtPeso.Location = new System.Drawing.Point(117, 46);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(73, 20);
+            this.txtPeso.TabIndex = 1;
+            this.txtPeso.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
             // 
             // label16
             // 
@@ -433,14 +453,14 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.textBox15);
+            this.groupBox3.Controls.Add(this.txtDeposito);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cbPrograma);
             this.groupBox3.Location = new System.Drawing.Point(489, 276);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(425, 199);
@@ -461,14 +481,15 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "INSCRIBIR";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox15
+            // txtDeposito
             // 
-            this.textBox15.Location = new System.Drawing.Point(117, 144);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(92, 20);
-            this.textBox15.TabIndex = 19;
-            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            this.txtDeposito.Location = new System.Drawing.Point(117, 144);
+            this.txtDeposito.Name = "txtDeposito";
+            this.txtDeposito.Size = new System.Drawing.Size(92, 20);
+            this.txtDeposito.TabIndex = 19;
+            this.txtDeposito.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
             // 
             // label22
             // 
@@ -543,49 +564,51 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtObetivos;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtfoto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox txtRiesgos;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnInscribir;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPrograma;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtAbdomen;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtCintura;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtCajaToracica;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox TxtGastronomio;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txtMuslo;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCadera;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox txtBiceps;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtFlexibilidad;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox txtDeposito;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

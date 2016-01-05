@@ -13,7 +13,7 @@ namespace ArrobaGym
 {
     public partial class Programa_Agregar : Form
     {
-        Repository<Models.Programa> ProgramaDAO = new Repository<Models.Programa>();
+        Repository<Models.Programas> ProgramaDAO = new Repository<Models.Programas>();
 
         public Programa_Agregar()
         {
@@ -24,11 +24,12 @@ namespace ArrobaGym
         {
             if (this.Validate())
             {
-                Models.Programa programa = new Models.Programa
+                Models.Programas programa = new Models.Programas
                 {
                     Descripcion = textBox6.Text,
                     Precio_Inscripcion = Decimal.Parse(textBox1.Text),
-                    Precio_periodo = Decimal.Parse(textBox2.Text)
+                    Precio_periodo = Decimal.Parse(textBox2.Text),
+                    Status = "Activo"
                 };
                 try
                 {

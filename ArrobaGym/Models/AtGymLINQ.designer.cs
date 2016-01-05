@@ -30,31 +30,34 @@ namespace ArrobaGym.Models
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void InsertCalentamiento(Calentamiento instance);
-    partial void UpdateCalentamiento(Calentamiento instance);
-    partial void DeleteCalentamiento(Calentamiento instance);
+    partial void InsertCalentamientos(Calentamientos instance);
+    partial void UpdateCalentamientos(Calentamientos instance);
+    partial void DeleteCalentamientos(Calentamientos instance);
     partial void InsertCliente(Cliente instance);
     partial void UpdateCliente(Cliente instance);
     partial void DeleteCliente(Cliente instance);
+    partial void InsertCliente_Programa(Cliente_Programa instance);
+    partial void UpdateCliente_Programa(Cliente_Programa instance);
+    partial void DeleteCliente_Programa(Cliente_Programa instance);
     partial void InsertPersonal(Personal instance);
     partial void UpdatePersonal(Personal instance);
     partial void DeletePersonal(Personal instance);
-    partial void InsertProducto(Producto instance);
-    partial void UpdateProducto(Producto instance);
-    partial void DeleteProducto(Producto instance);
-    partial void InsertPrograma(Programa instance);
-    partial void UpdatePrograma(Programa instance);
-    partial void DeletePrograma(Programa instance);
-    partial void InsertRegistro_Producto(Registro_Producto instance);
-    partial void UpdateRegistro_Producto(Registro_Producto instance);
-    partial void DeleteRegistro_Producto(Registro_Producto instance);
+    partial void InsertProductos(Productos instance);
+    partial void UpdateProductos(Productos instance);
+    partial void DeleteProductos(Productos instance);
+    partial void InsertProgramas(Programas instance);
+    partial void UpdateProgramas(Programas instance);
+    partial void DeleteProgramas(Programas instance);
+    partial void InsertRegistro_Productos(Registro_Productos instance);
+    partial void UpdateRegistro_Productos(Registro_Productos instance);
+    partial void DeleteRegistro_Productos(Registro_Productos instance);
     partial void InsertSeguimiento(Seguimiento instance);
     partial void UpdateSeguimiento(Seguimiento instance);
     partial void DeleteSeguimiento(Seguimiento instance);
     #endregion
 		
 		public AtGymLINQDataContext() : 
-				base(global::ArrobaGym.Properties.Settings.Default.AtGymConnectionString, mappingSource)
+				base(global::ArrobaGym.Properties.Settings.Default.AtGymConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -83,15 +86,15 @@ namespace ArrobaGym.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Calentamiento> Calentamientos
+		public System.Data.Linq.Table<Calentamientos> Calentamientos
 		{
 			get
 			{
-				return this.GetTable<Calentamiento>();
+				return this.GetTable<Calentamientos>();
 			}
 		}
 		
-		public System.Data.Linq.Table<Cliente> Clientes
+		public System.Data.Linq.Table<Cliente> Cliente
 		{
 			get
 			{
@@ -99,7 +102,15 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Personal> Personals
+		public System.Data.Linq.Table<Cliente_Programa> Cliente_Programa
+		{
+			get
+			{
+				return this.GetTable<Cliente_Programa>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Personal> Personal
 		{
 			get
 			{
@@ -107,49 +118,41 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<Producto> Productos
+		public System.Data.Linq.Table<Productos> Productos
 		{
 			get
 			{
-				return this.GetTable<Producto>();
+				return this.GetTable<Productos>();
 			}
 		}
 		
-		public System.Data.Linq.Table<Programa> Programas
+		public System.Data.Linq.Table<Programas> Programas
 		{
 			get
 			{
-				return this.GetTable<Programa>();
+				return this.GetTable<Programas>();
 			}
 		}
 		
-		public System.Data.Linq.Table<Registro_Producto> Registro_Productos
+		public System.Data.Linq.Table<Registro_Productos> Registro_Productos
 		{
 			get
 			{
-				return this.GetTable<Registro_Producto>();
+				return this.GetTable<Registro_Productos>();
 			}
 		}
 		
-		public System.Data.Linq.Table<Seguimiento> Seguimientos
+		public System.Data.Linq.Table<Seguimiento> Seguimiento
 		{
 			get
 			{
 				return this.GetTable<Seguimiento>();
 			}
 		}
-		
-		public System.Data.Linq.Table<Users> Users
-		{
-			get
-			{
-				return this.GetTable<Users>();
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Calentamientos")]
-	public partial class Calentamiento : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Calentamientos : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -160,7 +163,7 @@ namespace ArrobaGym.Models
 		
 		private System.Nullable<decimal> _Cantidad;
 		
-		private string _EmpleadoDeTurno;
+		private int _EmpleadoDeTurno;
 		
 		private EntityRef<Personal> _Personal;
 		
@@ -174,17 +177,17 @@ namespace ArrobaGym.Models
     partial void OnFechaYHoraChanged();
     partial void OnCantidadChanging(System.Nullable<decimal> value);
     partial void OnCantidadChanged();
-    partial void OnEmpleadoDeTurnoChanging(string value);
+    partial void OnEmpleadoDeTurnoChanging(int value);
     partial void OnEmpleadoDeTurnoChanged();
     #endregion
 		
-		public Calentamiento()
+		public Calentamientos()
 		{
 			this._Personal = default(EntityRef<Personal>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_registro", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_registro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Num_registro
 		{
 			get
@@ -244,8 +247,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpleadoDeTurno", DbType="NChar(11)")]
-		public string EmpleadoDeTurno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpleadoDeTurno", DbType="Int NOT NULL")]
+		public int EmpleadoDeTurno
 		{
 			get
 			{
@@ -268,7 +271,7 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamiento", Storage="_Personal", ThisKey="EmpleadoDeTurno", OtherKey="Cedula", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamientos", Storage="_Personal", ThisKey="EmpleadoDeTurno", OtherKey="Id", IsForeignKey=true)]
 		public Personal Personal
 		{
 			get
@@ -291,11 +294,11 @@ namespace ArrobaGym.Models
 					if ((value != null))
 					{
 						value.Calentamientos.Add(this);
-						this._EmpleadoDeTurno = value.Cedula;
+						this._EmpleadoDeTurno = value.Id;
 					}
 					else
 					{
-						this._EmpleadoDeTurno = default(string);
+						this._EmpleadoDeTurno = default(int);
 					}
 					this.SendPropertyChanged("Personal");
 				}
@@ -329,6 +332,8 @@ namespace ArrobaGym.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private int _Id;
+		
 		private string _Codigo;
 		
 		private string _Nombre;
@@ -355,14 +360,16 @@ namespace ArrobaGym.Models
 		
 		private System.Nullable<int> _IdPrograma;
 		
-		private EntitySet<Seguimiento> _Seguimientos;
+		private EntitySet<Cliente_Programa> _Cliente_Programa;
 		
-		private EntityRef<Programa> _Programa;
+		private EntitySet<Seguimiento> _Seguimiento;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
     partial void OnCodigoChanging(string value);
     partial void OnCodigoChanged();
     partial void OnNombreChanging(string value);
@@ -393,12 +400,32 @@ namespace ArrobaGym.Models
 		
 		public Cliente()
 		{
-			this._Seguimientos = new EntitySet<Seguimiento>(new Action<Seguimiento>(this.attach_Seguimientos), new Action<Seguimiento>(this.detach_Seguimientos));
-			this._Programa = default(EntityRef<Programa>);
+			this._Cliente_Programa = new EntitySet<Cliente_Programa>(new Action<Cliente_Programa>(this.attach_Cliente_Programa), new Action<Cliente_Programa>(this.detach_Cliente_Programa));
+			this._Seguimiento = new EntitySet<Seguimiento>(new Action<Seguimiento>(this.attach_Seguimiento), new Action<Seguimiento>(this.detach_Seguimiento));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="NChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", DbType="NChar(6) NOT NULL", CanBeNull=false)]
 		public string Codigo
 		{
 			get
@@ -649,10 +676,6 @@ namespace ArrobaGym.Models
 			{
 				if ((this._IdPrograma != value))
 				{
-					if (this._Programa.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnIdProgramaChanging(value);
 					this.SendPropertyChanging();
 					this._IdPrograma = value;
@@ -662,50 +685,29 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Seguimiento", Storage="_Seguimientos", ThisKey="Codigo", OtherKey="Id_Cliente")]
-		public EntitySet<Seguimiento> Seguimientos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Cliente_Programa", Storage="_Cliente_Programa", ThisKey="Id", OtherKey="ID_Cliente")]
+		public EntitySet<Cliente_Programa> Cliente_Programa
 		{
 			get
 			{
-				return this._Seguimientos;
+				return this._Cliente_Programa;
 			}
 			set
 			{
-				this._Seguimientos.Assign(value);
+				this._Cliente_Programa.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Programa_Cliente", Storage="_Programa", ThisKey="IdPrograma", OtherKey="Id", IsForeignKey=true)]
-		public Programa Programa
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Seguimiento", Storage="_Seguimiento", ThisKey="Id", OtherKey="Cliente_ID")]
+		public EntitySet<Seguimiento> Seguimiento
 		{
 			get
 			{
-				return this._Programa.Entity;
+				return this._Seguimiento;
 			}
 			set
 			{
-				Programa previousValue = this._Programa.Entity;
-				if (((previousValue != value) 
-							|| (this._Programa.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Programa.Entity = null;
-						previousValue.Clientes.Remove(this);
-					}
-					this._Programa.Entity = value;
-					if ((value != null))
-					{
-						value.Clientes.Add(this);
-						this._IdPrograma = value.Id;
-					}
-					else
-					{
-						this._IdPrograma = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Programa");
-				}
+				this._Seguimiento.Assign(value);
 			}
 		}
 		
@@ -729,16 +731,196 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		private void attach_Seguimientos(Seguimiento entity)
+		private void attach_Cliente_Programa(Cliente_Programa entity)
 		{
 			this.SendPropertyChanging();
 			entity.Cliente = this;
 		}
 		
-		private void detach_Seguimientos(Seguimiento entity)
+		private void detach_Cliente_Programa(Cliente_Programa entity)
 		{
 			this.SendPropertyChanging();
 			entity.Cliente = null;
+		}
+		
+		private void attach_Seguimiento(Seguimiento entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cliente = this;
+		}
+		
+		private void detach_Seguimiento(Seguimiento entity)
+		{
+			this.SendPropertyChanging();
+			entity.Cliente = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cliente_Programa")]
+	public partial class Cliente_Programa : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_Cliente;
+		
+		private int _ID_Programa;
+		
+		private EntityRef<Cliente> _Cliente;
+		
+		private EntityRef<Programas> _Programas;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_ClienteChanging(int value);
+    partial void OnID_ClienteChanged();
+    partial void OnID_ProgramaChanging(int value);
+    partial void OnID_ProgramaChanged();
+    #endregion
+		
+		public Cliente_Programa()
+		{
+			this._Cliente = default(EntityRef<Cliente>);
+			this._Programas = default(EntityRef<Programas>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Cliente", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_Cliente
+		{
+			get
+			{
+				return this._ID_Cliente;
+			}
+			set
+			{
+				if ((this._ID_Cliente != value))
+				{
+					if (this._Cliente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_ClienteChanging(value);
+					this.SendPropertyChanging();
+					this._ID_Cliente = value;
+					this.SendPropertyChanged("ID_Cliente");
+					this.OnID_ClienteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_Programa", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_Programa
+		{
+			get
+			{
+				return this._ID_Programa;
+			}
+			set
+			{
+				if ((this._ID_Programa != value))
+				{
+					if (this._Programas.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_ProgramaChanging(value);
+					this.SendPropertyChanging();
+					this._ID_Programa = value;
+					this.SendPropertyChanged("ID_Programa");
+					this.OnID_ProgramaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Cliente_Programa", Storage="_Cliente", ThisKey="ID_Cliente", OtherKey="Id", IsForeignKey=true)]
+		public Cliente Cliente
+		{
+			get
+			{
+				return this._Cliente.Entity;
+			}
+			set
+			{
+				Cliente previousValue = this._Cliente.Entity;
+				if (((previousValue != value) 
+							|| (this._Cliente.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Cliente.Entity = null;
+						previousValue.Cliente_Programa.Remove(this);
+					}
+					this._Cliente.Entity = value;
+					if ((value != null))
+					{
+						value.Cliente_Programa.Add(this);
+						this._ID_Cliente = value.Id;
+					}
+					else
+					{
+						this._ID_Cliente = default(int);
+					}
+					this.SendPropertyChanged("Cliente");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Programas_Cliente_Programa", Storage="_Programas", ThisKey="ID_Programa", OtherKey="Id", IsForeignKey=true)]
+		public Programas Programas
+		{
+			get
+			{
+				return this._Programas.Entity;
+			}
+			set
+			{
+				Programas previousValue = this._Programas.Entity;
+				if (((previousValue != value) 
+							|| (this._Programas.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Programas.Entity = null;
+						previousValue.Cliente_Programa.Remove(this);
+					}
+					this._Programas.Entity = value;
+					if ((value != null))
+					{
+						value.Cliente_Programa.Add(this);
+						this._ID_Programa = value.Id;
+					}
+					else
+					{
+						this._ID_Programa = default(int);
+					}
+					this.SendPropertyChanged("Programas");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -747,6 +929,8 @@ namespace ArrobaGym.Models
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
 		
 		private string _Cedula;
 		
@@ -774,16 +958,18 @@ namespace ArrobaGym.Models
 		
 		private string _Tipo;
 		
-		private EntitySet<Calentamiento> _Calentamientos;
+		private EntitySet<Calentamientos> _Calentamientos;
 		
-		private EntitySet<Registro_Producto> _Registro_Productos;
+		private EntitySet<Registro_Productos> _Registro_Productos;
 		
-		private EntitySet<Seguimiento> _Seguimientos;
+		private EntitySet<Seguimiento> _Seguimiento;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
     partial void OnCedulaChanging(string value);
     partial void OnCedulaChanged();
     partial void OnNombreChanging(string value);
@@ -814,13 +1000,33 @@ namespace ArrobaGym.Models
 		
 		public Personal()
 		{
-			this._Calentamientos = new EntitySet<Calentamiento>(new Action<Calentamiento>(this.attach_Calentamientos), new Action<Calentamiento>(this.detach_Calentamientos));
-			this._Registro_Productos = new EntitySet<Registro_Producto>(new Action<Registro_Producto>(this.attach_Registro_Productos), new Action<Registro_Producto>(this.detach_Registro_Productos));
-			this._Seguimientos = new EntitySet<Seguimiento>(new Action<Seguimiento>(this.attach_Seguimientos), new Action<Seguimiento>(this.detach_Seguimientos));
+			this._Calentamientos = new EntitySet<Calentamientos>(new Action<Calentamientos>(this.attach_Calentamientos), new Action<Calentamientos>(this.detach_Calentamientos));
+			this._Registro_Productos = new EntitySet<Registro_Productos>(new Action<Registro_Productos>(this.attach_Registro_Productos), new Action<Registro_Productos>(this.detach_Registro_Productos));
+			this._Seguimiento = new EntitySet<Seguimiento>(new Action<Seguimiento>(this.attach_Seguimiento), new Action<Seguimiento>(this.detach_Seguimiento));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cedula", DbType="NChar(11) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cedula", DbType="NChar(11) NOT NULL", CanBeNull=false)]
 		public string Cedula
 		{
 			get
@@ -1080,8 +1286,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamiento", Storage="_Calentamientos", ThisKey="Cedula", OtherKey="EmpleadoDeTurno")]
-		public EntitySet<Calentamiento> Calentamientos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamientos", Storage="_Calentamientos", ThisKey="Id", OtherKey="EmpleadoDeTurno")]
+		public EntitySet<Calentamientos> Calentamientos
 		{
 			get
 			{
@@ -1093,8 +1299,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Registro_Producto", Storage="_Registro_Productos", ThisKey="Cedula", OtherKey="Empleado_Turno")]
-		public EntitySet<Registro_Producto> Registro_Productos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Registro_Productos", Storage="_Registro_Productos", ThisKey="Id", OtherKey="Empleado_Turno")]
+		public EntitySet<Registro_Productos> Registro_Productos
 		{
 			get
 			{
@@ -1106,16 +1312,16 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Seguimiento", Storage="_Seguimientos", ThisKey="Cedula", OtherKey="Empleado_turno")]
-		public EntitySet<Seguimiento> Seguimientos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Seguimiento", Storage="_Seguimiento", ThisKey="Id", OtherKey="Personal_ID")]
+		public EntitySet<Seguimiento> Seguimiento
 		{
 			get
 			{
-				return this._Seguimientos;
+				return this._Seguimiento;
 			}
 			set
 			{
-				this._Seguimientos.Assign(value);
+				this._Seguimiento.Assign(value);
 			}
 		}
 		
@@ -1139,37 +1345,37 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		private void attach_Calentamientos(Calentamiento entity)
+		private void attach_Calentamientos(Calentamientos entity)
 		{
 			this.SendPropertyChanging();
 			entity.Personal = this;
 		}
 		
-		private void detach_Calentamientos(Calentamiento entity)
+		private void detach_Calentamientos(Calentamientos entity)
 		{
 			this.SendPropertyChanging();
 			entity.Personal = null;
 		}
 		
-		private void attach_Registro_Productos(Registro_Producto entity)
+		private void attach_Registro_Productos(Registro_Productos entity)
 		{
 			this.SendPropertyChanging();
 			entity.Personal = this;
 		}
 		
-		private void detach_Registro_Productos(Registro_Producto entity)
+		private void detach_Registro_Productos(Registro_Productos entity)
 		{
 			this.SendPropertyChanging();
 			entity.Personal = null;
 		}
 		
-		private void attach_Seguimientos(Seguimiento entity)
+		private void attach_Seguimiento(Seguimiento entity)
 		{
 			this.SendPropertyChanging();
 			entity.Personal = this;
 		}
 		
-		private void detach_Seguimientos(Seguimiento entity)
+		private void detach_Seguimiento(Seguimiento entity)
 		{
 			this.SendPropertyChanging();
 			entity.Personal = null;
@@ -1177,7 +1383,7 @@ namespace ArrobaGym.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Productos")]
-	public partial class Producto : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Productos : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1188,7 +1394,7 @@ namespace ArrobaGym.Models
 		
 		private System.Nullable<decimal> _Precio;
 		
-		private EntitySet<Registro_Producto> _Registro_Productos;
+		private EntitySet<Registro_Productos> _Registro_Productos;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1202,13 +1408,13 @@ namespace ArrobaGym.Models
     partial void OnPrecioChanged();
     #endregion
 		
-		public Producto()
+		public Productos()
 		{
-			this._Registro_Productos = new EntitySet<Registro_Producto>(new Action<Registro_Producto>(this.attach_Registro_Productos), new Action<Registro_Producto>(this.detach_Registro_Productos));
+			this._Registro_Productos = new EntitySet<Registro_Productos>(new Action<Registro_Productos>(this.attach_Registro_Productos), new Action<Registro_Productos>(this.detach_Registro_Productos));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -1268,8 +1474,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Producto_Registro_Producto", Storage="_Registro_Productos", ThisKey="Id", OtherKey="Id_Producto")]
-		public EntitySet<Registro_Producto> Registro_Productos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Productos_Registro_Productos", Storage="_Registro_Productos", ThisKey="Id", OtherKey="Id_Producto")]
+		public EntitySet<Registro_Productos> Registro_Productos
 		{
 			get
 			{
@@ -1301,21 +1507,21 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		private void attach_Registro_Productos(Registro_Producto entity)
+		private void attach_Registro_Productos(Registro_Productos entity)
 		{
 			this.SendPropertyChanging();
-			entity.Producto = this;
+			entity.Productos = this;
 		}
 		
-		private void detach_Registro_Productos(Registro_Producto entity)
+		private void detach_Registro_Productos(Registro_Productos entity)
 		{
 			this.SendPropertyChanging();
-			entity.Producto = null;
+			entity.Productos = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Programas")]
-	public partial class Programa : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Programas : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1330,7 +1536,7 @@ namespace ArrobaGym.Models
 		
 		private string _Status;
 		
-		private EntitySet<Cliente> _Clientes;
+		private EntitySet<Cliente_Programa> _Cliente_Programa;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1348,13 +1554,13 @@ namespace ArrobaGym.Models
     partial void OnStatusChanged();
     #endregion
 		
-		public Programa()
+		public Programas()
 		{
-			this._Clientes = new EntitySet<Cliente>(new Action<Cliente>(this.attach_Clientes), new Action<Cliente>(this.detach_Clientes));
+			this._Cliente_Programa = new EntitySet<Cliente_Programa>(new Action<Cliente_Programa>(this.attach_Cliente_Programa), new Action<Cliente_Programa>(this.detach_Cliente_Programa));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -1434,7 +1640,7 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="NVarChar(4000) NOT NULL", CanBeNull=false)]
 		public string Status
 		{
 			get
@@ -1454,16 +1660,16 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Programa_Cliente", Storage="_Clientes", ThisKey="Id", OtherKey="IdPrograma")]
-		public EntitySet<Cliente> Clientes
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Programas_Cliente_Programa", Storage="_Cliente_Programa", ThisKey="Id", OtherKey="ID_Programa")]
+		public EntitySet<Cliente_Programa> Cliente_Programa
 		{
 			get
 			{
-				return this._Clientes;
+				return this._Cliente_Programa;
 			}
 			set
 			{
-				this._Clientes.Assign(value);
+				this._Cliente_Programa.Assign(value);
 			}
 		}
 		
@@ -1487,21 +1693,21 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		private void attach_Clientes(Cliente entity)
+		private void attach_Cliente_Programa(Cliente_Programa entity)
 		{
 			this.SendPropertyChanging();
-			entity.Programa = this;
+			entity.Programas = this;
 		}
 		
-		private void detach_Clientes(Cliente entity)
+		private void detach_Cliente_Programa(Cliente_Programa entity)
 		{
 			this.SendPropertyChanging();
-			entity.Programa = null;
+			entity.Programas = null;
 		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Registro_Productos")]
-	public partial class Registro_Producto : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class Registro_Productos : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1514,11 +1720,11 @@ namespace ArrobaGym.Models
 		
 		private System.Nullable<System.DateTime> _FechaYHora;
 		
-		private string _Empleado_Turno;
+		private int _Empleado_Turno;
 		
 		private EntityRef<Personal> _Personal;
 		
-		private EntityRef<Producto> _Producto;
+		private EntityRef<Productos> _Productos;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1532,18 +1738,18 @@ namespace ArrobaGym.Models
     partial void OnCantidad_VendidaChanged();
     partial void OnFechaYHoraChanging(System.Nullable<System.DateTime> value);
     partial void OnFechaYHoraChanged();
-    partial void OnEmpleado_TurnoChanging(string value);
+    partial void OnEmpleado_TurnoChanging(int value);
     partial void OnEmpleado_TurnoChanged();
     #endregion
 		
-		public Registro_Producto()
+		public Registro_Productos()
 		{
 			this._Personal = default(EntityRef<Personal>);
-			this._Producto = default(EntityRef<Producto>);
+			this._Productos = default(EntityRef<Productos>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRegistro", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdRegistro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int IdRegistro
 		{
 			get
@@ -1574,7 +1780,7 @@ namespace ArrobaGym.Models
 			{
 				if ((this._Id_Producto != value))
 				{
-					if (this._Producto.HasLoadedOrAssignedValue)
+					if (this._Productos.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -1627,8 +1833,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empleado_Turno", DbType="NChar(11)")]
-		public string Empleado_Turno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empleado_Turno", DbType="Int NOT NULL")]
+		public int Empleado_Turno
 		{
 			get
 			{
@@ -1651,7 +1857,7 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Registro_Producto", Storage="_Personal", ThisKey="Empleado_Turno", OtherKey="Cedula", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Registro_Productos", Storage="_Personal", ThisKey="Empleado_Turno", OtherKey="Id", IsForeignKey=true)]
 		public Personal Personal
 		{
 			get
@@ -1674,37 +1880,37 @@ namespace ArrobaGym.Models
 					if ((value != null))
 					{
 						value.Registro_Productos.Add(this);
-						this._Empleado_Turno = value.Cedula;
+						this._Empleado_Turno = value.Id;
 					}
 					else
 					{
-						this._Empleado_Turno = default(string);
+						this._Empleado_Turno = default(int);
 					}
 					this.SendPropertyChanged("Personal");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Producto_Registro_Producto", Storage="_Producto", ThisKey="Id_Producto", OtherKey="Id", IsForeignKey=true)]
-		public Producto Producto
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Productos_Registro_Productos", Storage="_Productos", ThisKey="Id_Producto", OtherKey="Id", IsForeignKey=true)]
+		public Productos Productos
 		{
 			get
 			{
-				return this._Producto.Entity;
+				return this._Productos.Entity;
 			}
 			set
 			{
-				Producto previousValue = this._Producto.Entity;
+				Productos previousValue = this._Productos.Entity;
 				if (((previousValue != value) 
-							|| (this._Producto.HasLoadedOrAssignedValue == false)))
+							|| (this._Productos.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._Producto.Entity = null;
+						this._Productos.Entity = null;
 						previousValue.Registro_Productos.Remove(this);
 					}
-					this._Producto.Entity = value;
+					this._Productos.Entity = value;
 					if ((value != null))
 					{
 						value.Registro_Productos.Add(this);
@@ -1714,7 +1920,7 @@ namespace ArrobaGym.Models
 					{
 						this._Id_Producto = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("Producto");
+					this.SendPropertyChanged("Productos");
 				}
 			}
 		}
@@ -1746,33 +1952,33 @@ namespace ArrobaGym.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Id_registro;
+		private int _Id;
 		
-		private string _Id_Cliente;
+		private System.DateTime _Fecha;
 		
-		private System.Nullable<System.DateTime> _Fecha;
+		private decimal _Peso;
 		
-		private System.Nullable<int> _Peso;
+		private decimal _Caja_Toraxica;
 		
-		private System.Nullable<int> _Caja_Toracica;
+		private decimal _Cintura;
 		
-		private System.Nullable<int> _Cintura;
+		private decimal _Abdomen;
 		
-		private System.Nullable<int> _Abdomen;
+		private decimal _Cadera;
 		
-		private System.Nullable<int> _Cadera;
+		private decimal _Muslo;
 		
-		private System.Nullable<int> _Muslo;
+		private decimal _Gastronmio;
 		
-		private System.Nullable<int> _Gastronomio;
+		private decimal _Biceps;
 		
-		private System.Nullable<int> _Biceps;
+		private decimal _Flexibilidad;
 		
-		private System.Nullable<int> _Flexibilidad;
+		private decimal _Saldo_Mes;
 		
-		private System.Nullable<decimal> _Saldo_Mes;
+		private int _Cliente_ID;
 		
-		private string _Empleado_turno;
+		private int _Personal_ID;
 		
 		private EntityRef<Cliente> _Cliente;
 		
@@ -1782,34 +1988,34 @@ namespace ArrobaGym.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnId_registroChanging(int value);
-    partial void OnId_registroChanged();
-    partial void OnId_ClienteChanging(string value);
-    partial void OnId_ClienteChanged();
-    partial void OnFechaChanging(System.Nullable<System.DateTime> value);
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnFechaChanging(System.DateTime value);
     partial void OnFechaChanged();
-    partial void OnPesoChanging(System.Nullable<int> value);
+    partial void OnPesoChanging(decimal value);
     partial void OnPesoChanged();
-    partial void OnCaja_ToracicaChanging(System.Nullable<int> value);
-    partial void OnCaja_ToracicaChanged();
-    partial void OnCinturaChanging(System.Nullable<int> value);
+    partial void OnCaja_ToraxicaChanging(decimal value);
+    partial void OnCaja_ToraxicaChanged();
+    partial void OnCinturaChanging(decimal value);
     partial void OnCinturaChanged();
-    partial void OnAbdomenChanging(System.Nullable<int> value);
+    partial void OnAbdomenChanging(decimal value);
     partial void OnAbdomenChanged();
-    partial void OnCaderaChanging(System.Nullable<int> value);
+    partial void OnCaderaChanging(decimal value);
     partial void OnCaderaChanged();
-    partial void OnMusloChanging(System.Nullable<int> value);
+    partial void OnMusloChanging(decimal value);
     partial void OnMusloChanged();
-    partial void OnGastronomioChanging(System.Nullable<int> value);
-    partial void OnGastronomioChanged();
-    partial void OnBicepsChanging(System.Nullable<int> value);
+    partial void OnGastronmioChanging(decimal value);
+    partial void OnGastronmioChanged();
+    partial void OnBicepsChanging(decimal value);
     partial void OnBicepsChanged();
-    partial void OnFlexibilidadChanging(System.Nullable<int> value);
+    partial void OnFlexibilidadChanging(decimal value);
     partial void OnFlexibilidadChanged();
-    partial void OnDeposito_MesChanging(System.Nullable<decimal> value);
-    partial void OnDeposito_MesChanged();
-    partial void OnEmpleado_turnoChanging(string value);
-    partial void OnEmpleado_turnoChanged();
+    partial void OnSaldo_MesChanging(decimal value);
+    partial void OnSaldo_MesChanged();
+    partial void OnCliente_IDChanging(int value);
+    partial void OnCliente_IDChanged();
+    partial void OnPersonal_IDChanging(int value);
+    partial void OnPersonal_IDChanged();
     #endregion
 		
 		public Seguimiento()
@@ -1819,52 +2025,28 @@ namespace ArrobaGym.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_registro", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Id_registro
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
 		{
 			get
 			{
-				return this._Id_registro;
+				return this._Id;
 			}
 			set
 			{
-				if ((this._Id_registro != value))
+				if ((this._Id != value))
 				{
-					this.OnId_registroChanging(value);
+					this.OnIdChanging(value);
 					this.SendPropertyChanging();
-					this._Id_registro = value;
-					this.SendPropertyChanged("Id_registro");
-					this.OnId_registroChanged();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_Cliente", DbType="NChar(6)")]
-		public string Id_Cliente
-		{
-			get
-			{
-				return this._Id_Cliente;
-			}
-			set
-			{
-				if ((this._Id_Cliente != value))
-				{
-					if (this._Cliente.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnId_ClienteChanging(value);
-					this.SendPropertyChanging();
-					this._Id_Cliente = value;
-					this.SendPropertyChanged("Id_Cliente");
-					this.OnId_ClienteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="Date")]
-		public System.Nullable<System.DateTime> Fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="Date NOT NULL")]
+		public System.DateTime Fecha
 		{
 			get
 			{
@@ -1883,8 +2065,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Peso", DbType="Int")]
-		public System.Nullable<int> Peso
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Peso", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Peso
 		{
 			get
 			{
@@ -1903,28 +2085,28 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caja_Toracica", DbType="Int")]
-		public System.Nullable<int> Caja_Toracica
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Caja_Toraxica", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Caja_Toraxica
 		{
 			get
 			{
-				return this._Caja_Toracica;
+				return this._Caja_Toraxica;
 			}
 			set
 			{
-				if ((this._Caja_Toracica != value))
+				if ((this._Caja_Toraxica != value))
 				{
-					this.OnCaja_ToracicaChanging(value);
+					this.OnCaja_ToraxicaChanging(value);
 					this.SendPropertyChanging();
-					this._Caja_Toracica = value;
-					this.SendPropertyChanged("Caja_Toracica");
-					this.OnCaja_ToracicaChanged();
+					this._Caja_Toraxica = value;
+					this.SendPropertyChanged("Caja_Toraxica");
+					this.OnCaja_ToraxicaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cintura", DbType="Int")]
-		public System.Nullable<int> Cintura
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cintura", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Cintura
 		{
 			get
 			{
@@ -1943,8 +2125,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Abdomen", DbType="Int")]
-		public System.Nullable<int> Abdomen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Abdomen", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Abdomen
 		{
 			get
 			{
@@ -1963,8 +2145,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cadera", DbType="Int")]
-		public System.Nullable<int> Cadera
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cadera", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Cadera
 		{
 			get
 			{
@@ -1983,8 +2165,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Muslo", DbType="Int")]
-		public System.Nullable<int> Muslo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Muslo", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Muslo
 		{
 			get
 			{
@@ -2003,28 +2185,28 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gastronomio", DbType="Int")]
-		public System.Nullable<int> Gastronomio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gastronmio", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Gastronmio
 		{
 			get
 			{
-				return this._Gastronomio;
+				return this._Gastronmio;
 			}
 			set
 			{
-				if ((this._Gastronomio != value))
+				if ((this._Gastronmio != value))
 				{
-					this.OnGastronomioChanging(value);
+					this.OnGastronmioChanging(value);
 					this.SendPropertyChanging();
-					this._Gastronomio = value;
-					this.SendPropertyChanged("Gastronomio");
-					this.OnGastronomioChanged();
+					this._Gastronmio = value;
+					this.SendPropertyChanged("Gastronmio");
+					this.OnGastronmioChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Biceps", DbType="Int")]
-		public System.Nullable<int> Biceps
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Biceps", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Biceps
 		{
 			get
 			{
@@ -2043,8 +2225,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flexibilidad", DbType="Int")]
-		public System.Nullable<int> Flexibilidad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flexibilidad", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Flexibilidad
 		{
 			get
 			{
@@ -2063,8 +2245,8 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Saldo_Mes", Storage="_Saldo_Mes", DbType="Money")]
-		public System.Nullable<decimal> Deposito_Mes
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Saldo_Mes", DbType="Money NOT NULL")]
+		public decimal Saldo_Mes
 		{
 			get
 			{
@@ -2074,40 +2256,64 @@ namespace ArrobaGym.Models
 			{
 				if ((this._Saldo_Mes != value))
 				{
-					this.OnDeposito_MesChanging(value);
+					this.OnSaldo_MesChanging(value);
 					this.SendPropertyChanging();
 					this._Saldo_Mes = value;
-					this.SendPropertyChanged("Deposito_Mes");
-					this.OnDeposito_MesChanged();
+					this.SendPropertyChanged("Saldo_Mes");
+					this.OnSaldo_MesChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Empleado_turno", DbType="NChar(11)")]
-		public string Empleado_turno
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cliente_ID", DbType="Int NOT NULL")]
+		public int Cliente_ID
 		{
 			get
 			{
-				return this._Empleado_turno;
+				return this._Cliente_ID;
 			}
 			set
 			{
-				if ((this._Empleado_turno != value))
+				if ((this._Cliente_ID != value))
+				{
+					if (this._Cliente.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnCliente_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Cliente_ID = value;
+					this.SendPropertyChanged("Cliente_ID");
+					this.OnCliente_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Personal_ID", DbType="Int NOT NULL")]
+		public int Personal_ID
+		{
+			get
+			{
+				return this._Personal_ID;
+			}
+			set
+			{
+				if ((this._Personal_ID != value))
 				{
 					if (this._Personal.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnEmpleado_turnoChanging(value);
+					this.OnPersonal_IDChanging(value);
 					this.SendPropertyChanging();
-					this._Empleado_turno = value;
-					this.SendPropertyChanged("Empleado_turno");
-					this.OnEmpleado_turnoChanged();
+					this._Personal_ID = value;
+					this.SendPropertyChanged("Personal_ID");
+					this.OnPersonal_IDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Seguimiento", Storage="_Cliente", ThisKey="Id_Cliente", OtherKey="Codigo", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Cliente_Seguimiento", Storage="_Cliente", ThisKey="Cliente_ID", OtherKey="Id", IsForeignKey=true)]
 		public Cliente Cliente
 		{
 			get
@@ -2124,24 +2330,24 @@ namespace ArrobaGym.Models
 					if ((previousValue != null))
 					{
 						this._Cliente.Entity = null;
-						previousValue.Seguimientos.Remove(this);
+						previousValue.Seguimiento.Remove(this);
 					}
 					this._Cliente.Entity = value;
 					if ((value != null))
 					{
-						value.Seguimientos.Add(this);
-						this._Id_Cliente = value.Codigo;
+						value.Seguimiento.Add(this);
+						this._Cliente_ID = value.Id;
 					}
 					else
 					{
-						this._Id_Cliente = default(string);
+						this._Cliente_ID = default(int);
 					}
 					this.SendPropertyChanged("Cliente");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Seguimiento", Storage="_Personal", ThisKey="Empleado_turno", OtherKey="Cedula", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Seguimiento", Storage="_Personal", ThisKey="Personal_ID", OtherKey="Id", IsForeignKey=true)]
 		public Personal Personal
 		{
 			get
@@ -2158,17 +2364,17 @@ namespace ArrobaGym.Models
 					if ((previousValue != null))
 					{
 						this._Personal.Entity = null;
-						previousValue.Seguimientos.Remove(this);
+						previousValue.Seguimiento.Remove(this);
 					}
 					this._Personal.Entity = value;
 					if ((value != null))
 					{
-						value.Seguimientos.Add(this);
-						this._Empleado_turno = value.Cedula;
+						value.Seguimiento.Add(this);
+						this._Personal_ID = value.Id;
 					}
 					else
 					{
-						this._Empleado_turno = default(string);
+						this._Personal_ID = default(int);
 					}
 					this.SendPropertyChanged("Personal");
 				}
@@ -2192,69 +2398,6 @@ namespace ArrobaGym.Models
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="")]
-	public partial class Users
-	{
-		
-		private string _User;
-		
-		private string _Password;
-		
-		private string _Type;
-		
-		public Users()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_User", CanBeNull=false)]
-		public string User
-		{
-			get
-			{
-				return this._User;
-			}
-			set
-			{
-				if ((this._User != value))
-				{
-					this._User = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", CanBeNull=false)]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
-				}
 			}
 		}
 	}

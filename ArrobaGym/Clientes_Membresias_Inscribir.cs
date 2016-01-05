@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ArrobaGym
@@ -87,6 +88,29 @@ namespace ArrobaGym
         private void textBox15_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Models.Cliente cliente = new Models.Cliente
+            {
+                Nombre = txtNombre.Text,
+                Apellido = txtApellido.Text,
+                Direccion = txtDireccion.Text,
+                Codigo = string.Format("%.05d", new Random().Next()),
+                Factores_de_riesgos = txtRiesgos.Text,
+                Fecha_Inscripcion = DateTime.Now,
+                Objetivos = txtObetivos.Text,
+                Saldo = decimal.Parse(txtDeposito.Text),
+                Status = "Activo",
+                Telefono = txtTelefono.Text,
+                Ultimo_Pago = DateTime.Now,
+
+
+            };
+            DAO.Repository<Models.Cliente> clienteDao = new DAO.Repository<Models.Cliente>();
+            clienteDao.Insert(cliente);
+            clienteDao.SaveAll();
         }
     }
 }

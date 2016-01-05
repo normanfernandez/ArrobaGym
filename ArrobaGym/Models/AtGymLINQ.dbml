@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AtGym" Class="AtGymLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=NULLPTR\SQLEXPRESS;Initial Catalog=AtGym;Integrated Security=True" SettingsObjectName="ArrobaGym.Properties.Settings" SettingsPropertyName="AtGymConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HECTORMOTA;Initial Catalog=AtGym;Integrated Security=True" SettingsObjectName="ArrobaGym.Properties.Settings" SettingsPropertyName="AtGymConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Calentamientos" Member="Calentamientos">
-    <Type Name="Calentamiento">
-      <Column Name="Num_registro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    <Type Name="Calentamientos">
+      <Column Name="Num_registro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="FechaYHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Cantidad" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="EmpleadoDeTurno" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
-      <Association Name="Personal_Calentamiento" Member="Personal" ThisKey="EmpleadoDeTurno" OtherKey="Cedula" Type="Personal" IsForeignKey="true" />
+      <Column Name="EmpleadoDeTurno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Personal_Calentamientos" Member="Personal" ThisKey="EmpleadoDeTurno" OtherKey="Id" Type="Personal" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Cliente" Member="Clientes">
+  <Table Name="dbo.Cliente" Member="Cliente">
     <Type Name="Cliente">
-      <Column Name="Codigo" Type="System.String" DbType="NChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="NChar(6) NOT NULL" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Apellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Telefono" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
@@ -24,13 +25,22 @@
       <Column Name="Saldo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Ultimo_Pago" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="IdPrograma" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Cliente_Seguimiento" Member="Seguimientos" ThisKey="Codigo" OtherKey="Id_Cliente" Type="Seguimiento" />
-      <Association Name="Programa_Cliente" Member="Programa" ThisKey="IdPrograma" OtherKey="Id" Type="Programa" IsForeignKey="true" />
+      <Association Name="Cliente_Cliente_Programa" Member="Cliente_Programa" ThisKey="Id" OtherKey="ID_Cliente" Type="Cliente_Programa" />
+      <Association Name="Cliente_Seguimiento" Member="Seguimiento" ThisKey="Id" OtherKey="Cliente_ID" Type="Seguimiento" />
     </Type>
   </Table>
-  <Table Name="dbo.Personal" Member="Personals">
+  <Table Name="dbo.Cliente_Programa" Member="Cliente_Programa">
+    <Type Name="Cliente_Programa">
+      <Column Name="ID_Cliente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_Programa" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Cliente_Cliente_Programa" Member="Cliente" ThisKey="ID_Cliente" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Programas_Cliente_Programa" Member="Programas" ThisKey="ID_Programa" OtherKey="Id" Type="Programas" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Personal" Member="Personal">
     <Type Name="Personal">
-      <Column Name="Cedula" Type="System.String" DbType="NChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cedula" Type="System.String" DbType="NChar(11) NOT NULL" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
@@ -43,67 +53,58 @@
       <Column Name="Fecha_Contratacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Personal_Calentamiento" Member="Calentamientos" ThisKey="Cedula" OtherKey="EmpleadoDeTurno" Type="Calentamiento" />
-      <Association Name="Personal_Registro_Producto" Member="Registro_Productos" ThisKey="Cedula" OtherKey="Empleado_Turno" Type="Registro_Producto" />
-      <Association Name="Personal_Seguimiento" Member="Seguimientos" ThisKey="Cedula" OtherKey="Empleado_turno" Type="Seguimiento" />
-      <Association Name="Users_Personal" Member="Users" ThisKey="Usuario" OtherKey="User" Type="Users" IsForeignKey="true" />
+      <Association Name="Personal_Calentamientos" Member="Calentamientos" ThisKey="Id" OtherKey="EmpleadoDeTurno" Type="Calentamientos" />
+      <Association Name="Personal_Registro_Productos" Member="Registro_Productos" ThisKey="Id" OtherKey="Empleado_Turno" Type="Registro_Productos" />
+      <Association Name="Personal_Seguimiento" Member="Seguimiento" ThisKey="Id" OtherKey="Personal_ID" Type="Seguimiento" />
     </Type>
   </Table>
   <Table Name="dbo.Productos" Member="Productos">
-    <Type Name="Producto">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    <Type Name="Productos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Precio" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Association Name="Producto_Registro_Producto" Member="Registro_Productos" ThisKey="Id" OtherKey="Id_Producto" Type="Registro_Producto" />
+      <Association Name="Productos_Registro_Productos" Member="Registro_Productos" ThisKey="Id" OtherKey="Id_Producto" Type="Registro_Productos" />
     </Type>
   </Table>
   <Table Name="dbo.Programas" Member="Programas">
-    <Type Name="Programa">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    <Type Name="Programas">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Precio_Inscripcion" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Precio_periodo" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Member="Status" Type="System.String" CanBeNull="false" />
-      <Association Name="Programa_Cliente" Member="Clientes" ThisKey="Id" OtherKey="IdPrograma" Type="Cliente" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Association Name="Programas_Cliente_Programa" Member="Cliente_Programa" ThisKey="Id" OtherKey="ID_Programa" Type="Cliente_Programa" />
     </Type>
   </Table>
   <Table Name="dbo.Registro_Productos" Member="Registro_Productos">
-    <Type Name="Registro_Producto">
-      <Column Name="IdRegistro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    <Type Name="Registro_Productos">
+      <Column Name="IdRegistro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Id_Producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Cantidad_Vendida" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="FechaYHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Empleado_Turno" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
-      <Association Name="Personal_Registro_Producto" Member="Personal" ThisKey="Empleado_Turno" OtherKey="Cedula" Type="Personal" IsForeignKey="true" />
-      <Association Name="Producto_Registro_Producto" Member="Producto" ThisKey="Id_Producto" OtherKey="Id" Type="Producto" IsForeignKey="true" />
+      <Column Name="Empleado_Turno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Personal_Registro_Productos" Member="Personal" ThisKey="Empleado_Turno" OtherKey="Id" Type="Personal" IsForeignKey="true" />
+      <Association Name="Productos_Registro_Productos" Member="Productos" ThisKey="Id_Producto" OtherKey="Id" Type="Productos" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Seguimiento" Member="Seguimientos">
+  <Table Name="dbo.Seguimiento" Member="Seguimiento">
     <Type Name="Seguimiento">
-      <Column Name="Id_registro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Id_Cliente" Type="System.String" DbType="NChar(6)" CanBeNull="true" />
-      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Peso" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Caja_Toracica" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Cintura" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Abdomen" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Cadera" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Muslo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Gastronomio" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Biceps" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Flexibilidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Saldo_Mes" Member="Deposito_Mes" Storage="_Saldo_Mes" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="Empleado_turno" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
-      <Association Name="Cliente_Seguimiento" Member="Cliente" ThisKey="Id_Cliente" OtherKey="Codigo" Type="Cliente" IsForeignKey="true" />
-      <Association Name="Personal_Seguimiento" Member="Personal" ThisKey="Empleado_turno" OtherKey="Cedula" Type="Personal" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="" Member="Users">
-    <Type Name="Users">
-      <Column Member="User" Type="System.String" CanBeNull="false" />
-      <Column Member="Password" Type="System.String" CanBeNull="false" />
-      <Column Member="Type" Type="System.String" CanBeNull="false" />
-      <Association Name="Users_Personal" Member="Personal" ThisKey="User" OtherKey="Usuario" Type="Personal" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Peso" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Caja_Toraxica" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Cintura" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Abdomen" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Cadera" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Muslo" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Gastronmio" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Biceps" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Flexibilidad" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Saldo_Mes" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Personal_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Cliente_Seguimiento" Member="Cliente" ThisKey="Cliente_ID" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Personal_Seguimiento" Member="Personal" ThisKey="Personal_ID" OtherKey="Id" Type="Personal" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
