@@ -38,6 +38,18 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
@@ -80,60 +92,60 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Clientes_Membresias_Administrar.cs">
+    <Compile Include="Forms\Clientes_Membresias_Administrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes_Membresias_Administrar.Designer.cs">
+    <Compile Include="Forms\Clientes_Membresias_Administrar.Designer.cs">
       <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes_Membresias_Cobrar_Historial.cs">
+    <Compile Include="Forms\Clientes_Membresias_Cobrar_Historial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes_Membresias_Cobrar_Historial.Designer.cs">
+    <Compile Include="Forms\Clientes_Membresias_Cobrar_Historial.Designer.cs">
       <DependentUpon>Clientes_Membresias_Cobrar_Historial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes_Pendientes.cs">
+    <Compile Include="Forms\Clientes_Pendientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes_Pendientes.Designer.cs">
+    <Compile Include="Forms\Clientes_Pendientes.Designer.cs">
       <DependentUpon>Clientes_Pendientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes_Membresias_Cobrar.cs">
+    <Compile Include="Forms\Clientes_Membresias_Cobrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes_Membresias_Cobrar.Designer.cs">
+    <Compile Include="Forms\Clientes_Membresias_Cobrar.Designer.cs">
       <DependentUpon>Clientes_Membresias_Cobrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes_Membresias_Inscribir.cs">
+    <Compile Include="Forms\Clientes_Membresias_Inscribir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes_Membresias_Inscribir.Designer.cs">
+    <Compile Include="Forms\Clientes_Membresias_Inscribir.Designer.cs">
       <DependentUpon>Clientes_Membresias_Inscribir.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes_Membresias_Consultar.cs">
+    <Compile Include="Forms\Clientes_Membresias_Consultar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes_Membresias_Consultar.Designer.cs">
+    <Compile Include="Forms\Clientes_Membresias_Consultar.Designer.cs">
       <DependentUpon>Clientes_Membresias_Consultar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cliente_calentamientos_administrar.cs">
+    <Compile Include="Forms\Cliente_calentamientos_administrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente_calentamientos_administrar.Designer.cs">
+    <Compile Include="Forms\Cliente_calentamientos_administrar.Designer.cs">
       <DependentUpon>Cliente_calentamientos_administrar.cs</DependentUpon>
     </Compile>
     <Compile Include="DAO\Repository.cs" />
     <Compile Include="DAO\IRepository.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Forms\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAdmin.cs">
+    <Compile Include="Forms\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
+    <Compile Include="Forms\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AtGymLINQ.designer.cs">
@@ -141,22 +153,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AtGymLINQ.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Personal_Cambiar.cs">
+    <Compile Include="Forms\Personal_Cambiar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personal_Cambiar.Designer.cs">
+    <Compile Include="Forms\Personal_Cambiar.Designer.cs">
       <DependentUpon>Personal_Cambiar.cs</DependentUpon>
     </Compile>
     <Compile Include="Personal.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Personal_Agregar.cs">
+    <Compile Include="Forms\Personal_Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Personal_Agregar.Designer.cs">
+    <Compile Include="Forms\Personal_Agregar.Designer.cs">
       <DependentUpon>Personal_Agregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="PictureBinary.cs" />
     <Compile Include="Producto.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
@@ -164,16 +175,16 @@
     <Compile Include="Programa.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Programas_Administrar.cs">
+    <Compile Include="Forms\Programas_Administrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Programas_Administrar.Designer.cs">
+    <Compile Include="Forms\Programas_Administrar.Designer.cs">
       <DependentUpon>Programas_Administrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Programa_Agregar.cs">
+    <Compile Include="Forms\Programa_Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Programa_Agregar.Designer.cs">
+    <Compile Include="Forms\Programa_Agregar.Designer.cs">
       <DependentUpon>Programa_Agregar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,46 +203,47 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Clientes_Membresias_Administrar.resx">
+    <Compile Include="Utils\PictureBinary.cs" />
+    <EmbeddedResource Include="Forms\Clientes_Membresias_Administrar.resx">
       <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes_Membresias_Cobrar_Historial.resx">
+    <EmbeddedResource Include="Forms\Clientes_Membresias_Cobrar_Historial.resx">
       <DependentUpon>Clientes_Membresias_Cobrar_Historial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes_Pendientes.resx">
+    <EmbeddedResource Include="Forms\Clientes_Pendientes.resx">
       <DependentUpon>Clientes_Pendientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes_Membresias_Cobrar.resx">
+    <EmbeddedResource Include="Forms\Clientes_Membresias_Cobrar.resx">
       <DependentUpon>Clientes_Membresias_Cobrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes_Membresias_Inscribir.resx">
+    <EmbeddedResource Include="Forms\Clientes_Membresias_Inscribir.resx">
       <DependentUpon>Clientes_Membresias_Inscribir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes_Membresias_Consultar.resx">
+    <EmbeddedResource Include="Forms\Clientes_Membresias_Consultar.resx">
       <DependentUpon>Clientes_Membresias_Consultar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cliente_calentamientos_administrar.resx">
+    <EmbeddedResource Include="Forms\Cliente_calentamientos_administrar.resx">
       <DependentUpon>Cliente_calentamientos_administrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuAdmin.resx">
+    <EmbeddedResource Include="Forms\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Models\AtGymLINQ.dbml.layout">
       <DependentUpon>AtGymLINQ.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Personal_Cambiar.resx">
+    <EmbeddedResource Include="Forms\Personal_Cambiar.resx">
       <DependentUpon>Personal_Cambiar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Personal_Agregar.resx">
+    <EmbeddedResource Include="Forms\Personal_Agregar.resx">
       <DependentUpon>Personal_Agregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Programas_Administrar.resx">
+    <EmbeddedResource Include="Forms\Programas_Administrar.resx">
       <DependentUpon>Programas_Administrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Programa_Agregar.resx">
+    <EmbeddedResource Include="Forms\Programa_Agregar.resx">
       <DependentUpon>Programa_Agregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -261,7 +273,7 @@
       <LastGenOutput>AtGymLINQ.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="Forms\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -281,6 +293,14 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\itextsharp.dll" />
+    <Content Include="Libs\itextsharp.pdfa.dll" />
+    <Content Include="Libs\itextsharp.xtra.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -220,11 +220,6 @@ namespace ArrobaGym
                 return false;
             return true;
         }
-
-       
-                
-            
-
     }
 }
 
