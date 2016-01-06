@@ -60,9 +60,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.pbFotoPersonal = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoPersonal)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -381,12 +383,22 @@
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // pbFotoPersonal
+            // 
+            this.pbFotoPersonal.Location = new System.Drawing.Point(837, 12);
+            this.pbFotoPersonal.Name = "pbFotoPersonal";
+            this.pbFotoPersonal.Size = new System.Drawing.Size(114, 134);
+            this.pbFotoPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFotoPersonal.TabIndex = 23;
+            this.pbFotoPersonal.TabStop = false;
+            // 
             // Personal_Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(840, 389);
+            this.ClientSize = new System.Drawing.Size(963, 389);
+            this.Controls.Add(this.pbFotoPersonal);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox3);
@@ -402,6 +414,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotoPersonal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,5 +453,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cbHorario;
         private System.Windows.Forms.DateTimePicker dtPago;
+        private System.Windows.Forms.PictureBox pbFotoPersonal;
     }
 }

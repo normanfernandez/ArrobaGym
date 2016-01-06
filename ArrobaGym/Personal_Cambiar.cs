@@ -13,7 +13,10 @@ namespace ArrobaGym
     public partial class Modificar_Personal : Form
     {
         private Models.Personal personal;
+        public Modificar_Personal()
+        {
 
+        }
         public Modificar_Personal(Models.Personal p)
         {
             this.personal = p;

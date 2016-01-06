@@ -156,6 +156,7 @@
     <Compile Include="Personal_Agregar.Designer.cs">
       <DependentUpon>Personal_Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="PictureBinary.cs" />
     <Compile Include="Producto.cs">
       <DependentUpon>AtGymModel.tt</DependentUpon>
     </Compile>

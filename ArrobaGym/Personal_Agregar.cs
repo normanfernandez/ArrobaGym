@@ -40,6 +40,8 @@ namespace ArrobaGym
                 Fecha_Contratacion = dtPago.Value,
                 Horario = cbHorario.SelectedText,
                 Salario = decimal.Parse(tbxSalario.Text),
+                Telefono = txtTelefono.Text,
+                Foto = Utils.PictureBinary.GetBinary(txtFoto.Text) //<------- Asi?
 
             };
             personalDAO.Insert(Personal);
@@ -52,6 +54,7 @@ namespace ArrobaGym
             OpenFileDialog openfile = new OpenFileDialog();
             openfile.ShowDialog();
             txtFoto.Text = openfile.FileName;
+
         }
     }
 }
