@@ -18,6 +18,7 @@ namespace ArrobaGym
 
         Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>();
         Repository<Models.Programas> ProgramaDAO = new Repository<Models.Programas>();
+        Repository<Models.Personal> PersonalDAO = new Repository<Models.Personal>();
         
         AtGymEntities AtGymddb = new AtGymEntities();
         public MenuAdmin()
@@ -35,6 +36,7 @@ namespace ArrobaGym
 
             dataGridView1.DataSource = ClienteDAO.SelectAll();
             dataGridView3.DataSource = ProgramaDAO.SelectAll();
+            dataGridView2.DataSource = PersonalDAO.SelectAll();
 
         }
 

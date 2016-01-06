@@ -31,39 +31,39 @@
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbxBuscarCedula = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tbxUsuario = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.tbxContr = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbxPago = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbxHorario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.tbxSalario = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbxCorreo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbxCedula = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbxDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbxTelefono = new System.Windows.Forms.TextBox();
+            this.tbxFoto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbxApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -103,13 +103,13 @@
             this.button4.Text = "Buscar";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // textBox5
+            // tbxBuscarCedula
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(153, 51);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(158, 26);
-            this.textBox5.TabIndex = 46;
+            this.tbxBuscarCedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbxBuscarCedula.Location = new System.Drawing.Point(153, 51);
+            this.tbxBuscarCedula.Name = "tbxBuscarCedula";
+            this.tbxBuscarCedula.Size = new System.Drawing.Size(158, 26);
+            this.tbxBuscarCedula.TabIndex = 46;
             // 
             // label7
             // 
@@ -152,11 +152,11 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cbTipo);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.tbxUsuario);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.textBox12);
+            this.groupBox3.Controls.Add(this.tbxContr);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Location = new System.Drawing.Point(476, 161);
             this.groupBox3.Name = "groupBox3";
@@ -165,16 +165,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cuenta";
             // 
-            // comboBox2
+            // cbTipo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
             "EMPLEADO",
             "ADMINISTRADOR"});
-            this.comboBox2.Location = new System.Drawing.Point(86, 106);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(180, 21);
-            this.comboBox2.TabIndex = 20;
+            this.cbTipo.Location = new System.Drawing.Point(86, 106);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(180, 21);
+            this.cbTipo.TabIndex = 20;
             // 
             // label11
             // 
@@ -185,12 +185,12 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "Tipo";
             // 
-            // textBox11
+            // tbxUsuario
             // 
-            this.textBox11.Location = new System.Drawing.Point(86, 54);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(180, 20);
-            this.textBox11.TabIndex = 16;
+            this.tbxUsuario.Location = new System.Drawing.Point(86, 54);
+            this.tbxUsuario.Name = "tbxUsuario";
+            this.tbxUsuario.Size = new System.Drawing.Size(180, 20);
+            this.tbxUsuario.TabIndex = 16;
             // 
             // label13
             // 
@@ -201,12 +201,12 @@
             this.label13.TabIndex = 15;
             this.label13.Text = "Usuario";
             // 
-            // textBox12
+            // tbxContr
             // 
-            this.textBox12.Location = new System.Drawing.Point(86, 80);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(180, 20);
-            this.textBox12.TabIndex = 1;
+            this.tbxContr.Location = new System.Drawing.Point(86, 80);
+            this.tbxContr.Name = "tbxContr";
+            this.tbxContr.Size = new System.Drawing.Size(180, 20);
+            this.tbxContr.TabIndex = 1;
             // 
             // label15
             // 
@@ -220,11 +220,11 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.tbxPago);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox9);
+            this.groupBox2.Controls.Add(this.tbxHorario);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox14);
+            this.groupBox2.Controls.Add(this.tbxSalario);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Location = new System.Drawing.Point(476, 21);
             this.groupBox2.Name = "groupBox2";
@@ -233,12 +233,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Laborales";
             // 
-            // textBox8
+            // tbxPago
             // 
-            this.textBox8.Location = new System.Drawing.Point(86, 83);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(180, 20);
-            this.textBox8.TabIndex = 18;
+            this.tbxPago.Location = new System.Drawing.Point(86, 83);
+            this.tbxPago.Name = "tbxPago";
+            this.tbxPago.Size = new System.Drawing.Size(180, 20);
+            this.tbxPago.TabIndex = 18;
             // 
             // label8
             // 
@@ -249,12 +249,12 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Dia de Pago";
             // 
-            // textBox9
+            // tbxHorario
             // 
-            this.textBox9.Location = new System.Drawing.Point(86, 31);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(180, 20);
-            this.textBox9.TabIndex = 16;
+            this.tbxHorario.Location = new System.Drawing.Point(86, 31);
+            this.tbxHorario.Name = "tbxHorario";
+            this.tbxHorario.Size = new System.Drawing.Size(180, 20);
+            this.tbxHorario.TabIndex = 16;
             // 
             // label9
             // 
@@ -265,12 +265,12 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Horario";
             // 
-            // textBox14
+            // tbxSalario
             // 
-            this.textBox14.Location = new System.Drawing.Point(86, 57);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(180, 20);
-            this.textBox14.TabIndex = 1;
+            this.tbxSalario.Location = new System.Drawing.Point(86, 57);
+            this.tbxSalario.Name = "tbxSalario";
+            this.tbxSalario.Size = new System.Drawing.Size(180, 20);
+            this.tbxSalario.TabIndex = 1;
             // 
             // label14
             // 
@@ -284,20 +284,20 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.tbxCorreo);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.tbxCedula);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.tbxDireccion);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.tbxTelefono);
+            this.groupBox1.Controls.Add(this.tbxFoto);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.tbxApellido);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.tbxNombre);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(77, 88);
             this.groupBox1.Name = "groupBox1";
@@ -306,12 +306,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion Personal";
             // 
-            // textBox7
+            // tbxCorreo
             // 
-            this.textBox7.Location = new System.Drawing.Point(117, 179);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(180, 20);
-            this.textBox7.TabIndex = 18;
+            this.tbxCorreo.Location = new System.Drawing.Point(117, 179);
+            this.tbxCorreo.Name = "tbxCorreo";
+            this.tbxCorreo.Size = new System.Drawing.Size(180, 20);
+            this.tbxCorreo.TabIndex = 18;
             // 
             // label6
             // 
@@ -322,12 +322,12 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Correo";
             // 
-            // textBox6
+            // tbxCedula
             // 
-            this.textBox6.Location = new System.Drawing.Point(117, 49);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(180, 20);
-            this.textBox6.TabIndex = 16;
+            this.tbxCedula.Location = new System.Drawing.Point(117, 49);
+            this.tbxCedula.Name = "tbxCedula";
+            this.tbxCedula.Size = new System.Drawing.Size(180, 20);
+            this.tbxCedula.TabIndex = 16;
             // 
             // label5
             // 
@@ -338,12 +338,12 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "Cédula";
             // 
-            // textBox4
+            // tbxDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 153);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 20);
-            this.textBox4.TabIndex = 7;
+            this.tbxDireccion.Location = new System.Drawing.Point(117, 153);
+            this.tbxDireccion.Name = "tbxDireccion";
+            this.tbxDireccion.Size = new System.Drawing.Size(180, 20);
+            this.tbxDireccion.TabIndex = 7;
             // 
             // label4
             // 
@@ -367,19 +367,19 @@
             this.button1.Text = "Subir Foto";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // tbxTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(117, 127);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 5;
+            this.tbxTelefono.Location = new System.Drawing.Point(117, 127);
+            this.tbxTelefono.Name = "tbxTelefono";
+            this.tbxTelefono.Size = new System.Drawing.Size(180, 20);
+            this.tbxTelefono.TabIndex = 5;
             // 
-            // textBox10
+            // tbxFoto
             // 
-            this.textBox10.Location = new System.Drawing.Point(117, 205);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(180, 20);
-            this.textBox10.TabIndex = 13;
+            this.tbxFoto.Location = new System.Drawing.Point(117, 205);
+            this.tbxFoto.Name = "tbxFoto";
+            this.tbxFoto.Size = new System.Drawing.Size(180, 20);
+            this.tbxFoto.TabIndex = 13;
             // 
             // label3
             // 
@@ -399,12 +399,12 @@
             this.label10.TabIndex = 12;
             this.label10.Text = "Foto";
             // 
-            // textBox2
+            // tbxApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 3;
+            this.tbxApellido.Location = new System.Drawing.Point(117, 101);
+            this.tbxApellido.Name = "tbxApellido";
+            this.tbxApellido.Size = new System.Drawing.Size(180, 20);
+            this.tbxApellido.TabIndex = 3;
             // 
             // label2
             // 
@@ -415,12 +415,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Apellido";
             // 
-            // textBox1
+            // tbxNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 1;
+            this.tbxNombre.Location = new System.Drawing.Point(117, 75);
+            this.tbxNombre.Name = "tbxNombre";
+            this.tbxNombre.Size = new System.Drawing.Size(180, 20);
+            this.tbxNombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -440,7 +440,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tbxBuscarCedula);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -468,39 +468,39 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbxBuscarCedula;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tbxUsuario;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tbxContr;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbxPago;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbxHorario;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox tbxSalario;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbxCorreo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbxCedula;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbxDireccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbxTelefono;
+        private System.Windows.Forms.TextBox tbxFoto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbxApellido;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxNombre;
         private System.Windows.Forms.Label label1;
     }
 }

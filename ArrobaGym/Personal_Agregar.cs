@@ -26,5 +26,25 @@ namespace ArrobaGym
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DAO.Repository<Models.Personal> personalDAO = new DAO.Repository<Models.Personal>();
+            Models.Personal Personal = new Models.Personal
+            {
+                Nombre = txtNombre.Text,
+                Apellido = txtApellido.Text,
+                Cedula = txtCedula.Text,
+                Correo = txtCorreo.Text,
+                Direccion = txtDireccion.Text,
+                Fecha_Contratacion = dtPago.Value,
+                Horario = cbHorario.SelectedText,
+                Salario = decimal.Parse(tbxSalario.Text),
+
+            };
+            personalDAO.Insert(Personal);
+            personalDAO.SaveAll();
+            MessageBox.Show("Empleado Insertado con Exito");
+        }
     }
 }

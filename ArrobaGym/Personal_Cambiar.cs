@@ -12,9 +12,14 @@ namespace ArrobaGym
 {
     public partial class Modificar_Personal : Form
     {
-        public Modificar_Personal()
+        private Models.Personal personal;
+
+        public Modificar_Personal(Models.Personal p)
         {
+            this.personal = p;
             InitializeComponent();
+            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
