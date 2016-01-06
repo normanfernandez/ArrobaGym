@@ -71,27 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AtGymModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AtGymModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AtGymModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="AtGymModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AtGymModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Calentamiento.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Cliente.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Clientes_Membresias_Administrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,22 +138,13 @@
     <Compile Include="Forms\Personal_Cambiar.Designer.cs">
       <DependentUpon>Personal_Cambiar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Personal.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Personal_Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Personal_Agregar.Designer.cs">
       <DependentUpon>Personal_Agregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Producto.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Programa.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Programas_Administrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,21 +158,6 @@
       <DependentUpon>Programa_Agregar.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro_Productos.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Seguimiento.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>AtGymModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Utils\PictureBinary.cs" />
     <EmbeddedResource Include="Forms\Clientes_Membresias_Administrar.resx">
       <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>
@@ -250,24 +205,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EntityDeploy Include="AtGymModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AtGymModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="AtGymModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AtGymModel.edmx</DependentUpon>
-      <LastGenOutput>AtGymModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="AtGymModel.edmx.diagram">
-      <DependentUpon>AtGymModel.edmx</DependentUpon>
-    </None>
-    <None Include="AtGymModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AtGymModel.edmx</DependentUpon>
-      <LastGenOutput>AtGymModel.cs</LastGenOutput>
-    </None>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Models\AtGymLINQ.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>AtGymLINQ.designer.cs</LastGenOutput>
@@ -285,7 +222,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\%40GYM5.png" />

@@ -19,8 +19,6 @@ namespace ArrobaGym
         Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>();
         Repository<Models.Programas> ProgramaDAO = new Repository<Models.Programas>();
         Repository<Models.Personal> PersonalDAO = new Repository<Models.Personal>();
-        
-        AtGymEntities AtGymddb = new AtGymEntities();
         public MenuAdmin()
         {
             InitializeComponent();
