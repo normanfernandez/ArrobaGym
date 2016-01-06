@@ -46,5 +46,12 @@ namespace ArrobaGym
             personalDAO.SaveAll();
             MessageBox.Show("Empleado Insertado con Exito");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.ShowDialog();
+            txtFoto.Text = openfile.FileName;
+        }
     }
 }

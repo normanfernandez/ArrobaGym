@@ -45,6 +45,8 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtPago = new System.Windows.Forms.DateTimePicker();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.tbxSalario = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.cbHorario = new System.Windows.Forms.ComboBox();
-            this.dtPago = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -150,6 +150,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Subir Foto";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtTelefono
             // 
@@ -230,6 +231,26 @@
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Laborales";
+            // 
+            // dtPago
+            // 
+            this.dtPago.Location = new System.Drawing.Point(117, 79);
+            this.dtPago.Name = "dtPago";
+            this.dtPago.Size = new System.Drawing.Size(180, 20);
+            this.dtPago.TabIndex = 20;
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Items.AddRange(new object[] {
+            "Mañana",
+            "Tarde",
+            "Noche",
+            "Completo"});
+            this.cbHorario.Location = new System.Drawing.Point(119, 20);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(178, 21);
+            this.cbHorario.TabIndex = 19;
             // 
             // label8
             // 
@@ -359,26 +380,6 @@
             this.button3.TabIndex = 22;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // cbHorario
-            // 
-            this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Items.AddRange(new object[] {
-            "Mañana",
-            "Tarde",
-            "Noche",
-            "Completo"});
-            this.cbHorario.Location = new System.Drawing.Point(119, 20);
-            this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(178, 21);
-            this.cbHorario.TabIndex = 19;
-            // 
-            // dtPago
-            // 
-            this.dtPago.Location = new System.Drawing.Point(117, 79);
-            this.dtPago.Name = "dtPago";
-            this.dtPago.Size = new System.Drawing.Size(180, 20);
-            this.dtPago.TabIndex = 20;
             // 
             // Personal_Agregar
             // 
