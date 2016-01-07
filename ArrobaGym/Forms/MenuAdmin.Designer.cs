@@ -195,7 +195,6 @@
             this.tabClientesMembresia.TabIndex = 0;
             this.tabClientesMembresia.Text = "Membresias";
             this.tabClientesMembresia.UseVisualStyleBackColor = true;
-            this.tabClientesMembresia.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label3
             // 
@@ -366,7 +365,6 @@
             this.tabClientesCalentamiento.TabIndex = 1;
             this.tabClientesCalentamiento.Text = "Registro de Calentamientos";
             this.tabClientesCalentamiento.UseVisualStyleBackColor = true;
-            this.tabClientesCalentamiento.Click += new System.EventHandler(this.tabClientesCalentamiento_Click);
             // 
             // label22
             // 
@@ -419,7 +417,6 @@
             this.lblCalMonto.Size = new System.Drawing.Size(156, 25);
             this.lblCalMonto.TabIndex = 15;
             this.lblCalMonto.Text = "Monto del Dia: Y";
-            this.lblCalMonto.Click += new System.EventHandler(this.lblCalMonto_Click);
             // 
             // lblCalReg
             // 
@@ -431,7 +428,6 @@
             this.lblCalReg.Size = new System.Drawing.Size(352, 25);
             this.lblCalReg.TabIndex = 14;
             this.lblCalReg.Text = "Calentamientos registrados en el día: X";
-            this.lblCalReg.Click += new System.EventHandler(this.lblCalReg_Click);
             // 
             // lblTimeCal
             // 
@@ -477,7 +473,6 @@
             this.label4.Size = new System.Drawing.Size(203, 31);
             this.label4.TabIndex = 9;
             this.label4.Text = "Calentamientos";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tabProductos
             // 
@@ -489,7 +484,6 @@
             this.tabProductos.TabIndex = 1;
             this.tabProductos.Text = "Productos";
             this.tabProductos.UseVisualStyleBackColor = true;
-            this.tabProductos.Click += new System.EventHandler(this.tabProductos_Click);
             // 
             // tbAdminProductos
             // 
@@ -606,7 +600,6 @@
             this.label8.Size = new System.Drawing.Size(397, 31);
             this.label8.TabIndex = 9;
             this.label8.Text = "Regisro de ventas de productos";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -651,7 +644,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Registro";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label15
             // 
@@ -724,7 +716,6 @@
             this.tabEmpleado.TabIndex = 2;
             this.tabEmpleado.Text = "Personal";
             this.tabEmpleado.UseVisualStyleBackColor = true;
-            this.tabEmpleado.Click += new System.EventHandler(this.tabEmpleado_Click);
             // 
             // button3
             // 
@@ -948,7 +939,6 @@
             this.tabProgramas.TabIndex = 4;
             this.tabProgramas.Text = "Programas";
             this.tabProgramas.UseVisualStyleBackColor = true;
-            this.tabProgramas.Click += new System.EventHandler(this.tabProgramas_Click);
             // 
             // button5
             // 
@@ -999,6 +989,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(862, 151);
             this.dataGridView3.TabIndex = 9;
+            this.dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEndEdit);
             // 
             // pctPerfil
             // 
@@ -1020,7 +1011,6 @@
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre";
-            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // lblApellido
             // 

@@ -34,28 +34,18 @@ namespace ArrobaGym
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = ClienteDAO.SelectAll();
-            dataGridView3.DataSource = ProgramaDAO.SelectAll();
+            dataGridView1.Columns["Id"].ReadOnly = true;
             dataGridView2.DataSource = PersonalDAO.SelectAll();
+            dataGridView2.Columns["Id"].ReadOnly = true;
+            dataGridView3.DataSource = ProgramaDAO.SelectAll();
+            dataGridView3.Columns["Id"].ReadOnly = true;
+            dataGridView3.EditMode = DataGridViewEditMode.EditOnEnter;
+
         }
 
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabProductos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -65,50 +55,10 @@ namespace ArrobaGym
             
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCalMonto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCalReg_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabClientesCalentamiento_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabEmpleado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Personal_Agregar pa = new Personal_Agregar();
             pa.Visible = true;
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnInscribir_Click(object sender, EventArgs e)
@@ -145,8 +95,6 @@ namespace ArrobaGym
         {
             Cliente_calentamientos_administrar calentamientos = new Cliente_calentamientos_administrar();
             calentamientos.Visible = true;
-          
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -162,20 +110,10 @@ namespace ArrobaGym
             PrAg.Visible = true;
         }
 
-        private void tabProgramas_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Programas_Administrar PrgAdmin = new Programas_Administrar();
             PrgAdmin.Visible = true; 
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -215,6 +153,11 @@ namespace ArrobaGym
             if (productosDAO.SelectSingle(p => p.Nombre == textBoxNombreProducto.Text) != null)
                 return false;
             return true;
+        }
+
+        private void dataGridView3_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            ProgramaDAO.SaveAll();
         }
     }
 }
