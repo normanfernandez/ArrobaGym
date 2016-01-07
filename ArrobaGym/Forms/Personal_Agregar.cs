@@ -41,7 +41,7 @@ namespace ArrobaGym
                 Horario = cbHorario.SelectedText,
                 Salario = decimal.Parse(tbxSalario.Text),
                 Telefono = txtTelefono.Text,
-                Foto = Utils.PictureBinary.GetBinary(txtFoto.Text) 
+                Foto = Utils.PictureBinary.GetBinary(txtFoto.Text), 
                 Usuario = tbxUser.Text,
                 Contraseña = tbxCont.Text,
                 Tipo = cbTipo.SelectedText,
@@ -51,6 +51,7 @@ namespace ArrobaGym
             personalDAO.Insert(Personal);
             personalDAO.SaveAll();
             MessageBox.Show("Empleado Insertado con Exito");
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,7 +59,14 @@ namespace ArrobaGym
             OpenFileDialog openfile = new OpenFileDialog();
             openfile.ShowDialog();
             txtFoto.Text = openfile.FileName;
+            pbFotoPersonal.Image = Utils.PictureBinary.GetImage(Utils.PictureBinary.GetBinary(txtFoto.Text));
+               
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
