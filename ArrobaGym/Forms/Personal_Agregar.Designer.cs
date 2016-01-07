@@ -52,7 +52,7 @@
             this.tbxSalario = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tbxUser = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -291,7 +291,7 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cbTipo);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.tbxUser);
             this.groupBox3.Controls.Add(this.label13);
@@ -304,16 +304,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cuenta";
             // 
-            // comboBox2
+            // cbTipo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
             "EMPLEADO",
             "ADMINISTRADOR"});
-            this.comboBox2.Location = new System.Drawing.Point(117, 101);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(180, 21);
-            this.comboBox2.TabIndex = 20;
+            this.cbTipo.Location = new System.Drawing.Point(117, 101);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(180, 21);
+            this.cbTipo.TabIndex = 20;
             // 
             // label11
             // 
@@ -443,7 +443,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tbxUser;
         private System.Windows.Forms.Label label13;

@@ -26,11 +26,11 @@ namespace ArrobaGym
             cbPrograma.ValueMember = "Id";
         }
 
-
+       
 
         private void label13_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -100,12 +100,13 @@ namespace ArrobaGym
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string codigoCliente = string.Format("%.05d", new Random().Next()); 
             Models.Cliente cliente = new Models.Cliente
             {
                 Nombre = txtNombre.Text,
                 Apellido = txtApellido.Text,
                 Direccion = txtDireccion.Text,
-                Codigo = string.Format("%.05d", new Random().Next()),
+                Codigo = codigoCliente,
                 Factores_de_riesgos = txtRiesgos.Text,
                 Fecha_Inscripcion = DateTime.Now,
                 Objetivos = txtObetivos.Text,
@@ -114,10 +115,23 @@ namespace ArrobaGym
                 Telefono = txtTelefono.Text,
                 Ultimo_Pago = DateTime.Now,
                 Imagen = Utils.PictureBinary.GetBinary(txtfoto.Text),
-                
+            };
+            Models.Seguimiento seguimiento = new Models.Seguimiento
+            {
+                Abdomen=decimal.Parse(txtAbdomen.Text), 
+                Biceps = decimal.Parse(txtBiceps.Text),
+                Cadera = decimal.Parse(txtCadera.Text), 
+                Caja_Toraxica=decimal.Parse(txtCajaToracica.Text),
+                Cintura=decimal.Parse(txtCintura.Text),
+                Fecha = DateTime.Now,
+                Flexibilidad=decimal.Parse(txtFlexibilidad.Text),
+                Gastronmio = decimal.Parse(TxtGastronomio.Text),
+                Muslo = decimal.Parse(txtMuslo.Text),
+                Peso = decimal.Parse(txtPeso.Text)
 
 
             };
+
             DAO.Repository<Models.Cliente> clienteDao = new DAO.Repository<Models.Cliente>();
             clienteDao.Insert(cliente);
             clienteDao.SaveAll();

@@ -41,7 +41,11 @@ namespace ArrobaGym
                 Horario = cbHorario.SelectedText,
                 Salario = decimal.Parse(tbxSalario.Text),
                 Telefono = txtTelefono.Text,
-                Foto = Utils.PictureBinary.GetBinary(txtFoto.Text) //<------- Asi?
+                Foto = Utils.PictureBinary.GetBinary(txtFoto.Text) 
+                Usuario = tbxUser.Text,
+                Contraseña = tbxCont.Text,
+                Tipo = cbTipo.SelectedText,
+
 
             };
             personalDAO.Insert(Personal);
