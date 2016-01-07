@@ -249,9 +249,9 @@
             "Tarde",
             "Noche",
             "Completo"});
-            this.cbHorario.Location = new System.Drawing.Point(119, 20);
+            this.cbHorario.Location = new System.Drawing.Point(117, 20);
             this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(178, 21);
+            this.cbHorario.Size = new System.Drawing.Size(180, 21);
             this.cbHorario.TabIndex = 19;
             // 
             // label8

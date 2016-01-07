@@ -105,12 +105,22 @@ namespace ArrobaGym
                 Status = "Activo",
                 Telefono = txtTelefono.Text,
                 Ultimo_Pago = DateTime.Now,
+                Imagen = Utils.PictureBinary.GetBinary(txtfoto.Text),
+                
 
 
             };
             DAO.Repository<Models.Cliente> clienteDao = new DAO.Repository<Models.Cliente>();
             clienteDao.Insert(cliente);
             clienteDao.SaveAll();
+        }
+
+        private void btnInscribir_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.ShowDialog();
+            txtfoto.Text = openfile.FileName;
+
         }
     }
 }

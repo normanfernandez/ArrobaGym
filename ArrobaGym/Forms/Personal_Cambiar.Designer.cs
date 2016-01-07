@@ -43,11 +43,8 @@
             this.tbxContr = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbxPago = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbxHorario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tbxSalario = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbxCorreo = new System.Windows.Forms.TextBox();
@@ -65,6 +62,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtPago = new System.Windows.Forms.DateTimePicker();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.tbxSalario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -148,6 +148,7 @@
             this.button2.TabIndex = 44;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
@@ -220,11 +221,11 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
-            this.groupBox2.Controls.Add(this.tbxPago);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.tbxHorario);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.dtPago);
+            this.groupBox2.Controls.Add(this.cbHorario);
             this.groupBox2.Controls.Add(this.tbxSalario);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Location = new System.Drawing.Point(476, 21);
             this.groupBox2.Name = "groupBox2";
@@ -232,13 +233,6 @@
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Laborales";
-            // 
-            // tbxPago
-            // 
-            this.tbxPago.Location = new System.Drawing.Point(86, 83);
-            this.tbxPago.Name = "tbxPago";
-            this.tbxPago.Size = new System.Drawing.Size(180, 20);
-            this.tbxPago.TabIndex = 18;
             // 
             // label8
             // 
@@ -249,13 +243,6 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Dia de Pago";
             // 
-            // tbxHorario
-            // 
-            this.tbxHorario.Location = new System.Drawing.Point(86, 31);
-            this.tbxHorario.Name = "tbxHorario";
-            this.tbxHorario.Size = new System.Drawing.Size(180, 20);
-            this.tbxHorario.TabIndex = 16;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -264,13 +251,6 @@
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 15;
             this.label9.Text = "Horario";
-            // 
-            // tbxSalario
-            // 
-            this.tbxSalario.Location = new System.Drawing.Point(86, 57);
-            this.tbxSalario.Name = "tbxSalario";
-            this.tbxSalario.Size = new System.Drawing.Size(180, 20);
-            this.tbxSalario.TabIndex = 1;
             // 
             // label14
             // 
@@ -431,6 +411,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
             // 
+            // dtPago
+            // 
+            this.dtPago.Location = new System.Drawing.Point(84, 89);
+            this.dtPago.Name = "dtPago";
+            this.dtPago.Size = new System.Drawing.Size(180, 20);
+            this.dtPago.TabIndex = 23;
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Items.AddRange(new object[] {
+            "Mañana",
+            "Tarde",
+            "Noche",
+            "Completo"});
+            this.cbHorario.Location = new System.Drawing.Point(84, 30);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(180, 21);
+            this.cbHorario.TabIndex = 22;
+            // 
+            // tbxSalario
+            // 
+            this.tbxSalario.Location = new System.Drawing.Point(84, 62);
+            this.tbxSalario.Name = "tbxSalario";
+            this.tbxSalario.Size = new System.Drawing.Size(180, 20);
+            this.tbxSalario.TabIndex = 21;
+            // 
             // Modificar_Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,11 +487,8 @@
         private System.Windows.Forms.TextBox tbxContr;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox tbxPago;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbxHorario;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tbxSalario;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox tbxCorreo;
@@ -502,5 +506,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtPago;
+        private System.Windows.Forms.ComboBox cbHorario;
+        private System.Windows.Forms.TextBox tbxSalario;
     }
 }

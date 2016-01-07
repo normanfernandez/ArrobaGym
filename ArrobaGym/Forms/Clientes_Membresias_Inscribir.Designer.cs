@@ -135,6 +135,7 @@
             this.btnInscribir.TabIndex = 14;
             this.btnInscribir.Text = "Subir Foto";
             this.btnInscribir.UseVisualStyleBackColor = false;
+            this.btnInscribir.Click += new System.EventHandler(this.btnInscribir_Click);
             // 
             // txtfoto
             // 
