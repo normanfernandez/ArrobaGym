@@ -19,26 +19,24 @@ namespace ArrobaGym
         Repository<Models.Cliente> ClienteDAO = new Repository<Models.Cliente>();
         Repository<Models.Programas> ProgramaDAO = new Repository<Models.Programas>();
         Repository<Models.Personal> PersonalDAO = new Repository<Models.Personal>();
+        Repository<Models.Productos> ProductoDAO = new Repository<Models.Productos>();
+
         public MenuAdmin()
         {
             InitializeComponent();
-            DataTable dt = new DataTable();
-            
-       
 
+            cbbProdVen.DataSource = ProgramaDAO.SelectAll().Select(
+                p => new { p.Id, p.Descripcion }).ToArray();
+            cbbProdVen.DisplayMember = "Descripcion";
+            cbbProdVen.ValueMember = "Id";
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
-
-
             dataGridView1.DataSource = ClienteDAO.SelectAll();
             dataGridView3.DataSource = ProgramaDAO.SelectAll();
             dataGridView2.DataSource = PersonalDAO.SelectAll();
-
         }
-
-       
 
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)
         {

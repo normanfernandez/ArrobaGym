@@ -13,9 +13,17 @@ namespace ArrobaGym
 {
     public partial class Clientes_Membresias_Inscribir : Form
     {
+        DAO.Repository<Models.Programas> ProgramaDAO = new DAO.Repository<Models.Programas>();
+
         public Clientes_Membresias_Inscribir()
         {
             InitializeComponent();
+
+            cbPrograma.DataSource = ProgramaDAO.SelectAll().Select(
+                p => new { p.Id, p.Descripcion }
+                ).ToList();
+            cbPrograma.DisplayMember = "Descripcion";
+            cbPrograma.ValueMember = "Id";
         }
 
 
