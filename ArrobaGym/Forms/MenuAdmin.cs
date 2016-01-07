@@ -25,9 +25,9 @@ namespace ArrobaGym
         {
             InitializeComponent();
 
-            cbbProdVen.DataSource = ProgramaDAO.SelectAll().Select(
-                p => new { p.Id, p.Descripcion }).ToArray();
-            cbbProdVen.DisplayMember = "Descripcion";
+            cbbProdVen.DataSource = ProductoDAO.SelectAll().Select(
+                p => new { p.Id, p.Nombre }).ToList();
+            cbbProdVen.DisplayMember = "Nombre";
             cbbProdVen.ValueMember = "Id";
         }
 

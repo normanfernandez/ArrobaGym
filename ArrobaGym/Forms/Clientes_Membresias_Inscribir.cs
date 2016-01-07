@@ -100,6 +100,7 @@ namespace ArrobaGym
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //falta generar el codigo 
             string codigoCliente = string.Format("%.05d", new Random().Next()); 
             Models.Cliente cliente = new Models.Cliente
             {
@@ -128,8 +129,8 @@ namespace ArrobaGym
                 Gastronmio = decimal.Parse(TxtGastronomio.Text),
                 Muslo = decimal.Parse(txtMuslo.Text),
                 Peso = decimal.Parse(txtPeso.Text)
-
-
+                //Saldo_Mes =  igual a deposito menos inscripcion_programa que hay que halarlo de la tabla programa
+                
             };
 
             DAO.Repository<Models.Cliente> clienteDao = new DAO.Repository<Models.Cliente>();
