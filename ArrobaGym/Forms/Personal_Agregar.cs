@@ -29,29 +29,42 @@ namespace ArrobaGym
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DAO.Repository<Models.Personal> personalDAO = new DAO.Repository<Models.Personal>();
-            Models.Personal Personal = new Models.Personal
+            if (validatorPersonal())
             {
-                Nombre = txtNombre.Text,
-                Apellido = txtApellido.Text,
-                Cedula = txtCedula.Text,
-                Correo = txtCorreo.Text,
-                Direccion = txtDireccion.Text,
-                Fecha_Contratacion = dtPago.Value,
-                Horario = cbHorario.SelectedText,
-                Salario = decimal.Parse(tbxSalario.Text),
-                Telefono = txtTelefono.Text,
-                Foto = Utils.PictureBinary.GetBinary(txtFoto.Text), 
-                Usuario = tbxUser.Text,
-                Contraseña = tbxCont.Text,
-                Tipo = cbTipo.SelectedText,
+                if (dtPago == null) dtPago.Value = DateTime.Now;
+                DAO.Repository<Models.Personal> personalDAO = new DAO.Repository<Models.Personal>();
+                Models.Personal Personal = new Models.Personal
+                {
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Cedula = txtCedula.Text,
+                    Correo = txtCorreo.Text,
+                    Direccion = txtDireccion.Text,
+                    Fecha_Contratacion = dtPago.Value,
+                    Horario = cbHorario.SelectedText,
+                    Salario = decimal.Parse(tbxSalario.Text),
+                    Telefono = txtTelefono.Text,
+                    Foto = Utils.PictureBinary.GetBinary(txtFoto.Text),
+                    Usuario = tbxUser.Text,
+                    Contraseña = tbxCont.Text,
+                    Tipo = cbTipo.SelectedText,
 
 
-            };
-            personalDAO.Insert(Personal);
-            personalDAO.SaveAll();
-            MessageBox.Show("Empleado Insertado con Exito");
-            this.Close();
+                };
+                try
+                {
+                    personalDAO.Insert(Personal);
+                    personalDAO.SaveAll();
+                    MessageBox.Show("Empleado Insertado con Exito");
+                    this.Close();
+                }
+                catch (Exception exe) 
+                {
+                    MessageBox.Show("Error al agregar Programa!");
+                }
+                //finally { this.Close(); }
+            }
+            else MessageBox.Show("Campos No Válidos");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,6 +80,16 @@ namespace ArrobaGym
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private bool validatorPersonal() 
+        {
+            Decimal d;
+            if (txtCedula.Text.Length != 11 && !Decimal.TryParse(txtCedula.Text, out d)) return false;
+            if (!txtCorreo.Text.Contains('@')) return false;
+            if (!Decimal.TryParse(tbxSalario.Text, out d)) return false;
+            if (txtTelefono.Text.Length != 10 && !Decimal.TryParse(txtTelefono.Text, out d)) return false;
+            if (tbxUser.Text == string.Empty || tbxCont.Text == string.Empty) return false;
+            return true;
         }
     }
 }
