@@ -23,10 +23,10 @@ namespace ArrobaGym
 
         public MenuAdmin()
         {
-            InitializeComponent();
 
+            InitializeComponent();
             cbbProdVen.DataSource = ProductoDAO.SelectAll().Select(
-                p => new { p.Id, p.Nombre }).ToList();
+            p => new { p.Id, p.Nombre }).ToList();
             cbbProdVen.DisplayMember = "Nombre";
             cbbProdVen.ValueMember = "Id";
         }

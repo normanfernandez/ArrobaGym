@@ -43,6 +43,9 @@
             this.tbxContr = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtPago = new System.Windows.Forms.DateTimePicker();
+            this.cbHorario = new System.Windows.Forms.ComboBox();
+            this.tbxSalario = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,9 +65,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtPago = new System.Windows.Forms.DateTimePicker();
-            this.cbHorario = new System.Windows.Forms.ComboBox();
-            this.tbxSalario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,12 +81,14 @@
             this.label12.Size = new System.Drawing.Size(97, 13);
             this.label12.TabIndex = 51;
             this.label12.Text = "Eliminar Membresía";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(808, 21);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(123, 132);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 50;
             this.pictureBox1.TabStop = false;
             // 
@@ -102,6 +104,7 @@
             this.button4.TabIndex = 49;
             this.button4.Text = "Buscar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // tbxBuscarCedula
             // 
@@ -234,6 +237,33 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Laborales";
             // 
+            // dtPago
+            // 
+            this.dtPago.Location = new System.Drawing.Point(84, 89);
+            this.dtPago.Name = "dtPago";
+            this.dtPago.Size = new System.Drawing.Size(180, 20);
+            this.dtPago.TabIndex = 23;
+            // 
+            // cbHorario
+            // 
+            this.cbHorario.FormattingEnabled = true;
+            this.cbHorario.Items.AddRange(new object[] {
+            "Mañana",
+            "Tarde",
+            "Noche",
+            "Completo"});
+            this.cbHorario.Location = new System.Drawing.Point(84, 30);
+            this.cbHorario.Name = "cbHorario";
+            this.cbHorario.Size = new System.Drawing.Size(180, 21);
+            this.cbHorario.TabIndex = 22;
+            // 
+            // tbxSalario
+            // 
+            this.tbxSalario.Location = new System.Drawing.Point(84, 62);
+            this.tbxSalario.Name = "tbxSalario";
+            this.tbxSalario.Size = new System.Drawing.Size(180, 20);
+            this.tbxSalario.TabIndex = 21;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -346,6 +376,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Subir Foto";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // tbxTelefono
             // 
@@ -410,33 +441,6 @@
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre";
-            // 
-            // dtPago
-            // 
-            this.dtPago.Location = new System.Drawing.Point(84, 89);
-            this.dtPago.Name = "dtPago";
-            this.dtPago.Size = new System.Drawing.Size(180, 20);
-            this.dtPago.TabIndex = 23;
-            // 
-            // cbHorario
-            // 
-            this.cbHorario.FormattingEnabled = true;
-            this.cbHorario.Items.AddRange(new object[] {
-            "Mañana",
-            "Tarde",
-            "Noche",
-            "Completo"});
-            this.cbHorario.Location = new System.Drawing.Point(84, 30);
-            this.cbHorario.Name = "cbHorario";
-            this.cbHorario.Size = new System.Drawing.Size(180, 21);
-            this.cbHorario.TabIndex = 22;
-            // 
-            // tbxSalario
-            // 
-            this.tbxSalario.Location = new System.Drawing.Point(84, 62);
-            this.tbxSalario.Name = "tbxSalario";
-            this.tbxSalario.Size = new System.Drawing.Size(180, 20);
-            this.tbxSalario.TabIndex = 21;
             // 
             // Modificar_Personal
             // 
