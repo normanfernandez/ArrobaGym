@@ -21,10 +21,11 @@ namespace ArrobaGym
         Repository<Models.Personal> PersonalDAO = new Repository<Models.Personal>();
         Repository<Models.Productos> ProductoDAO = new Repository<Models.Productos>();
         Repository<Models.Gastos> GastosDao = new Repository<Models.Gastos>();
+        private string privilegios; 
 
-        public MenuAdmin()
+        public MenuAdmin(Models.Personal per)
         {
-
+            this.privilegios = per.Tipo; 
             InitializeComponent();
             cbbProdVen.DataSource = ProductoDAO.SelectAll().Select(
             p => new { p.Id, p.Nombre }).ToList();
