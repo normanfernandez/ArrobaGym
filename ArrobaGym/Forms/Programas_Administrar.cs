@@ -22,16 +22,17 @@ namespace ArrobaGym
              ).ToList();
             comboBox1.DisplayMember = "Descripcion";
             comboBox1.ValueMember = "Id";
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            programa = ProgramaDAO.SelectAll().First();
             rellenar();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DAO.Repository<Models.Programas> programaDAO = new DAO.Repository<Models.Programas>();
-            programa = ProgramaDAO.SelectSingle(p => p.Id == comboBox1.SelectedIndex);
+            programa = ProgramaDAO.SelectSingle(p => p.Id == (int)comboBox1.SelectedValue);
             programa.Precio_Inscripcion = decimal.Parse(tbxInscripcion.Text);
             programa.Precio_periodo = decimal.Parse(tbxMensualidad.Text);
-            programaDAO.SaveAll();
+            ProgramaDAO.SaveAll();
            
             MessageBox.Show("Modificado con exito");
         }
@@ -57,8 +58,6 @@ namespace ArrobaGym
         }
         private void rellenar() 
         {
-            programa = ProgramaDAO.SelectSingle(p => p.Descripcion == comboBox1.SelectedText);
-            //programa.Precio_Inscripcion = decimal.Parse(tbxInscripcion.Text);
             if (programa != null)
             {
                 tbxInscripcion.Text = Convert.ToString(programa.Precio_Inscripcion);
