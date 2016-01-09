@@ -204,6 +204,22 @@ namespace ArrobaGym
             if (!Decimal.TryParse(tbxMontoGastos.Text, out d)) return false;
             return true;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.AddExtension = true;
+            sfd.FileName = DateTime.Now.ToString();
+            sfd.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+            sfd.DefaultExt = "pdf";
+            sfd.FileOk += (s,o) => 
+            {
+                Utils.AtGymPDFReport report = new Utils.AtGymPDFReport(sfd.FileName, null);
+                report.GenerateReport();
+            };
+            sfd.ShowDialog();
+            
+        }
     }
 }
 
