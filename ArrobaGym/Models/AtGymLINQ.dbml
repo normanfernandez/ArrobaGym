@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AtGym" Class="AtGymLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=HECTORMOTA;Initial Catalog=AtGym;Integrated Security=True" SettingsObjectName="ArrobaGym.Properties.Settings" SettingsPropertyName="AtGymConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Calentamientos" Member="Calentamientos">
-    <Type Name="Calentamientos">
-      <Column Name="Num_registro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FechaYHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="EmpleadoDeTurno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Personal_Calentamientos" Member="Personal" ThisKey="EmpleadoDeTurno" OtherKey="Id" Type="Personal" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Cliente" Member="Cliente">
     <Type Name="Cliente">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -53,9 +44,9 @@
       <Column Name="Fecha_Contratacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Foto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Personal_Calentamientos" Member="Calentamientos" ThisKey="Id" OtherKey="EmpleadoDeTurno" Type="Calentamientos" />
       <Association Name="Personal_Registro_Productos" Member="Registro_Productos" ThisKey="Id" OtherKey="Empleado_Turno" Type="Registro_Productos" />
       <Association Name="Personal_Seguimiento" Member="Seguimiento" ThisKey="Id" OtherKey="Personal_ID" Type="Seguimiento" />
+      <Association Name="Personal_Calentamientos" Member="Calentamientos" ThisKey="Id" OtherKey="EmpleadoDeTurno" Type="Calentamientos" />
     </Type>
   </Table>
   <Table Name="dbo.Productos" Member="Productos">
@@ -105,6 +96,16 @@
       <Column Name="Personal_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Cliente_Seguimiento" Member="Cliente" ThisKey="Cliente_ID" OtherKey="Id" Type="Cliente" IsForeignKey="true" />
       <Association Name="Personal_Seguimiento" Member="Personal" ThisKey="Personal_ID" OtherKey="Id" Type="Personal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Calentamientos" Member="Calentamientos">
+    <Type Name="Calentamientos">
+      <Column Name="Num_registro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FechaYHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EmpleadoDeTurno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cuota" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Personal_Calentamientos" Member="Personal" ThisKey="EmpleadoDeTurno" OtherKey="Id" Type="Personal" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

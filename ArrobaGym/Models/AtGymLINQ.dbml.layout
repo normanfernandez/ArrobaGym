@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 14.5" name="AtGymLINQ">
   <DataContextMoniker Name="/AtGymLINQDataContext" />
   <nestedChildShapes>
-    <classShape Id="55966aa7-e4a5-4746-8006-337c7ab16ce7" absoluteBounds="3.5, 4.625, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/AtGymLINQDataContext/Calentamientos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="63062c13-0201-4502-a8c9-bb70738573b5" absoluteBounds="3.515, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="d2e9cb60-f716-48d9-b1e6-7a295b8f917d" absoluteBounds="3.75, 7.75, 2, 3.5016097005208318">
       <DataClassMoniker Name="/AtGymLINQDataContext/Cliente" />
       <nestedChildShapes>
@@ -50,21 +44,14 @@
         <elementListCompartment Id="457ae74e-fa8a-44f3-a8d1-62488a382e2c" absoluteBounds="6.515, 4.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.75 : 9.47199625651042); (6.5 : 9.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 9.47199625651042); (6.5 : 9.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AtGymLINQDataContext/Cliente/Cliente_Cliente_Programa" />
       <nodes>
         <classShapeMoniker Id="d2e9cb60-f716-48d9-b1e6-7a295b8f917d" />
         <classShapeMoniker Id="172811f7-b75c-4f85-ab12-56d6da91b175" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.41429768880208); (3.5 : 5.41429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/AtGymLINQDataContext/Personal/Personal_Calentamientos" />
-      <nodes>
-        <classShapeMoniker Id="f38a67b6-6701-4bcf-9aed-085d528310fa" />
-        <classShapeMoniker Id="55966aa7-e4a5-4746-8006-337c7ab16ce7" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 13.3854484049479); (7.5 : 13.3854484049479); (7.5 : 10.0689925130208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.75 : 13.3854484049479); (7.5 : 13.3854484049479); (7.5 : 10.0689925130208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AtGymLINQDataContext/Programas/Programas_Cliente_Programa" />
       <nodes>
         <classShapeMoniker Id="7ba147f7-ef8b-4811-b1f6-c911ea9149f7" />
@@ -85,18 +72,31 @@
         <classShapeMoniker Id="ba1d2f31-187d-435e-973c-cd5b4b65c335" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.65625 : 7.75); (5.65625 : 6.7588525390625); (6.5 : 6.7588525390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.75 : 7.75); (4.75 : 5.75080860026042); (6.5 : 5.75080860026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AtGymLINQDataContext/Cliente/Cliente_Seguimiento" />
       <nodes>
         <classShapeMoniker Id="d2e9cb60-f716-48d9-b1e6-7a295b8f917d" />
         <classShapeMoniker Id="11008556-c21d-46bd-bf24-33fbb8e5fba7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.1875025); (6.5 : 4.1875025)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.1875025); (6.5 : 4.1875025)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/AtGymLINQDataContext/Personal/Personal_Seguimiento" />
       <nodes>
         <classShapeMoniker Id="f38a67b6-6701-4bcf-9aed-085d528310fa" />
         <classShapeMoniker Id="11008556-c21d-46bd-bf24-33fbb8e5fba7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="805878f6-6f2c-42c8-b03a-c85629937382" absoluteBounds="0.875, 7.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AtGymLINQDataContext/Calentamientos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0542479-fe80-4cb0-bfe4-ecc1e4653294" absoluteBounds="0.88999999999999968, 8.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.8125 : 7.25160970052083); (1.8125 : 7.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AtGymLINQDataContext/Personal/Personal_Calentamientos" />
+      <nodes>
+        <classShapeMoniker Id="f38a67b6-6701-4bcf-9aed-085d528310fa" />
+        <classShapeMoniker Id="805878f6-6f2c-42c8-b03a-c85629937382" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

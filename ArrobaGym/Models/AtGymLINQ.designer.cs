@@ -30,9 +30,6 @@ namespace ArrobaGym.Models
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void InsertCalentamientos(Calentamientos instance);
-    partial void UpdateCalentamientos(Calentamientos instance);
-    partial void DeleteCalentamientos(Calentamientos instance);
     partial void InsertCliente(Cliente instance);
     partial void UpdateCliente(Cliente instance);
     partial void DeleteCliente(Cliente instance);
@@ -54,6 +51,9 @@ namespace ArrobaGym.Models
     partial void InsertSeguimiento(Seguimiento instance);
     partial void UpdateSeguimiento(Seguimiento instance);
     partial void DeleteSeguimiento(Seguimiento instance);
+    partial void InsertCalentamientos(Calentamientos instance);
+    partial void UpdateCalentamientos(Calentamientos instance);
+    partial void DeleteCalentamientos(Calentamientos instance);
     #endregion
 		
 		public AtGymLINQDataContext() : 
@@ -84,14 +84,6 @@ namespace ArrobaGym.Models
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Calentamientos> Calentamientos
-		{
-			get
-			{
-				return this.GetTable<Calentamientos>();
-			}
 		}
 		
 		public System.Data.Linq.Table<Cliente> Cliente
@@ -149,179 +141,12 @@ namespace ArrobaGym.Models
 				return this.GetTable<Seguimiento>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Calentamientos")]
-	public partial class Calentamientos : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Num_registro;
-		
-		private System.Nullable<System.DateTime> _FechaYHora;
-		
-		private System.Nullable<decimal> _Cantidad;
-		
-		private int _EmpleadoDeTurno;
-		
-		private EntityRef<Personal> _Personal;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnNum_registroChanging(int value);
-    partial void OnNum_registroChanged();
-    partial void OnFechaYHoraChanging(System.Nullable<System.DateTime> value);
-    partial void OnFechaYHoraChanged();
-    partial void OnCantidadChanging(System.Nullable<decimal> value);
-    partial void OnCantidadChanged();
-    partial void OnEmpleadoDeTurnoChanging(int value);
-    partial void OnEmpleadoDeTurnoChanged();
-    #endregion
-		
-		public Calentamientos()
-		{
-			this._Personal = default(EntityRef<Personal>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_registro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Num_registro
+		public System.Data.Linq.Table<Calentamientos> Calentamientos
 		{
 			get
 			{
-				return this._Num_registro;
-			}
-			set
-			{
-				if ((this._Num_registro != value))
-				{
-					this.OnNum_registroChanging(value);
-					this.SendPropertyChanging();
-					this._Num_registro = value;
-					this.SendPropertyChanged("Num_registro");
-					this.OnNum_registroChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaYHora", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaYHora
-		{
-			get
-			{
-				return this._FechaYHora;
-			}
-			set
-			{
-				if ((this._FechaYHora != value))
-				{
-					this.OnFechaYHoraChanging(value);
-					this.SendPropertyChanging();
-					this._FechaYHora = value;
-					this.SendPropertyChanged("FechaYHora");
-					this.OnFechaYHoraChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Money")]
-		public System.Nullable<decimal> Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this.OnCantidadChanging(value);
-					this.SendPropertyChanging();
-					this._Cantidad = value;
-					this.SendPropertyChanged("Cantidad");
-					this.OnCantidadChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpleadoDeTurno", DbType="Int NOT NULL")]
-		public int EmpleadoDeTurno
-		{
-			get
-			{
-				return this._EmpleadoDeTurno;
-			}
-			set
-			{
-				if ((this._EmpleadoDeTurno != value))
-				{
-					if (this._Personal.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEmpleadoDeTurnoChanging(value);
-					this.SendPropertyChanging();
-					this._EmpleadoDeTurno = value;
-					this.SendPropertyChanged("EmpleadoDeTurno");
-					this.OnEmpleadoDeTurnoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamientos", Storage="_Personal", ThisKey="EmpleadoDeTurno", OtherKey="Id", IsForeignKey=true)]
-		public Personal Personal
-		{
-			get
-			{
-				return this._Personal.Entity;
-			}
-			set
-			{
-				Personal previousValue = this._Personal.Entity;
-				if (((previousValue != value) 
-							|| (this._Personal.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Personal.Entity = null;
-						previousValue.Calentamientos.Remove(this);
-					}
-					this._Personal.Entity = value;
-					if ((value != null))
-					{
-						value.Calentamientos.Add(this);
-						this._EmpleadoDeTurno = value.Id;
-					}
-					else
-					{
-						this._EmpleadoDeTurno = default(int);
-					}
-					this.SendPropertyChanged("Personal");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<Calentamientos>();
 			}
 		}
 	}
@@ -958,11 +783,11 @@ namespace ArrobaGym.Models
 		
 		private string _Tipo;
 		
-		private EntitySet<Calentamientos> _Calentamientos;
-		
 		private EntitySet<Registro_Productos> _Registro_Productos;
 		
 		private EntitySet<Seguimiento> _Seguimiento;
+		
+		private EntitySet<Calentamientos> _Calentamientos;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1000,9 +825,9 @@ namespace ArrobaGym.Models
 		
 		public Personal()
 		{
-			this._Calentamientos = new EntitySet<Calentamientos>(new Action<Calentamientos>(this.attach_Calentamientos), new Action<Calentamientos>(this.detach_Calentamientos));
 			this._Registro_Productos = new EntitySet<Registro_Productos>(new Action<Registro_Productos>(this.attach_Registro_Productos), new Action<Registro_Productos>(this.detach_Registro_Productos));
 			this._Seguimiento = new EntitySet<Seguimiento>(new Action<Seguimiento>(this.attach_Seguimiento), new Action<Seguimiento>(this.detach_Seguimiento));
+			this._Calentamientos = new EntitySet<Calentamientos>(new Action<Calentamientos>(this.attach_Calentamientos), new Action<Calentamientos>(this.detach_Calentamientos));
 			OnCreated();
 		}
 		
@@ -1286,19 +1111,6 @@ namespace ArrobaGym.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamientos", Storage="_Calentamientos", ThisKey="Id", OtherKey="EmpleadoDeTurno")]
-		public EntitySet<Calentamientos> Calentamientos
-		{
-			get
-			{
-				return this._Calentamientos;
-			}
-			set
-			{
-				this._Calentamientos.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Registro_Productos", Storage="_Registro_Productos", ThisKey="Id", OtherKey="Empleado_Turno")]
 		public EntitySet<Registro_Productos> Registro_Productos
 		{
@@ -1325,6 +1137,19 @@ namespace ArrobaGym.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamientos", Storage="_Calentamientos", ThisKey="Id", OtherKey="EmpleadoDeTurno")]
+		public EntitySet<Calentamientos> Calentamientos
+		{
+			get
+			{
+				return this._Calentamientos;
+			}
+			set
+			{
+				this._Calentamientos.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1343,18 +1168,6 @@ namespace ArrobaGym.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Calentamientos(Calentamientos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Personal = this;
-		}
-		
-		private void detach_Calentamientos(Calentamientos entity)
-		{
-			this.SendPropertyChanging();
-			entity.Personal = null;
 		}
 		
 		private void attach_Registro_Productos(Registro_Productos entity)
@@ -1376,6 +1189,18 @@ namespace ArrobaGym.Models
 		}
 		
 		private void detach_Seguimiento(Seguimiento entity)
+		{
+			this.SendPropertyChanging();
+			entity.Personal = null;
+		}
+		
+		private void attach_Calentamientos(Calentamientos entity)
+		{
+			this.SendPropertyChanging();
+			entity.Personal = this;
+		}
+		
+		private void detach_Calentamientos(Calentamientos entity)
 		{
 			this.SendPropertyChanging();
 			entity.Personal = null;
@@ -2375,6 +2200,205 @@ namespace ArrobaGym.Models
 					else
 					{
 						this._Personal_ID = default(int);
+					}
+					this.SendPropertyChanged("Personal");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Calentamientos")]
+	public partial class Calentamientos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Num_registro;
+		
+		private System.Nullable<System.DateTime> _FechaYHora;
+		
+		private System.Nullable<decimal> _Cantidad;
+		
+		private int _EmpleadoDeTurno;
+		
+		private decimal _Cuota;
+		
+		private EntityRef<Personal> _Personal;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnNum_registroChanging(int value);
+    partial void OnNum_registroChanged();
+    partial void OnFechaYHoraChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaYHoraChanged();
+    partial void OnCantidadChanging(System.Nullable<decimal> value);
+    partial void OnCantidadChanged();
+    partial void OnEmpleadoDeTurnoChanging(int value);
+    partial void OnEmpleadoDeTurnoChanged();
+    partial void OnCuotaChanging(decimal value);
+    partial void OnCuotaChanged();
+    #endregion
+		
+		public Calentamientos()
+		{
+			this._Personal = default(EntityRef<Personal>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Num_registro", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Num_registro
+		{
+			get
+			{
+				return this._Num_registro;
+			}
+			set
+			{
+				if ((this._Num_registro != value))
+				{
+					this.OnNum_registroChanging(value);
+					this.SendPropertyChanging();
+					this._Num_registro = value;
+					this.SendPropertyChanged("Num_registro");
+					this.OnNum_registroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaYHora", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaYHora
+		{
+			get
+			{
+				return this._FechaYHora;
+			}
+			set
+			{
+				if ((this._FechaYHora != value))
+				{
+					this.OnFechaYHoraChanging(value);
+					this.SendPropertyChanging();
+					this._FechaYHora = value;
+					this.SendPropertyChanged("FechaYHora");
+					this.OnFechaYHoraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Money")]
+		public System.Nullable<decimal> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this.OnCantidadChanging(value);
+					this.SendPropertyChanging();
+					this._Cantidad = value;
+					this.SendPropertyChanged("Cantidad");
+					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpleadoDeTurno", DbType="Int NOT NULL")]
+		public int EmpleadoDeTurno
+		{
+			get
+			{
+				return this._EmpleadoDeTurno;
+			}
+			set
+			{
+				if ((this._EmpleadoDeTurno != value))
+				{
+					if (this._Personal.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmpleadoDeTurnoChanging(value);
+					this.SendPropertyChanging();
+					this._EmpleadoDeTurno = value;
+					this.SendPropertyChanged("EmpleadoDeTurno");
+					this.OnEmpleadoDeTurnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cuota", DbType="Money NOT NULL")]
+		public decimal Cuota
+		{
+			get
+			{
+				return this._Cuota;
+			}
+			set
+			{
+				if ((this._Cuota != value))
+				{
+					this.OnCuotaChanging(value);
+					this.SendPropertyChanging();
+					this._Cuota = value;
+					this.SendPropertyChanged("Cuota");
+					this.OnCuotaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Personal_Calentamientos", Storage="_Personal", ThisKey="EmpleadoDeTurno", OtherKey="Id", IsForeignKey=true)]
+		public Personal Personal
+		{
+			get
+			{
+				return this._Personal.Entity;
+			}
+			set
+			{
+				Personal previousValue = this._Personal.Entity;
+				if (((previousValue != value) 
+							|| (this._Personal.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Personal.Entity = null;
+						previousValue.Calentamientos.Remove(this);
+					}
+					this._Personal.Entity = value;
+					if ((value != null))
+					{
+						value.Calentamientos.Add(this);
+						this._EmpleadoDeTurno = value.Id;
+					}
+					else
+					{
+						this._EmpleadoDeTurno = default(int);
 					}
 					this.SendPropertyChanged("Personal");
 				}
