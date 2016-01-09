@@ -21,19 +21,33 @@ namespace ArrobaGym
         Repository<Models.Personal> PersonalDAO = new Repository<Models.Personal>();
         Repository<Models.Productos> ProductoDAO = new Repository<Models.Productos>();
         Repository<Models.Gastos> GastosDao = new Repository<Models.Gastos>();
+        
+        private bool privilegios;
 
-        public MenuAdmin()
+        public MenuAdmin(Models.Personal per)
         {
-
+            if (per.Tipo == "ADMINISTRADOR")
+            {
+                this.privilegios = true;
+            }
+            else
+            {
+                this.privilegios = false;
+            }
             InitializeComponent();
             cbbProdVen.DataSource = ProductoDAO.SelectAll().Select(
             p => new { p.Id, p.Nombre }).ToList();
             cbbProdVen.DisplayMember = "Nombre";
             cbbProdVen.ValueMember = "Id";
+            pctPerfil.Image = Utils.PictureBinary.GetImage(per.Foto);
+            lblUser.Text = per.Usuario;
+            lblNombre.Text = per.Nombre;
+            lblApellido.Text = per.Apellido;
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
         {
+
             dataGridView1.DataSource = ClienteDAO.SelectAll();
             dataGridView1.Columns["Id"].ReadOnly = true;
             dataGridView2.DataSource = PersonalDAO.SelectAll();
@@ -42,6 +56,16 @@ namespace ArrobaGym
             dataGridView3.Columns["Id"].ReadOnly = true;
             dataGridView3.EditMode = DataGridViewEditMode.EditOnEnter;
 
+            if (!privilegios)
+            {
+                tbcAdminMain.TabPages.Remove(tabReportes);
+                tbcAdminMain.TabPages.Remove(tabEmpleado);
+                tbcAdminMain.TabPages.Remove(TabGastos);
+                tbAdminProductos.TabPages.Remove(tabPage2);
+                button5.Visible = button6.Visible = false;
+
+                label2.Visible = false;
+            }
         }
 
         private void MenuAdmin_FormClosed(object sender, FormClosedEventArgs e)

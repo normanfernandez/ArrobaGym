@@ -102,7 +102,11 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.Gastos = new System.Windows.Forms.TabPage();
+=======
+            this.TabGastos = new System.Windows.Forms.TabPage();
+>>>>>>> origin/master
             this.button7 = new System.Windows.Forms.Button();
             this.tbxMontoGastos = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -138,7 +142,11 @@
             this.groupBox2.SuspendLayout();
             this.tabProgramas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+<<<<<<< HEAD
             this.Gastos.SuspendLayout();
+=======
+            this.TabGastos.SuspendLayout();
+>>>>>>> origin/master
             ((System.ComponentModel.ISupportInitialize)(this.pctPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,7 +160,7 @@
             this.tbcAdminMain.Controls.Add(this.tabEmpleado);
             this.tbcAdminMain.Controls.Add(this.tabReportes);
             this.tbcAdminMain.Controls.Add(this.tabProgramas);
-            this.tbcAdminMain.Controls.Add(this.Gastos);
+            this.tbcAdminMain.Controls.Add(this.TabGastos);
             this.tbcAdminMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbcAdminMain.Location = new System.Drawing.Point(12, 1);
             this.tbcAdminMain.Name = "tbcAdminMain";
@@ -1001,6 +1009,7 @@
             this.dataGridView3.TabIndex = 9;
             this.dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEndEdit);
             // 
+<<<<<<< HEAD
             // Gastos
             // 
             this.Gastos.Controls.Add(this.button7);
@@ -1017,6 +1026,24 @@
             this.Gastos.Text = "Gastos";
             this.Gastos.UseVisualStyleBackColor = true;
             this.Gastos.Click += new System.EventHandler(this.Gastos_Click);
+=======
+            // TabGastos
+            // 
+            this.TabGastos.Controls.Add(this.button7);
+            this.TabGastos.Controls.Add(this.tbxMontoGastos);
+            this.TabGastos.Controls.Add(this.label23);
+            this.TabGastos.Controls.Add(this.label21);
+            this.TabGastos.Controls.Add(this.label16);
+            this.TabGastos.Controls.Add(this.cbDescripcionGastos);
+            this.TabGastos.Location = new System.Drawing.Point(4, 25);
+            this.TabGastos.Name = "TabGastos";
+            this.TabGastos.Padding = new System.Windows.Forms.Padding(3);
+            this.TabGastos.Size = new System.Drawing.Size(875, 676);
+            this.TabGastos.TabIndex = 5;
+            this.TabGastos.Text = "Gastos";
+            this.TabGastos.UseVisualStyleBackColor = true;
+            this.TabGastos.Click += new System.EventHandler(this.Gastos_Click);
+>>>>>>> origin/master
             // 
             // button7
             // 
@@ -1092,6 +1119,7 @@
             this.pctPerfil.Location = new System.Drawing.Point(901, 26);
             this.pctPerfil.Name = "pctPerfil";
             this.pctPerfil.Size = new System.Drawing.Size(95, 104);
+            this.pctPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctPerfil.TabIndex = 1;
             this.pctPerfil.TabStop = false;
             // 
@@ -1186,8 +1214,13 @@
             this.tabProgramas.ResumeLayout(false);
             this.tabProgramas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+<<<<<<< HEAD
             this.Gastos.ResumeLayout(false);
             this.Gastos.PerformLayout();
+=======
+            this.TabGastos.ResumeLayout(false);
+            this.TabGastos.PerformLayout();
+>>>>>>> origin/master
             ((System.ComponentModel.ISupportInitialize)(this.pctPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1273,7 +1306,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.TabPage Gastos;
+        private System.Windows.Forms.TabPage TabGastos;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cbDescripcionGastos;
