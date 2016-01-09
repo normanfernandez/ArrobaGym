@@ -22,7 +22,10 @@ namespace ArrobaGym
         Repository<Models.Personal> PersonalDAO = new Repository<Models.Personal>();
         Repository<Models.Productos> ProductoDAO = new Repository<Models.Productos>();
         Repository<Models.Gastos> GastosDao = new Repository<Models.Gastos>();
-        
+        Repository<Models.Calentamientos> CalentamientosDAO = new Repository<Calentamientos>();
+
+        private Models.Personal EmpleadodeTurno; 
+
         private bool privilegios;
 
         public MenuAdmin(Models.Personal per)
@@ -44,6 +47,7 @@ namespace ArrobaGym
             lblUser.Text = per.Usuario;
             lblNombre.Text = per.Nombre;
             lblApellido.Text = per.Apellido;
+            this.EmpleadodeTurno = per; 
         }
 
         private void MenuAdmin_Load(object sender, EventArgs e)
@@ -245,6 +249,34 @@ namespace ArrobaGym
             sfd.ShowDialog();
             
         }
-    }
+
+        private void btnRegCalent_Click(object sender, EventArgs e)
+        {
+            if (validadorCalentamientos())
+            {
+                Models.Calentamientos calentamientos = new Models.Calentamientos
+                {
+                    Cantidad = numCantidad.Value,
+                    Cuota = decimal.Parse(tbxPrecioCalentamiento.Text),
+                    FechaYHora = DateTime.Now,
+                    EmpleadoDeTurno = EmpleadodeTurno.Id
+                };
+                CalentamientosDAO.Insert(calentamientos);
+                CalentamientosDAO.SaveAll();
+                MessageBox.Show("Registro insertado");
+            }
+            else 
+            {
+                MessageBox.Show("Error al insertar el registro");
+            }
+
+        }
+        private bool validadorCalentamientos()
+        {
+            Decimal d;
+            if (!Decimal.TryParse(tbxPrecioCalentamiento.Text, out d))  return false;
+            return true;
+        }
+    } 
 }
 

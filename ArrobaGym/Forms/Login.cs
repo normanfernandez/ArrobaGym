@@ -24,7 +24,7 @@ namespace ArrobaGym
             DAO.Repository<Models.Personal> PersonalDao = new DAO.Repository<Models.Personal>();
             try
             {
-                personal = PersonalDao.SelectSingle(p => p.Usuario == tbxUsuario.Text && );
+                personal = PersonalDao.SelectSingle(p => p.Usuario == tbxUsuario.Text );
                 if (personal != null && personal.Contraseña == tbxContraseña.Text)
                 {
 

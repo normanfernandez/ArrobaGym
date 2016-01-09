@@ -48,7 +48,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabClientesCalentamiento = new System.Windows.Forms.TabPage();
             this.label22 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblCalPrecio = new System.Windows.Forms.Label();
             this.lblCalMonto = new System.Windows.Forms.Label();
@@ -104,16 +104,18 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.TabGastos = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
-            this.tbxMontoGastos = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.tbxMontoGastos = new System.Windows.Forms.TextBox();
             this.cbDescripcionGastos = new System.Windows.Forms.ComboBox();
             this.pctPerfil = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label24 = new System.Windows.Forms.Label();
+            this.tbxPrecioCalentamiento = new System.Windows.Forms.TextBox();
             this.tbcAdminMain.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.TabClientesCont.SuspendLayout();
@@ -122,7 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabClientesCalentamiento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabProductos.SuspendLayout();
             this.tbAdminProductos.SuspendLayout();
@@ -357,8 +359,10 @@
             // 
             // tabClientesCalentamiento
             // 
+            this.tabClientesCalentamiento.Controls.Add(this.tbxPrecioCalentamiento);
+            this.tabClientesCalentamiento.Controls.Add(this.label24);
             this.tabClientesCalentamiento.Controls.Add(this.label22);
-            this.tabClientesCalentamiento.Controls.Add(this.numericUpDown2);
+            this.tabClientesCalentamiento.Controls.Add(this.numCantidad);
             this.tabClientesCalentamiento.Controls.Add(this.pictureBox2);
             this.tabClientesCalentamiento.Controls.Add(this.lblCalPrecio);
             this.tabClientesCalentamiento.Controls.Add(this.lblCalMonto);
@@ -380,25 +384,25 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(241, 650);
+            this.label22.Location = new System.Drawing.Point(241, 653);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(133, 13);
             this.label22.TabIndex = 19;
             this.label22.Text = "Administrar Calentamientos";
             this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
-            // numericUpDown2
+            // numCantidad
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(470, 94);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(53, 23);
-            this.numericUpDown2.TabIndex = 18;
+            this.numCantidad.Location = new System.Drawing.Point(470, 94);
+            this.numCantidad.Name = "numCantidad";
+            this.numCantidad.Size = new System.Drawing.Size(53, 23);
+            this.numCantidad.TabIndex = 18;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(569, 387);
+            this.pictureBox2.Location = new System.Drawing.Point(569, 390);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(300, 300);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -410,7 +414,7 @@
             this.lblCalPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalPrecio.AutoSize = true;
             this.lblCalPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalPrecio.Location = new System.Drawing.Point(22, 302);
+            this.lblCalPrecio.Location = new System.Drawing.Point(22, 305);
             this.lblCalPrecio.Name = "lblCalPrecio";
             this.lblCalPrecio.Size = new System.Drawing.Size(152, 25);
             this.lblCalPrecio.TabIndex = 16;
@@ -421,7 +425,7 @@
             this.lblCalMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalMonto.AutoSize = true;
             this.lblCalMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalMonto.Location = new System.Drawing.Point(22, 352);
+            this.lblCalMonto.Location = new System.Drawing.Point(22, 355);
             this.lblCalMonto.Name = "lblCalMonto";
             this.lblCalMonto.Size = new System.Drawing.Size(156, 25);
             this.lblCalMonto.TabIndex = 15;
@@ -432,7 +436,7 @@
             this.lblCalReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalReg.AutoSize = true;
             this.lblCalReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalReg.Location = new System.Drawing.Point(22, 327);
+            this.lblCalReg.Location = new System.Drawing.Point(22, 330);
             this.lblCalReg.Name = "lblCalReg";
             this.lblCalReg.Size = new System.Drawing.Size(352, 25);
             this.lblCalReg.TabIndex = 14;
@@ -444,7 +448,7 @@
             this.lblTimeCal.AutoSize = true;
             this.lblTimeCal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeCal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTimeCal.Location = new System.Drawing.Point(22, 638);
+            this.lblTimeCal.Location = new System.Drawing.Point(22, 641);
             this.lblTimeCal.Name = "lblTimeCal";
             this.lblTimeCal.Size = new System.Drawing.Size(90, 25);
             this.lblTimeCal.TabIndex = 13;
@@ -461,6 +465,7 @@
             this.btnRegCalent.TabIndex = 12;
             this.btnRegCalent.Text = "Registrar";
             this.btnRegCalent.UseVisualStyleBackColor = false;
+            this.btnRegCalent.Click += new System.EventHandler(this.btnRegCalent_Click);
             // 
             // label5
             // 
@@ -1001,22 +1006,6 @@
             this.dataGridView3.TabIndex = 9;
             this.dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEndEdit);
             // 
-            // Gastos
-            // 
-            this.TabGastos.Controls.Add(this.button7);
-            //this.TabGastos.Controls.Add(this.tbxMontoTabGastos);
-            this.TabGastos.Controls.Add(this.label23);
-            this.TabGastos.Controls.Add(this.label21);
-            this.TabGastos.Controls.Add(this.label16);
-            //this.TabGastos.Controls.Add(this.cbDescripcionTabGastos);
-            this.TabGastos.Location = new System.Drawing.Point(4, 25);
-            this.TabGastos.Name = "Gastos";
-            this.TabGastos.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGastos.Size = new System.Drawing.Size(875, 676);
-            this.TabGastos.TabIndex = 5;
-            this.TabGastos.Text = "Gastos";
-            this.TabGastos.UseVisualStyleBackColor = true;
-            this.TabGastos.Click += new System.EventHandler(this.Gastos_Click);
             // TabGastos
             // 
             this.TabGastos.Controls.Add(this.button7);
@@ -1047,13 +1036,6 @@
             this.button7.Text = "Agregar";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // tbxMontoGastos
-            // 
-            this.tbxMontoGastos.Location = new System.Drawing.Point(117, 147);
-            this.tbxMontoGastos.Name = "tbxMontoGastos";
-            this.tbxMontoGastos.Size = new System.Drawing.Size(109, 23);
-            this.tbxMontoGastos.TabIndex = 18;
             // 
             // label23
             // 
@@ -1086,6 +1068,13 @@
             this.label16.Size = new System.Drawing.Size(247, 31);
             this.label16.TabIndex = 15;
             this.label16.Text = "Registro de Gastos";
+            // 
+            // tbxMontoGastos
+            // 
+            this.tbxMontoGastos.Location = new System.Drawing.Point(117, 147);
+            this.tbxMontoGastos.Name = "tbxMontoGastos";
+            this.tbxMontoGastos.Size = new System.Drawing.Size(109, 23);
+            this.tbxMontoGastos.TabIndex = 18;
             // 
             // cbDescripcionGastos
             // 
@@ -1150,6 +1139,23 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(540, 94);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(67, 25);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "Precio";
+            // 
+            // tbxPrecioCalentamiento
+            // 
+            this.tbxPrecioCalentamiento.Location = new System.Drawing.Point(613, 93);
+            this.tbxPrecioCalentamiento.Name = "tbxPrecioCalentamiento";
+            this.tbxPrecioCalentamiento.Size = new System.Drawing.Size(76, 23);
+            this.tbxPrecioCalentamiento.TabIndex = 21;
+            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1180,7 +1186,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabClientesCalentamiento.ResumeLayout(false);
             this.tabClientesCalentamiento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabProductos.ResumeLayout(false);
             this.tbAdminProductos.ResumeLayout(false);
@@ -1203,8 +1209,6 @@
             this.tabProgramas.ResumeLayout(false);
             this.tabProgramas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.TabGastos.ResumeLayout(false);
-            this.TabGastos.PerformLayout();
             this.TabGastos.ResumeLayout(false);
             this.TabGastos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctPerfil)).EndInit();
@@ -1281,7 +1285,7 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numCantidad;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label20;
@@ -1299,6 +1303,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox tbxMontoGastos;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox tbxPrecioCalentamiento;
+        private System.Windows.Forms.Label label24;
 
     }
 }

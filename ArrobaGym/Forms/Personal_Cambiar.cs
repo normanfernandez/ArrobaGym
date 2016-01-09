@@ -61,7 +61,7 @@ namespace ArrobaGym
                     personal.Foto = Utils.PictureBinary.GetBinary(tbxFoto.Text);
                     personal.Usuario = tbxUsuario.Text;
                     personal.Contraseña = tbxContr.Text;
-                    personal.Tipo = cbTipo.SelectedText;                   
+                    personal.Tipo = cbTipo.Text;                   
                 
                 try
                 {
