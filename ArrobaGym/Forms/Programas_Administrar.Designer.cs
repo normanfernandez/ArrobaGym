@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
+            this.ModificarPrograma = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxMensualidad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -36,21 +36,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button2
+            // ModificarPrograma
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.BackColor = System.Drawing.Color.DarkRed;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(191, 131);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 34);
-            this.button2.TabIndex = 52;
-            this.button2.Text = "Modificar Programa";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ModificarPrograma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ModificarPrograma.BackColor = System.Drawing.Color.DarkRed;
+            this.ModificarPrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModificarPrograma.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ModificarPrograma.Location = new System.Drawing.Point(191, 131);
+            this.ModificarPrograma.Name = "ModificarPrograma";
+            this.ModificarPrograma.Size = new System.Drawing.Size(180, 34);
+            this.ModificarPrograma.TabIndex = 52;
+            this.ModificarPrograma.Text = "Modificar Programa";
+            this.ModificarPrograma.UseVisualStyleBackColor = false;
+            this.ModificarPrograma.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -106,6 +107,9 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(179, 21);
             this.comboBox1.TabIndex = 53;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
+            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // label8
             // 
@@ -118,15 +122,30 @@
             this.label8.TabIndex = 54;
             this.label8.Text = "Eliminar Programa";
             // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.DarkRed;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(191, 167);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 34);
+            this.button1.TabIndex = 55;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Programas_Administrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(392, 226);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ModificarPrograma);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxMensualidad);
             this.Controls.Add(this.label5);
@@ -143,7 +162,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ModificarPrograma;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxMensualidad;
         private System.Windows.Forms.Label label5;
@@ -151,5 +170,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
     }
 }
