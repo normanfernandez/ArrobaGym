@@ -108,4 +108,12 @@
       <Association Name="Personal_Calentamientos" Member="Personal" ThisKey="EmpleadoDeTurno" OtherKey="Id" Type="Personal" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Gastos" Member="Gastos">
+    <Type Name="Gastos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

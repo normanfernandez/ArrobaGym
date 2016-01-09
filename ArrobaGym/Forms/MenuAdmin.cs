@@ -20,6 +20,7 @@ namespace ArrobaGym
         Repository<Models.Programas> ProgramaDAO = new Repository<Models.Programas>();
         Repository<Models.Personal> PersonalDAO = new Repository<Models.Personal>();
         Repository<Models.Productos> ProductoDAO = new Repository<Models.Productos>();
+        Repository<Models.Gastos> GastosDao = new Repository<Models.Gastos>();
 
         public MenuAdmin()
         {
@@ -158,6 +159,50 @@ namespace ArrobaGym
         private void dataGridView3_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             ProgramaDAO.SaveAll();
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Gastos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (validatorGastos())
+            {
+                try
+                {
+                    Models.Gastos Gastos = new Models.Gastos
+                    {
+                        Descripcion = cbDescripcionGastos.Text,
+                        Monto = decimal.Parse(tbxMontoGastos.Text),
+                        Fecha = DateTime.Now
+
+                    };
+                    GastosDao.Insert(Gastos);
+                    GastosDao.SaveAll();
+                    MessageBox.Show("Registro insertado con exito");
+                }
+                catch (Exception exepcion) 
+                {
+                    MessageBox.Show("Error al insertar datos");
+                }
+            }
+            else
+                MessageBox.Show("Error de validacion al introducir los datos");
+        }
+        private bool validatorGastos() 
+        {
+            Decimal d;
+            if (cbDescripcionGastos.Text == string.Empty) return false;
+            if (tbxMontoGastos.Text == string.Empty) return false;
+            if (!Decimal.TryParse(tbxMontoGastos.Text, out d)) return false;
+            return true;
         }
     }
 }
