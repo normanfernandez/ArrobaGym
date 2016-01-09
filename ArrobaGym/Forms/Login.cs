@@ -22,16 +22,25 @@ namespace ArrobaGym
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DAO.Repository<Models.Personal> PersonalDao = new DAO.Repository<Models.Personal>();
-            personal = PersonalDao.SelectSingle(p => p.Usuario == tbxUsuario.Text);
-            if (personal != null && personal.Contraseña == tbxContraseña.Text)
+            try
             {
+                personal = PersonalDao.SelectSingle(p => p.Usuario == tbxUsuario.Text && );
+                if (personal != null && personal.Contraseña == tbxContraseña.Text)
+                {
 
-                MenuAdmin mn = new MenuAdmin(personal);
-                mn.Show();
-                this.Hide();
+                    MenuAdmin mn = new MenuAdmin(personal);
+                    mn.Show();
+                    this.Hide();
 
+                }
+                else
+                    MessageBox.Show("Error de Autenticacion");
             }
-            else MessageBox.Show("Error de Autenticacion");
+            catch (Exception conException)
+            {
+                MessageBox.Show("Error de Conexión");
+            }
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
