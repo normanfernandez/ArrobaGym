@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
 using ArrobaGym.DAO;
+using ArrobaGym.Models;
 
 namespace ArrobaGym
 {

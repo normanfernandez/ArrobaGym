@@ -102,11 +102,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-            this.Gastos = new System.Windows.Forms.TabPage();
-=======
             this.TabGastos = new System.Windows.Forms.TabPage();
->>>>>>> origin/master
             this.button7 = new System.Windows.Forms.Button();
             this.tbxMontoGastos = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -142,11 +138,7 @@
             this.groupBox2.SuspendLayout();
             this.tabProgramas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-<<<<<<< HEAD
-            this.Gastos.SuspendLayout();
-=======
             this.TabGastos.SuspendLayout();
->>>>>>> origin/master
             ((System.ComponentModel.ISupportInitialize)(this.pctPerfil)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1009,24 +1001,22 @@
             this.dataGridView3.TabIndex = 9;
             this.dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEndEdit);
             // 
-<<<<<<< HEAD
             // Gastos
             // 
-            this.Gastos.Controls.Add(this.button7);
-            this.Gastos.Controls.Add(this.tbxMontoGastos);
-            this.Gastos.Controls.Add(this.label23);
-            this.Gastos.Controls.Add(this.label21);
-            this.Gastos.Controls.Add(this.label16);
-            this.Gastos.Controls.Add(this.cbDescripcionGastos);
-            this.Gastos.Location = new System.Drawing.Point(4, 25);
-            this.Gastos.Name = "Gastos";
-            this.Gastos.Padding = new System.Windows.Forms.Padding(3);
-            this.Gastos.Size = new System.Drawing.Size(875, 676);
-            this.Gastos.TabIndex = 5;
-            this.Gastos.Text = "Gastos";
-            this.Gastos.UseVisualStyleBackColor = true;
-            this.Gastos.Click += new System.EventHandler(this.Gastos_Click);
-=======
+            this.TabGastos.Controls.Add(this.button7);
+            //this.TabGastos.Controls.Add(this.tbxMontoTabGastos);
+            this.TabGastos.Controls.Add(this.label23);
+            this.TabGastos.Controls.Add(this.label21);
+            this.TabGastos.Controls.Add(this.label16);
+            //this.TabGastos.Controls.Add(this.cbDescripcionTabGastos);
+            this.TabGastos.Location = new System.Drawing.Point(4, 25);
+            this.TabGastos.Name = "Gastos";
+            this.TabGastos.Padding = new System.Windows.Forms.Padding(3);
+            this.TabGastos.Size = new System.Drawing.Size(875, 676);
+            this.TabGastos.TabIndex = 5;
+            this.TabGastos.Text = "Gastos";
+            this.TabGastos.UseVisualStyleBackColor = true;
+            this.TabGastos.Click += new System.EventHandler(this.Gastos_Click);
             // TabGastos
             // 
             this.TabGastos.Controls.Add(this.button7);
@@ -1043,7 +1033,6 @@
             this.TabGastos.Text = "Gastos";
             this.TabGastos.UseVisualStyleBackColor = true;
             this.TabGastos.Click += new System.EventHandler(this.Gastos_Click);
->>>>>>> origin/master
             // 
             // button7
             // 
@@ -1214,13 +1203,10 @@
             this.tabProgramas.ResumeLayout(false);
             this.tabProgramas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-<<<<<<< HEAD
-            this.Gastos.ResumeLayout(false);
-            this.Gastos.PerformLayout();
-=======
             this.TabGastos.ResumeLayout(false);
             this.TabGastos.PerformLayout();
->>>>>>> origin/master
+            this.TabGastos.ResumeLayout(false);
+            this.TabGastos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctPerfil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
