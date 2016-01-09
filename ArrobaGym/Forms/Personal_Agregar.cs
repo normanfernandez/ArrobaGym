@@ -83,12 +83,21 @@ namespace ArrobaGym
         }
         private bool validatorPersonal() 
         {
+            Models.Personal personalV = new Models.Personal();
+            DAO.Repository<Models.Personal> PersonalDaoV = new DAO.Repository<Models.Personal>();
+            personalV = PersonalDaoV.SelectSingle(p => p.Usuario == tbxUser.Text);
             Decimal d;
             if (txtCedula.Text.Length != 11 && !Decimal.TryParse(txtCedula.Text, out d)) return false;
             if (!txtCorreo.Text.Contains('@')) return false;
             if (!Decimal.TryParse(tbxSalario.Text, out d)) return false;
             if (txtTelefono.Text.Length != 10 && !Decimal.TryParse(txtTelefono.Text, out d)) return false;
             if (tbxUser.Text == string.Empty || tbxCont.Text == string.Empty) return false;
+            if (personalV != null) return false;
+            if (tbxCont.Text.Length < 6) 
+            {
+                MessageBox.Show("La longitud de la contraseña debe ser minimo de 6 caracteres");
+                return false; 
+            } 
             return true;
         }
     }

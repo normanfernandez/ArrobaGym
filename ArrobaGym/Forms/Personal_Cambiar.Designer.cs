@@ -193,6 +193,7 @@
             // 
             this.tbxUsuario.Location = new System.Drawing.Point(86, 54);
             this.tbxUsuario.Name = "tbxUsuario";
+            this.tbxUsuario.ReadOnly = true;
             this.tbxUsuario.Size = new System.Drawing.Size(180, 20);
             this.tbxUsuario.TabIndex = 16;
             // 

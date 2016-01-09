@@ -12,6 +12,8 @@ namespace ArrobaGym
 {
     public partial class Modificar_Personal : Form
     {
+        DAO.Repository<Models.Personal> personalDAO = new DAO.Repository<Models.Personal>();
+             
         private Models.Personal personal;
         public Modificar_Personal()
         {
@@ -46,24 +48,21 @@ namespace ArrobaGym
             if (validatorPersonal())
             {
                 if (dtPago == null) dtPago.Value = DateTime.Now;
-                DAO.Repository<Models.Personal> personalDAO = new DAO.Repository<Models.Personal>();
                 
-                Models.Personal Personal = new Models.Personal
-                {
-                    Nombre = tbxNombre.Text,
-                    Apellido = tbxApellido.Text,
-                    Cedula = tbxCedula.Text,
-                    Correo = tbxCorreo.Text,
-                    Direccion = tbxDireccion.Text,
-                    Fecha_Contratacion = dtPago.Value,
-                    Horario = cbHorario.SelectedText,
-                    Salario = decimal.Parse(tbxSalario.Text),
-                    Telefono = tbxTelefono.Text,
-                    Foto = Utils.PictureBinary.GetBinary(tbxFoto.Text),
-                    Usuario = tbxUsuario.Text,
-                    Contraseña = tbxContr.Text,
-                    Tipo = cbTipo.SelectedText,                   
-                };
+                    personal.Nombre = tbxNombre.Text;
+                    personal.Apellido = tbxApellido.Text;
+                    personal.Cedula = tbxCedula.Text;
+                    personal.Correo = tbxCorreo.Text;
+                    personal.Direccion = tbxDireccion.Text;
+                    personal.Fecha_Contratacion = dtPago.Value;
+                    personal.Horario = cbHorario.SelectedText;
+                    personal.Salario = decimal.Parse(tbxSalario.Text);
+                    personal.Telefono = tbxTelefono.Text;
+                    personal.Foto = Utils.PictureBinary.GetBinary(tbxFoto.Text);
+                    personal.Usuario = tbxUsuario.Text;
+                    personal.Contraseña = tbxContr.Text;
+                    personal.Tipo = cbTipo.SelectedText;                   
+                
                 try
                 {
                     
@@ -74,7 +73,7 @@ namespace ArrobaGym
                 }
                 catch (Exception exe)
                 {
-                    MessageBox.Show("Error al agregar empleado!");
+                    MessageBox.Show("Error al modificar empleado!");
                 }
                 //finally { this.Close(); }
             }
@@ -90,8 +89,7 @@ namespace ArrobaGym
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DAO.Repository<Models.Personal> PersonalDao = new DAO.Repository<Models.Personal>();
-            personal = PersonalDao.SelectSingle(p => p.Cedula == tbxBuscarCedula.Text);
+            personal = personalDAO.SelectSingle(p => p.Cedula == tbxBuscarCedula.Text);
             if (personal != null)
             {
                 tbxCedula.Text = personal.Cedula;
@@ -102,9 +100,10 @@ namespace ArrobaGym
                 tbxCorreo.Text = personal.Correo;
                 tbxSalario.Text =  Convert.ToString( personal.Salario);
                 tbxUsuario.Text = personal.Usuario;
-                tbxContr.Text = personal.Contraseña;
+ //               tbxContr.Text = personal.Contraseña;
                 pictureBox1.Image = Utils.PictureBinary.GetImage(personal.Foto);
-
+                cbHorario.Text = personal.Horario;
+                cbTipo.Text = personal.Tipo;
 
             }
             else
@@ -120,15 +119,22 @@ namespace ArrobaGym
             tbxFoto.Text = openfile.FileName;
             pictureBox1.Image = Utils.PictureBinary.GetImage(Utils.PictureBinary.GetBinary(tbxFoto.Text));
         }
+        
         private bool validatorPersonal()
         {
             Decimal d;
             if (tbxCedula.Text.Length != 11 && !Decimal.TryParse(tbxCedula.Text, out d)) return false;
-            if (!tbxCorreo.Text.Contains('@')) return false;
+            if (tbxCorreo.Text != string.Empty) 
+            {
+                if (!tbxCorreo.Text.Contains('@')) return false;
+            }
             if (!Decimal.TryParse(tbxSalario.Text, out d)) return false;
             if (tbxTelefono.Text.Length != 10 && !Decimal.TryParse(tbxTelefono.Text, out d)) return false;
-            if (tbxUsuario.Text == string.Empty || tbxContr.Text == string.Empty) return false;
-            if (cbHorario.SelectedItem == null || cbTipo.SelectedItem == null) return false;
+            if (tbxContr.Text.Length < 6)
+            {
+                MessageBox.Show("La longitud de la contraseña debe ser minimo de 6 caracteres");
+                return false;
+            }
             return true;
         }
 

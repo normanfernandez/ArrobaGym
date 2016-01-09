@@ -29,12 +29,22 @@ namespace ArrobaGym
 
         private void button2_Click(object sender, EventArgs e)
         {
-            programa = ProgramaDAO.SelectSingle(p => p.Id == (int)comboBox1.SelectedValue);
-            programa.Precio_Inscripcion = decimal.Parse(tbxInscripcion.Text);
-            programa.Precio_periodo = decimal.Parse(tbxMensualidad.Text);
-            ProgramaDAO.SaveAll();
+            if (validateprogram()) 
+            { 
+                programa = ProgramaDAO.SelectSingle(p => p.Id == (int)comboBox1.SelectedValue);
+                programa.Precio_Inscripcion = decimal.Parse(tbxInscripcion.Text);
+                programa.Precio_periodo = decimal.Parse(tbxMensualidad.Text);
+                ProgramaDAO.SaveAll();
            
-            MessageBox.Show("Modificado con exito");
+               MessageBox.Show("Modificado con exito");
+               this.Close();
+               
+            }
+            else {
+                MessageBox.Show("error al introducir datos");
+            }
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,6 +73,13 @@ namespace ArrobaGym
                 tbxInscripcion.Text = Convert.ToString(programa.Precio_Inscripcion);
                 tbxMensualidad.Text = Convert.ToString(programa.Precio_periodo);
             }
+        }
+        private bool validateprogram() 
+        {
+            Decimal d;
+            if (!Decimal.TryParse(tbxInscripcion.Text, out d)) return false;
+            if (!Decimal.TryParse(tbxMensualidad.Text, out d)) return false;
+            return true; 
         }
     }
 }
