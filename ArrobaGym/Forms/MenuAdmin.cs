@@ -23,6 +23,7 @@ namespace ArrobaGym
         Repository<Models.Productos> ProductoDAO = new Repository<Models.Productos>();
         Repository<Models.Gastos> GastosDao = new Repository<Models.Gastos>();
         Repository<Models.Calentamientos> CalentamientosDAO = new Repository<Calentamientos>();
+        Repository<Models.Registro_Productos> RegistroProductosDAo = new Repository<Registro_Productos>();
 
         private Models.Personal EmpleadodeTurno; 
 
@@ -276,6 +277,35 @@ namespace ArrobaGym
             Decimal d;
             if (!Decimal.TryParse(tbxPrecioCalentamiento.Text, out d))  return false;
             return true;
+        }
+
+        private void btnProdReg_Click(object sender, EventArgs e)
+        {
+            if (nmCantidadVentaProductos.Value > 0)
+            {
+                Models.Productos pr = ProductoDAO.SelectSingle(p => p.Id == (int)cbbProdVen.SelectedValue);
+
+                Models.Registro_Productos regprod = new Registro_Productos
+               {
+                   Cantidad_Vendida = (int)nmCantidadVentaProductos.Value,
+                   Empleado_Turno = EmpleadodeTurno.Id,
+                   FechaYHora = DateTime.Now,
+                   Id_Producto = pr.Id
+
+
+               };
+                try
+                {
+                    RegistroProductosDAo.Insert(regprod);
+                    RegistroProductosDAo.SaveAll();
+                }
+                catch (Exception c)
+                {
+                    MessageBox.Show("Error al introducir el registro");
+                }
+
+            }
+            else MessageBox.Show("Debe introducir un numero mayor de 0");
         }
     } 
 }

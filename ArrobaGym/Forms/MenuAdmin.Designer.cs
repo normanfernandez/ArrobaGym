@@ -47,6 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabClientesCalentamiento = new System.Windows.Forms.TabPage();
+            this.tbxPrecioCalentamiento = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.numCantidad = new System.Windows.Forms.NumericUpDown();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -60,7 +62,7 @@
             this.tabProductos = new System.Windows.Forms.TabPage();
             this.tbAdminProductos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nmCantidadVentaProductos = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -104,18 +106,16 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.TabGastos = new System.Windows.Forms.TabPage();
             this.button7 = new System.Windows.Forms.Button();
+            this.tbxMontoGastos = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.tbxMontoGastos = new System.Windows.Forms.TextBox();
             this.cbDescripcionGastos = new System.Windows.Forms.ComboBox();
             this.pctPerfil = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label24 = new System.Windows.Forms.Label();
-            this.tbxPrecioCalentamiento = new System.Windows.Forms.TextBox();
             this.tbcAdminMain.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.TabClientesCont.SuspendLayout();
@@ -129,7 +129,7 @@
             this.tabProductos.SuspendLayout();
             this.tbAdminProductos.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCantidadVentaProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProdVen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -379,12 +379,29 @@
             this.tabClientesCalentamiento.Text = "Registro de Calentamientos";
             this.tabClientesCalentamiento.UseVisualStyleBackColor = true;
             // 
+            // tbxPrecioCalentamiento
+            // 
+            this.tbxPrecioCalentamiento.Location = new System.Drawing.Point(613, 93);
+            this.tbxPrecioCalentamiento.Name = "tbxPrecioCalentamiento";
+            this.tbxPrecioCalentamiento.Size = new System.Drawing.Size(76, 23);
+            this.tbxPrecioCalentamiento.TabIndex = 21;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(540, 94);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(67, 25);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "Precio";
+            // 
             // label22
             // 
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(241, 653);
+            this.label22.Location = new System.Drawing.Point(241, 656);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(133, 13);
             this.label22.TabIndex = 19;
@@ -402,7 +419,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(569, 390);
+            this.pictureBox2.Location = new System.Drawing.Point(569, 393);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(300, 300);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -414,7 +431,7 @@
             this.lblCalPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalPrecio.AutoSize = true;
             this.lblCalPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalPrecio.Location = new System.Drawing.Point(22, 305);
+            this.lblCalPrecio.Location = new System.Drawing.Point(22, 308);
             this.lblCalPrecio.Name = "lblCalPrecio";
             this.lblCalPrecio.Size = new System.Drawing.Size(152, 25);
             this.lblCalPrecio.TabIndex = 16;
@@ -425,7 +442,7 @@
             this.lblCalMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalMonto.AutoSize = true;
             this.lblCalMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalMonto.Location = new System.Drawing.Point(22, 355);
+            this.lblCalMonto.Location = new System.Drawing.Point(22, 358);
             this.lblCalMonto.Name = "lblCalMonto";
             this.lblCalMonto.Size = new System.Drawing.Size(156, 25);
             this.lblCalMonto.TabIndex = 15;
@@ -436,7 +453,7 @@
             this.lblCalReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalReg.AutoSize = true;
             this.lblCalReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalReg.Location = new System.Drawing.Point(22, 330);
+            this.lblCalReg.Location = new System.Drawing.Point(22, 333);
             this.lblCalReg.Name = "lblCalReg";
             this.lblCalReg.Size = new System.Drawing.Size(352, 25);
             this.lblCalReg.TabIndex = 14;
@@ -448,7 +465,7 @@
             this.lblTimeCal.AutoSize = true;
             this.lblTimeCal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeCal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTimeCal.Location = new System.Drawing.Point(22, 641);
+            this.lblTimeCal.Location = new System.Drawing.Point(22, 644);
             this.lblTimeCal.Name = "lblTimeCal";
             this.lblTimeCal.Size = new System.Drawing.Size(90, 25);
             this.lblTimeCal.TabIndex = 13;
@@ -515,7 +532,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.numericUpDown1);
+            this.tabPage1.Controls.Add(this.nmCantidadVentaProductos);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label9);
@@ -534,12 +551,12 @@
             this.tabPage1.Text = "Ventas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // nmCantidadVentaProductos
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(98, 131);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(61, 23);
-            this.numericUpDown1.TabIndex = 23;
+            this.nmCantidadVentaProductos.Location = new System.Drawing.Point(98, 131);
+            this.nmCantidadVentaProductos.Name = "nmCantidadVentaProductos";
+            this.nmCantidadVentaProductos.Size = new System.Drawing.Size(61, 23);
+            this.nmCantidadVentaProductos.TabIndex = 23;
             // 
             // label12
             // 
@@ -603,6 +620,7 @@
             this.btnProdReg.TabIndex = 13;
             this.btnProdReg.Text = "Registrar";
             this.btnProdReg.UseVisualStyleBackColor = false;
+            this.btnProdReg.Click += new System.EventHandler(this.btnProdReg_Click);
             // 
             // label8
             // 
@@ -1037,6 +1055,13 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // tbxMontoGastos
+            // 
+            this.tbxMontoGastos.Location = new System.Drawing.Point(117, 147);
+            this.tbxMontoGastos.Name = "tbxMontoGastos";
+            this.tbxMontoGastos.Size = new System.Drawing.Size(109, 23);
+            this.tbxMontoGastos.TabIndex = 18;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -1068,13 +1093,6 @@
             this.label16.Size = new System.Drawing.Size(247, 31);
             this.label16.TabIndex = 15;
             this.label16.Text = "Registro de Gastos";
-            // 
-            // tbxMontoGastos
-            // 
-            this.tbxMontoGastos.Location = new System.Drawing.Point(117, 147);
-            this.tbxMontoGastos.Name = "tbxMontoGastos";
-            this.tbxMontoGastos.Size = new System.Drawing.Size(109, 23);
-            this.tbxMontoGastos.TabIndex = 18;
             // 
             // cbDescripcionGastos
             // 
@@ -1139,23 +1157,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(540, 94);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 25);
-            this.label24.TabIndex = 20;
-            this.label24.Text = "Precio";
-            // 
-            // tbxPrecioCalentamiento
-            // 
-            this.tbxPrecioCalentamiento.Location = new System.Drawing.Point(613, 93);
-            this.tbxPrecioCalentamiento.Name = "tbxPrecioCalentamiento";
-            this.tbxPrecioCalentamiento.Size = new System.Drawing.Size(76, 23);
-            this.tbxPrecioCalentamiento.TabIndex = 21;
-            // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1192,7 +1193,7 @@
             this.tbAdminProductos.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCantidadVentaProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProdVen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage2.ResumeLayout(false);
@@ -1286,7 +1287,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.NumericUpDown numCantidad;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nmCantidadVentaProductos;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DataGridView dataGridView3;
