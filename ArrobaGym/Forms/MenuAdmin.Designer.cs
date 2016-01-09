@@ -102,18 +102,18 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.TabGastos = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.tbxMontoGastos = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cbDescripcionGastos = new System.Windows.Forms.ComboBox();
             this.pctPerfil = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Gastos = new System.Windows.Forms.TabPage();
-            this.cbDescripcionGastos = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tbxMontoGastos = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.tbcAdminMain.SuspendLayout();
             this.tabClientes.SuspendLayout();
             this.TabClientesCont.SuspendLayout();
@@ -138,8 +138,8 @@
             this.groupBox2.SuspendLayout();
             this.tabProgramas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.TabGastos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctPerfil)).BeginInit();
-            this.Gastos.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcAdminMain
@@ -152,7 +152,7 @@
             this.tbcAdminMain.Controls.Add(this.tabEmpleado);
             this.tbcAdminMain.Controls.Add(this.tabReportes);
             this.tbcAdminMain.Controls.Add(this.tabProgramas);
-            this.tbcAdminMain.Controls.Add(this.Gastos);
+            this.tbcAdminMain.Controls.Add(this.TabGastos);
             this.tbcAdminMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbcAdminMain.Location = new System.Drawing.Point(12, 1);
             this.tbcAdminMain.Name = "tbcAdminMain";
@@ -380,7 +380,7 @@
             this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(241, 647);
+            this.label22.Location = new System.Drawing.Point(241, 650);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(133, 13);
             this.label22.TabIndex = 19;
@@ -398,7 +398,7 @@
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(569, 384);
+            this.pictureBox2.Location = new System.Drawing.Point(569, 387);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(300, 300);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -410,7 +410,7 @@
             this.lblCalPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalPrecio.AutoSize = true;
             this.lblCalPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalPrecio.Location = new System.Drawing.Point(22, 299);
+            this.lblCalPrecio.Location = new System.Drawing.Point(22, 302);
             this.lblCalPrecio.Name = "lblCalPrecio";
             this.lblCalPrecio.Size = new System.Drawing.Size(152, 25);
             this.lblCalPrecio.TabIndex = 16;
@@ -421,7 +421,7 @@
             this.lblCalMonto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalMonto.AutoSize = true;
             this.lblCalMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalMonto.Location = new System.Drawing.Point(22, 349);
+            this.lblCalMonto.Location = new System.Drawing.Point(22, 352);
             this.lblCalMonto.Name = "lblCalMonto";
             this.lblCalMonto.Size = new System.Drawing.Size(156, 25);
             this.lblCalMonto.TabIndex = 15;
@@ -432,7 +432,7 @@
             this.lblCalReg.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCalReg.AutoSize = true;
             this.lblCalReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalReg.Location = new System.Drawing.Point(22, 324);
+            this.lblCalReg.Location = new System.Drawing.Point(22, 327);
             this.lblCalReg.Name = "lblCalReg";
             this.lblCalReg.Size = new System.Drawing.Size(352, 25);
             this.lblCalReg.TabIndex = 14;
@@ -444,7 +444,7 @@
             this.lblTimeCal.AutoSize = true;
             this.lblTimeCal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeCal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTimeCal.Location = new System.Drawing.Point(22, 635);
+            this.lblTimeCal.Location = new System.Drawing.Point(22, 638);
             this.lblTimeCal.Name = "lblTimeCal";
             this.lblTimeCal.Size = new System.Drawing.Size(90, 25);
             this.lblTimeCal.TabIndex = 13;
@@ -1000,6 +1000,90 @@
             this.dataGridView3.TabIndex = 9;
             this.dataGridView3.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellEndEdit);
             // 
+            // TabGastos
+            // 
+            this.TabGastos.Controls.Add(this.button7);
+            this.TabGastos.Controls.Add(this.tbxMontoGastos);
+            this.TabGastos.Controls.Add(this.label23);
+            this.TabGastos.Controls.Add(this.label21);
+            this.TabGastos.Controls.Add(this.label16);
+            this.TabGastos.Controls.Add(this.cbDescripcionGastos);
+            this.TabGastos.Location = new System.Drawing.Point(4, 25);
+            this.TabGastos.Name = "TabGastos";
+            this.TabGastos.Padding = new System.Windows.Forms.Padding(3);
+            this.TabGastos.Size = new System.Drawing.Size(875, 676);
+            this.TabGastos.TabIndex = 5;
+            this.TabGastos.Text = "Gastos";
+            this.TabGastos.UseVisualStyleBackColor = true;
+            this.TabGastos.Click += new System.EventHandler(this.Gastos_Click);
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button7.BackColor = System.Drawing.Color.DarkRed;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button7.Location = new System.Drawing.Point(117, 208);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(241, 42);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Agregar";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // tbxMontoGastos
+            // 
+            this.tbxMontoGastos.Location = new System.Drawing.Point(117, 147);
+            this.tbxMontoGastos.Name = "tbxMontoGastos";
+            this.tbxMontoGastos.Size = new System.Drawing.Size(109, 23);
+            this.tbxMontoGastos.TabIndex = 18;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(57, 147);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(54, 20);
+            this.label23.TabIndex = 17;
+            this.label23.Text = "Monto";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(19, 81);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(92, 20);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Descripcion";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label16.Location = new System.Drawing.Point(17, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(247, 31);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Registro de Gastos";
+            // 
+            // cbDescripcionGastos
+            // 
+            this.cbDescripcionGastos.FormattingEnabled = true;
+            this.cbDescripcionGastos.Items.AddRange(new object[] {
+            "ALQUILER LOCAL",
+            "PAGO DE ELECTRICIDAD",
+            "PAGO DE INTERNET",
+            "MANTENIMIENTO",
+            "OTROS GASTOS"});
+            this.cbDescripcionGastos.Location = new System.Drawing.Point(117, 81);
+            this.cbDescripcionGastos.Name = "cbDescripcionGastos";
+            this.cbDescripcionGastos.Size = new System.Drawing.Size(241, 24);
+            this.cbDescripcionGastos.TabIndex = 0;
+            // 
             // pctPerfil
             // 
             this.pctPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1007,6 +1091,7 @@
             this.pctPerfil.Location = new System.Drawing.Point(901, 26);
             this.pctPerfil.Name = "pctPerfil";
             this.pctPerfil.Size = new System.Drawing.Size(95, 104);
+            this.pctPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctPerfil.TabIndex = 1;
             this.pctPerfil.TabStop = false;
             // 
@@ -1047,90 +1132,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // Gastos
-            // 
-            this.Gastos.Controls.Add(this.button7);
-            this.Gastos.Controls.Add(this.tbxMontoGastos);
-            this.Gastos.Controls.Add(this.label23);
-            this.Gastos.Controls.Add(this.label21);
-            this.Gastos.Controls.Add(this.label16);
-            this.Gastos.Controls.Add(this.cbDescripcionGastos);
-            this.Gastos.Location = new System.Drawing.Point(4, 25);
-            this.Gastos.Name = "Gastos";
-            this.Gastos.Padding = new System.Windows.Forms.Padding(3);
-            this.Gastos.Size = new System.Drawing.Size(875, 676);
-            this.Gastos.TabIndex = 5;
-            this.Gastos.Text = "Gastos";
-            this.Gastos.UseVisualStyleBackColor = true;
-            this.Gastos.Click += new System.EventHandler(this.Gastos_Click);
-            // 
-            // cbDescripcionGastos
-            // 
-            this.cbDescripcionGastos.FormattingEnabled = true;
-            this.cbDescripcionGastos.Items.AddRange(new object[] {
-            "ALQUILER LOCAL",
-            "PAGO DE ELECTRICIDAD",
-            "PAGO DE INTERNET",
-            "MANTENIMIENTO",
-            "OTROS GASTOS"});
-            this.cbDescripcionGastos.Location = new System.Drawing.Point(117, 81);
-            this.cbDescripcionGastos.Name = "cbDescripcionGastos";
-            this.cbDescripcionGastos.Size = new System.Drawing.Size(241, 24);
-            this.cbDescripcionGastos.TabIndex = 0;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label16.Location = new System.Drawing.Point(17, 3);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(247, 31);
-            this.label16.TabIndex = 15;
-            this.label16.Text = "Registro de Gastos";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(19, 81);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(92, 20);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Descripcion";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(57, 147);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(54, 20);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Monto";
-            // 
-            // tbxMontoGastos
-            // 
-            this.tbxMontoGastos.Location = new System.Drawing.Point(117, 147);
-            this.tbxMontoGastos.Name = "tbxMontoGastos";
-            this.tbxMontoGastos.Size = new System.Drawing.Size(109, 23);
-            this.tbxMontoGastos.TabIndex = 18;
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button7.BackColor = System.Drawing.Color.DarkRed;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Location = new System.Drawing.Point(117, 208);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(241, 42);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Agregar";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // MenuAdmin
             // 
@@ -1185,9 +1186,9 @@
             this.tabProgramas.ResumeLayout(false);
             this.tabProgramas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.TabGastos.ResumeLayout(false);
+            this.TabGastos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctPerfil)).EndInit();
-            this.Gastos.ResumeLayout(false);
-            this.Gastos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1272,7 +1273,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.TabPage Gastos;
+        private System.Windows.Forms.TabPage TabGastos;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cbDescripcionGastos;
