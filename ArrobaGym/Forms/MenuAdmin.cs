@@ -94,7 +94,7 @@ namespace ArrobaGym
 
         private void btnInscribir_Click(object sender, EventArgs e)
         {
-            Clientes_Membresias_Inscribir inscribir = new Clientes_Membresias_Inscribir();
+            Clientes_Membresias_Inscribir inscribir = new Clientes_Membresias_Inscribir(EmpleadodeTurno);
             inscribir.Visible = true; 
         }
 
@@ -237,14 +237,15 @@ namespace ArrobaGym
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Utils.AtGymReport day = new Utils.AtGymReport(0);
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.AddExtension = true;
-            sfd.FileName = DateTime.Now.ToString();
+            sfd.FileName = "Reporte "+DateTime.Now.Month.ToString()+" "+DateTime.Now.Day.ToString();
             sfd.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
             sfd.DefaultExt = "pdf";
             sfd.FileOk += (s,o) => 
             {
-                Utils.AtGymPDFReport report = new Utils.AtGymPDFReport(sfd.FileName, null);
+                Utils.AtGymPDFReport report = new Utils.AtGymPDFReport(sfd.FileName, day);
                 report.GenerateReport();
             };
             sfd.ShowDialog();

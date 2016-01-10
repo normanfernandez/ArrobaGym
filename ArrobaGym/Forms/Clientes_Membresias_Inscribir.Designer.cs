@@ -156,6 +156,7 @@
             // txtRiesgos
             // 
             this.txtRiesgos.Location = new System.Drawing.Point(117, 222);
+            this.txtRiesgos.MaxLength = 100;
             this.txtRiesgos.Name = "txtRiesgos";
             this.txtRiesgos.Size = new System.Drawing.Size(180, 39);
             this.txtRiesgos.TabIndex = 11;
@@ -173,6 +174,7 @@
             // txtObetivos
             // 
             this.txtObetivos.Location = new System.Drawing.Point(117, 151);
+            this.txtObetivos.MaxLength = 100;
             this.txtObetivos.Name = "txtObetivos";
             this.txtObetivos.Size = new System.Drawing.Size(180, 65);
             this.txtObetivos.TabIndex = 9;

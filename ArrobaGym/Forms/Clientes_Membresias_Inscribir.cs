@@ -18,9 +18,11 @@ namespace ArrobaGym
         DAO.Repository<Models.Seguimiento> SeguimientoDao = new DAO.Repository<Models.Seguimiento>();
         DAO.Repository<Models.Cliente> ClienteDAO = new DAO.Repository<Models.Cliente>();
         private Models.Programas programa; 
-        public Clientes_Membresias_Inscribir( )
+        private Models.Personal PersonalDeTurno;
+        public Clientes_Membresias_Inscribir(Models.Personal personalDeTurno )
         {
             InitializeComponent();
+            this.PersonalDeTurno = personalDeTurno; 
             cbPrograma.DataSource = ProgramaDAO.SelectAll().Select(
                 p => new { p.Id, p.Descripcion }
                 ).ToList();
@@ -44,108 +46,111 @@ namespace ArrobaGym
         {
 
         }
-
         private void textBox9_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox11_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void textBox12_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void label12_Click(object sender, EventArgs e)
         {
 
         }
-
         private void textBox13_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void label18_Click(object sender, EventArgs e)
         {
 
         }
-
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void label22_Click(object sender, EventArgs e)
         {
             
         }
-
         private void textBox15_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //falta generar el codigo 
-            programa = ProgramaDAO.SelectSingle(p => p.Descripcion == cbPrograma.Text); 
-            string codigoCliente = string.Format("%.05d", new Random().Next()); 
-            Models.Cliente cliente = new Models.Cliente
+         
+            programa = ProgramaDAO.SelectSingle(p => p.Descripcion == cbPrograma.Text);
+            if (validatorCliente())
             {
-                Nombre = txtNombre.Text,
-                Apellido = txtApellido.Text,
-                Direccion = txtDireccion.Text,
-                Codigo = codigoCliente,
-                Factores_de_riesgos = txtRiesgos.Text,
-                Fecha_Inscripcion = DateTime.Now,
-                Objetivos = txtObetivos.Text,
-                Status = "Activo",
-                Telefono = txtTelefono.Text,
-                Ultimo_Pago = DateTime.Now,
-                Imagen = Utils.PictureBinary.GetBinary(txtfoto.Text),
-                Saldo = programa.Precio_Inscripcion - decimal.Parse(txtDeposito.Text)
-                
-            };
-            Models.Seguimiento seguimiento = new Models.Seguimiento
-            {
-                Abdomen=decimal.Parse(txtAbdomen.Text), 
-                Biceps = decimal.Parse(txtBiceps.Text),
-                Cadera = decimal.Parse(txtCadera.Text), 
-                Caja_Toraxica=decimal.Parse(txtCajaToracica.Text),
-                Cintura=decimal.Parse(txtCintura.Text),
-                Fecha = DateTime.Now,
-                Flexibilidad=decimal.Parse(txtFlexibilidad.Text),
-                Gastronmio = decimal.Parse(TxtGastronomio.Text),
-                Muslo = decimal.Parse(txtMuslo.Text),
-                Peso = decimal.Parse(txtPeso.Text),
-                Saldo_Mes =  decimal.Parse(txtDeposito.Text)
-                
-            };
+                Models.Cliente cliente = new Models.Cliente
+                {
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Direccion = txtDireccion.Text,
+                    Codigo = generateCode(txtNombre.Text, txtApellido.Text, cbPrograma.Text),
+                    Factores_de_riesgos = txtRiesgos.Text,
+                    Fecha_Inscripcion = DateTime.Now,
+                    Objetivos = txtObetivos.Text,
+                    Status = "Activo",
+                    Telefono = txtTelefono.Text,
+                    Ultimo_Pago = DateTime.Now,
+                    Imagen = Utils.PictureBinary.GetBinary(txtfoto.Text),
+                    Saldo = programa.Precio_Inscripcion - decimal.Parse(txtDeposito.Text),
+                    IdPrograma = (int)programa.Id
 
-            DAO.Repository<Models.Cliente> clienteDao = new DAO.Repository<Models.Cliente>();
-            clienteDao.Insert(cliente);
-            clienteDao.SaveAll();
+                };
+                Models.Seguimiento seguimiento = new Models.Seguimiento
+                {
+                    Abdomen = decimal.Parse(txtAbdomen.Text),
+                    Biceps = decimal.Parse(txtBiceps.Text),
+                    Cadera = decimal.Parse(txtCadera.Text),
+                    Caja_Toraxica = decimal.Parse(txtCajaToracica.Text),
+                    Cintura = decimal.Parse(txtCintura.Text),
+                    Fecha = DateTime.Now,
+                    Flexibilidad = decimal.Parse(txtFlexibilidad.Text),
+                    Gastronmio = decimal.Parse(TxtGastronomio.Text),
+                    Muslo = decimal.Parse(txtMuslo.Text),
+                    Peso = decimal.Parse(txtPeso.Text),
+                    Saldo_Mes = decimal.Parse(txtDeposito.Text),
+                    Personal_ID = PersonalDeTurno.Id,
+              
+
+                };
+                try
+                {
+                    ClienteDAO.Insert(cliente);
+                    ClienteDAO.SaveAll();
+                    SeguimientoDao.Insert(seguimiento);
+                    SeguimientoDao.SaveAll();
+                    MessageBox.Show("Cliente Insertado con Exito");
+                }
+                catch (Exception ee) 
+                {
+                    MessageBox.Show("Error al introducir los datos");
+                }
+            }
+            else MessageBox.Show("Error al introducir los datos");
+
+            
         }
 
         private void btnInscribir_Click(object sender, EventArgs e)
@@ -163,16 +168,43 @@ namespace ArrobaGym
             label20.Text = "RD$:" + Convert.ToString(programa.Precio_periodo);
              
         }
-        private string generateCode(Models.Cliente cliente) 
+        private bool validatorCliente() 
         {
-            
+            Decimal d; 
+            if(
+                txtNombre.Text == string.Empty ||  
+                txtApellido.Text == string.Empty ||
+                txtTelefono.Text == string.Empty ||
+                txtDireccion.Text == string.Empty ||
+                txtPeso.Text == string.Empty ||
+                txtCajaToracica.Text == string.Empty ||
+                txtCintura.Text == string.Empty ||
+                txtAbdomen.Text == string.Empty ||
+                txtCadera.Text == string.Empty ||
+                txtMuslo.Text == string.Empty ||
+                TxtGastronomio.Text == string.Empty ||
+                txtBiceps.Text == string.Empty ||
+                txtFlexibilidad.Text == string.Empty 
+              )
+            {
+                MessageBox.Show("Hay campos en blanco"); return false;
+            }
+            return true;
+        }
+        private string generateCode(string nom, string ape, string prog) 
+        {
+            string n, a, p;
             Random rgn = new Random(); 
             string code;
             int value = rgn.Next(1000);
             string numeric = value.ToString("000");
-            code = cliente.Nombre[0] + cliente.Apellido[0] + Convert.ToString(cliente.IdPrograma)[0] + numeric;
-            if (ClienteDAO.SelectSingle(c => c.Codigo == cliente.Codigo) == null) return code;
-            else return generateCode(cliente);
+            n = nom[0].ToString();
+            a = ape[0].ToString();
+            p = prog[0].ToString();
+            code = n+a+p+numeric;
+            if (ClienteDAO.SelectSingle(c => c.Codigo == code) == null) return code;
+            else return generateCode(nom, ape, prog);
         }
+
     }
 }

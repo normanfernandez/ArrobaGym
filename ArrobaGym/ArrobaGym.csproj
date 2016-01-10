@@ -159,6 +159,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\AtGymPDFReport.cs" />
+    <Compile Include="Utils\AtGymReport.cs" />
     <Compile Include="Utils\PictureBinary.cs" />
     <EmbeddedResource Include="Forms\Clientes_Membresias_Administrar.resx">
       <DependentUpon>Clientes_Membresias_Administrar.cs</DependentUpon>

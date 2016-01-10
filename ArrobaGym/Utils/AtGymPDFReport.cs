@@ -13,9 +13,9 @@ namespace ArrobaGym.Utils
     {
         private Document PDFDocument;
         private PdfWriter writer;
-        private AtGymReport report;
+        private Utils.AtGymReport report;
         
-        public AtGymPDFReport(string filename, AtGymReport report)
+        public AtGymPDFReport(string filename, Utils.AtGymReport report)
         {
             //Prototype! Ignore lambda expression, pass null
             PDFDocument = new Document();
@@ -38,6 +38,7 @@ namespace ArrobaGym.Utils
             PDFDocument.Add(new Paragraph("Pago de electricidad: " + report.ElectricityCosts));
             PDFDocument.Add(new Paragraph("Gastos de Mantenimiento: " + report.Mantainment));
             PDFDocument.Add(new Paragraph("Compra de mercancía: " + report.Merchandise));
+            PDFDocument.Add(new Paragraph("Otros: " + report.Others));
             PDFDocument.Add(new Paragraph("BALANCE NETO: " + report.NetBalance));
 
             PDFDocument.Close();

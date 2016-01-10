@@ -26,6 +26,7 @@ namespace ArrobaGym.Utils
         private DAO.Repository<Models.Gastos> GastosDAO = new DAO.Repository<Models.Gastos>();
 
 
+
         public string ReportType { get { return ReportType; } set { ReportType = value; } }
         public decimal MembershipIncome { get { return MembershipIncome; } set { MembershipIncome = value; } }
         public decimal WarmupIncome { get { return WarmupIncome; } set { WarmupIncome = value; } }
@@ -36,6 +37,8 @@ namespace ArrobaGym.Utils
         public decimal Mantainment { get { return Mantainment; } set { Mantainment = value; } }
         public decimal Merchandise { get { return Merchandise; } set { Merchandise = value; } }
         public decimal NetBalance { get { return NetBalance; }  set { NetBalance = value; } }
+        public decimal Others { get { return Others; } set { Others = value; } }
+
 
         public AtGymReport(AtGymReportType type)
         {
@@ -104,6 +107,11 @@ namespace ArrobaGym.Utils
             }
         }
 
+        public AtGymReport()
+        {
+            // TODO: Complete member initialization
+        }
+
         private void InitializeFields(
             Func<Models.Cliente, bool> exp1,
             Func<Models.Seguimiento, bool> exp2,
@@ -120,6 +128,7 @@ namespace ArrobaGym.Utils
             ElectricityCosts = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
             Mantainment = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
             Merchandise = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
+            Others = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
             NetBalance = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
         }
     }
