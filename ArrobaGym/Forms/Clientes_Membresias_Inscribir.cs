@@ -116,7 +116,7 @@ namespace ArrobaGym
                         Telefono = txtTelefono.Text,
                         Ultimo_Pago = DateTime.Now,
                         Imagen = Utils.PictureBinary.GetBinary(txtfoto.Text),
-                        Saldo = programa.Precio_Inscripcion - decimal.Parse(txtDeposito.Text),
+                        Saldo = decimal.Parse(txtDeposito.Text)-programa.Precio_Inscripcion,
                         IdPrograma = (int)programa.Id
 
                     };
