@@ -267,6 +267,7 @@
             this.cbPrograma.Name = "cbPrograma";
             this.cbPrograma.Size = new System.Drawing.Size(180, 21);
             this.cbPrograma.TabIndex = 16;
+            this.cbPrograma.SelectionChangeCommitted += new System.EventHandler(this.cbPrograma_SelectionChangeCommitted);
             // 
             // groupBox2
             // 

@@ -78,9 +78,9 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(802, 433);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 13);
+            this.label12.Size = new System.Drawing.Size(87, 13);
             this.label12.TabIndex = 51;
-            this.label12.Text = "Eliminar Membresía";
+            this.label12.Text = "Eliminar Personal";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // pictureBox1
