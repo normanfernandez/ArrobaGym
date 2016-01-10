@@ -13,13 +13,15 @@ namespace ArrobaGym.Utils
     {
         private Document PDFDocument;
         private PdfWriter writer;
+        private AtGymReport report;
         
-        public AtGymPDFReport(string filename, Func<DateTime, bool> date_exp)
+        public AtGymPDFReport(string filename, AtGymReport report)
         {
             //Prototype! Ignore lambda expression, pass null
             PDFDocument = new Document();
             writer = PdfWriter.GetInstance(PDFDocument, 
                 new FileStream(filename, FileMode.Create));
+            this.report = report;
 
         }
 
@@ -27,16 +29,16 @@ namespace ArrobaGym.Utils
         {
             PDFDocument.Open();
 
-            PDFDocument.Add(new Paragraph("Ingresos por membresías: "));
-            PDFDocument.Add(new Paragraph("Ingresos por calentamientos: "));
+            PDFDocument.Add(new Paragraph("Ingresos por membresías: " + report.MembershipIncome));
+            PDFDocument.Add(new Paragraph("Ingresos por calentamientos: " + report.WarmupIncome));
             PDFDocument.Add(new Paragraph(""));
-            PDFDocument.Add(new Paragraph("Ingresos por Ventas: "));
-            PDFDocument.Add(new Paragraph("Pagos a empleados: "));
-            PDFDocument.Add(new Paragraph("Alquiler del Local: "));
-            PDFDocument.Add(new Paragraph("Pago de electricidad: "));
-            PDFDocument.Add(new Paragraph("Gastos de Mantenimiento: "));
-            PDFDocument.Add(new Paragraph("Compra de mercancía: "));
-            PDFDocument.Add(new Paragraph("BALANCE NETO: "));
+            PDFDocument.Add(new Paragraph("Ingresos por Ventas: " + report.SalesIncome));
+            PDFDocument.Add(new Paragraph("Pagos a empleados: " + report.EmployeesPayment));
+            PDFDocument.Add(new Paragraph("Alquiler del Local: " + report.Rental));
+            PDFDocument.Add(new Paragraph("Pago de electricidad: " + report.ElectricityCosts));
+            PDFDocument.Add(new Paragraph("Gastos de Mantenimiento: " + report.Mantainment));
+            PDFDocument.Add(new Paragraph("Compra de mercancía: " + report.Merchandise));
+            PDFDocument.Add(new Paragraph("BALANCE NETO: " + report.NetBalance));
 
             PDFDocument.Close();
         }
