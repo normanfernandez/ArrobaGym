@@ -101,44 +101,44 @@ namespace ArrobaGym
             programa = ProgramaDAO.SelectSingle(p => p.Descripcion == cbPrograma.Text);
             if (validatorCliente())
             {
-                Models.Cliente cliente = new Models.Cliente
-                {
-                    Nombre = txtNombre.Text,
-                    Apellido = txtApellido.Text,
-                    Direccion = txtDireccion.Text,
-                    Codigo = generateCode(txtNombre.Text, txtApellido.Text, cbPrograma.Text),
-                    Factores_de_riesgos = txtRiesgos.Text,
-                    Fecha_Inscripcion = DateTime.Now,
-                    Objetivos = txtObetivos.Text,
-                    Status = "Activo",
-                    Telefono = txtTelefono.Text,
-                    Ultimo_Pago = DateTime.Now,
-                    Imagen = Utils.PictureBinary.GetBinary(txtfoto.Text),
-                    Saldo = programa.Precio_Inscripcion - decimal.Parse(txtDeposito.Text),
-                    IdPrograma = (int)programa.Id
-
-                };
-                Models.Seguimiento seguimiento = new Models.Seguimiento
-                {
-                    Abdomen = decimal.Parse(txtAbdomen.Text),
-                    Biceps = decimal.Parse(txtBiceps.Text),
-                    Cadera = decimal.Parse(txtCadera.Text),
-                    Caja_Toraxica = decimal.Parse(txtCajaToracica.Text),
-                    Cintura = decimal.Parse(txtCintura.Text),
-                    Fecha = DateTime.Now,
-                    Flexibilidad = decimal.Parse(txtFlexibilidad.Text),
-                    Gastronmio = decimal.Parse(TxtGastronomio.Text),
-                    Muslo = decimal.Parse(txtMuslo.Text),
-                    Peso = decimal.Parse(txtPeso.Text),
-                    Saldo_Mes = decimal.Parse(txtDeposito.Text),
-                    Personal_ID = PersonalDeTurno.Id,
-              
-
-                };
                 try
                 {
+                    Models.Cliente cliente = new Models.Cliente
+                    {
+                        Nombre = txtNombre.Text,
+                        Apellido = txtApellido.Text,
+                        Direccion = txtDireccion.Text,
+                        Codigo = generateCode(txtNombre.Text, txtApellido.Text, cbPrograma.Text),
+                        Factores_de_riesgos = txtRiesgos.Text,
+                        Fecha_Inscripcion = DateTime.Now,
+                        Objetivos = txtObetivos.Text,
+                        Status = "Activo",
+                        Telefono = txtTelefono.Text,
+                        Ultimo_Pago = DateTime.Now,
+                        Imagen = Utils.PictureBinary.GetBinary(txtfoto.Text),
+                        Saldo = programa.Precio_Inscripcion - decimal.Parse(txtDeposito.Text),
+                        IdPrograma = (int)programa.Id
+
+                    };
                     ClienteDAO.Insert(cliente);
                     ClienteDAO.SaveAll();
+                    Models.Seguimiento seguimiento = new Models.Seguimiento
+                    {
+                        Abdomen = decimal.Parse(txtAbdomen.Text),
+                        Biceps = decimal.Parse(txtBiceps.Text),
+                        Cadera = decimal.Parse(txtCadera.Text),
+                        Caja_Toraxica = decimal.Parse(txtCajaToracica.Text),
+                        Cintura = decimal.Parse(txtCintura.Text),
+                        Fecha = DateTime.Now,
+                        Flexibilidad = decimal.Parse(txtFlexibilidad.Text),
+                        Gastronmio = decimal.Parse(TxtGastronomio.Text),
+                        Muslo = decimal.Parse(txtMuslo.Text),
+                        Peso = decimal.Parse(txtPeso.Text),
+                        Saldo_Mes = decimal.Parse(txtDeposito.Text),
+                        Personal_ID = PersonalDeTurno.Id,
+                        Cliente_ID = cliente.Id
+
+                    };
                     SeguimientoDao.Insert(seguimiento);
                     SeguimientoDao.SaveAll();
                     MessageBox.Show("Cliente Insertado con Exito");
