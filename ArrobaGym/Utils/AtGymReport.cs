@@ -17,6 +17,7 @@ namespace ArrobaGym.Utils
             CurrentYear
         }
 
+        #region DAO
         private DAO.Repository<Models.Cliente> ClienteDAO = new DAO.Repository<Models.Cliente>();
         private DAO.Repository<Models.Registro_Productos> RegistroProductosDAO = new DAO.Repository<Models.Registro_Productos>();
         private DAO.Repository<Models.Productos> ProductosDAO = new DAO.Repository<Models.Productos>();
@@ -24,21 +25,35 @@ namespace ArrobaGym.Utils
         private DAO.Repository<Models.Seguimiento> SeguimientoDAO = new DAO.Repository<Models.Seguimiento>();
         private DAO.Repository<Models.Personal> PersonalDAO = new DAO.Repository<Models.Personal>();
         private DAO.Repository<Models.Gastos> GastosDAO = new DAO.Repository<Models.Gastos>();
+        #endregion
 
+        #region Backing Fields
+        private string _ReportType;
+        private decimal _MembershipIncome;
+        private decimal _WarmupIncome;
+        private decimal _SalesIncome;
+        private decimal _EmployeesPayment;
+        private decimal _Rental;
+        private decimal _ElectricityCosts;
+        private decimal _Mantainment;
+        private decimal _Merchandise;
+        private decimal _NetBalance;
+        private decimal _Others;
+        #endregion
 
-
-        public string ReportType { get { return ReportType; } set { ReportType = value; } }
-        public decimal MembershipIncome { get { return MembershipIncome; } set { MembershipIncome = value; } }
-        public decimal WarmupIncome { get { return WarmupIncome; } set { WarmupIncome = value; } }
-        public decimal SalesIncome { get { return SalesIncome; } set { SalesIncome = value; } }
-        public decimal EmployeesPayment { get { return EmployeesPayment; } set { EmployeesPayment = value; } }
-        public decimal Rental { get { return Rental; } set { Rental = value; } }
-        public decimal ElectricityCosts { get { return ElectricityCosts; } set { ElectricityCosts = value; } }
-        public decimal Mantainment { get { return Mantainment; } set { Mantainment = value; } }
-        public decimal Merchandise { get { return Merchandise; } set { Merchandise = value; } }
-        public decimal NetBalance { get { return NetBalance; }  set { NetBalance = value; } }
-        public decimal Others { get { return Others; } set { Others = value; } }
-
+        #region Fields
+        public string ReportType { get { return ReportType; } set { this._ReportType = value; } }
+        public decimal MembershipIncome { get { return MembershipIncome; } set { this._MembershipIncome = value; } }
+        public decimal WarmupIncome { get { return WarmupIncome; } set { this._WarmupIncome = value; } }
+        public decimal SalesIncome { get { return SalesIncome; } set { this._SalesIncome = value; } }
+        public decimal EmployeesPayment { get { return EmployeesPayment; } set { this._EmployeesPayment = value; } }
+        public decimal Rental { get { return Rental; } set { this._Rental = value; } }
+        public decimal ElectricityCosts { get { return ElectricityCosts; } set { this._ElectricityCosts = value; } }
+        public decimal Mantainment { get { return Mantainment; } set { this._Mantainment = value; } }
+        public decimal Merchandise { get { return Merchandise; } set { this._Merchandise = value; } }
+        public decimal NetBalance { get { return NetBalance; }  set { this._NetBalance = value; } }
+        public decimal Others { get { return Others; } set { this._Others = value; } }
+        #endregion
 
         public AtGymReport(AtGymReportType type)
         {
