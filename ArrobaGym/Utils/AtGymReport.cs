@@ -29,30 +29,30 @@ namespace ArrobaGym.Utils
 
         #region Backing Fields
         private string _ReportType;
-        private decimal _MembershipIncome;
-        private decimal _WarmupIncome;
-        private decimal _SalesIncome;
-        private decimal _EmployeesPayment;
-        private decimal _Rental;
-        private decimal _ElectricityCosts;
-        private decimal _Mantainment;
-        private decimal _Merchandise;
-        private decimal _NetBalance;
-        private decimal _Others;
+        private decimal ? _MembershipIncome;
+        private decimal ? _WarmupIncome;
+        private decimal ? _SalesIncome;
+        private decimal ? _EmployeesPayment;
+        private decimal ? _Rental;
+        private decimal ? _ElectricityCosts;
+        private decimal ? _Mantainment;
+        private decimal ? _Merchandise;
+        private decimal ? _NetBalance;
+        private decimal ? _Others;
         #endregion
 
         #region Fields
-        public string ReportType { get { return ReportType; } set { this._ReportType = value; } }
-        public decimal MembershipIncome { get { return MembershipIncome; } set { this._MembershipIncome = value; } }
-        public decimal WarmupIncome { get { return WarmupIncome; } set { this._WarmupIncome = value; } }
-        public decimal SalesIncome { get { return SalesIncome; } set { this._SalesIncome = value; } }
-        public decimal EmployeesPayment { get { return EmployeesPayment; } set { this._EmployeesPayment = value; } }
-        public decimal Rental { get { return Rental; } set { this._Rental = value; } }
-        public decimal ElectricityCosts { get { return ElectricityCosts; } set { this._ElectricityCosts = value; } }
-        public decimal Mantainment { get { return Mantainment; } set { this._Mantainment = value; } }
-        public decimal Merchandise { get { return Merchandise; } set { this._Merchandise = value; } }
-        public decimal NetBalance { get { return NetBalance; }  set { this._NetBalance = value; } }
-        public decimal Others { get { return Others; } set { this._Others = value; } }
+        public string ReportType { get { return this._ReportType; } set { this._ReportType = value; } }
+        public decimal ? MembershipIncome { get { return this._MembershipIncome; } set { this._MembershipIncome = value; } }
+        public decimal ? WarmupIncome { get { return this._WarmupIncome; } set { this._WarmupIncome = value; } }
+        public decimal ? SalesIncome { get { return this._SalesIncome; } set { this._SalesIncome = value; } }
+        public decimal ? EmployeesPayment { get { return this._EmployeesPayment; } set { this._EmployeesPayment = value; } }
+        public decimal ? Rental { get { return this._Rental; } set { this._Rental = value; } }
+        public decimal ? ElectricityCosts { get { return this._ElectricityCosts; } set { this._ElectricityCosts = value; } }
+        public decimal ? Mantainment { get { return this._Mantainment; } set { this._Mantainment = value; } }
+        public decimal ? Merchandise { get { return this._Merchandise; } set { this._Merchandise = value; } }
+        public decimal ? NetBalance { get { return this._NetBalance; }  set { this._NetBalance = value; } }
+        public decimal ? Others { get { return this._Others; } set { this._Others = value; } }
         #endregion
 
         public AtGymReport(AtGymReportType type)
@@ -63,12 +63,12 @@ namespace ArrobaGym.Utils
                     {
                         ReportType = "Día de hoy";
                         InitializeFields(
-                            c => c.Ultimo_Pago == DateTime.Today,
-                            s => s.Fecha == DateTime.Today,
-                            ca => ca.FechaYHora == DateTime.Today,
-                            rp => rp.FechaYHora == DateTime.Today,
+                            c => c.Ultimo_Pago.Value.DayOfYear == DateTime.Today.DayOfYear,
+                            s => s.Fecha.DayOfYear == DateTime.Today.DayOfYear,
+                            ca => ca.FechaYHora.Value.DayOfYear == DateTime.Today.DayOfYear,
+                            rp => rp.FechaYHora.Value.DayOfYear == DateTime.Today.DayOfYear,
                             p => true,
-                            g => g.Fecha == DateTime.Today);
+                            g => g.Fecha.DayOfYear == DateTime.Today.DayOfYear);
                         break;
                     }
                 case AtGymReportType.PresentMonth:
@@ -85,7 +85,7 @@ namespace ArrobaGym.Utils
                     }
                 case AtGymReportType.FiscalMonth:
                     {
-                        ReportType = "Ultimos 30 días";
+                        ReportType = "Últimos 30 días";
                         InitializeFields(
                             c => DateTime.Now.DayOfYear - c.Ultimo_Pago.Value.DayOfYear <= 30,
                             s => DateTime.Now.DayOfYear - s.Fecha.DayOfYear <= 30,
@@ -139,12 +139,21 @@ namespace ArrobaGym.Utils
             WarmupIncome = (decimal)CalentamientosDAO.FindAll(exp3).Sum(c => c.Cuota);
             SalesIncome = (decimal)RegistroProductosDAO.FindAll(exp4).Sum(p => p.Cantidad_Vendida*ProductosDAO.SelectSingle(p2 => p2.Id == p.Id_Producto).Precio);
             EmployeesPayment = (decimal)PersonalDAO.FindAll(exp5).Sum(p => p.Salario);
-            Rental = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
-            ElectricityCosts = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
-            Mantainment = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
-            Merchandise = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
-            Others = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
-            NetBalance = (decimal)GastosDAO.FindAll(exp6).Single(nombre_gasto => nombre_gasto.Id == 0).Monto;
+
+            var GastosGenerales = GastosDAO.FindAll(exp6);
+            var GastosRenta = GastosGenerales.Where(d => d.Descripcion == "ALQUILER LOCAL");
+            var GastosElectricidad = GastosGenerales.Where(d => d.Descripcion == "PAGO DE ELECTRICIDAD");
+            var GastosMantenimiento = GastosGenerales.Where(d => d.Descripcion == "MANTENIMIENTO");
+            var GastosMercancia = GastosGenerales.Where(d => d.Descripcion == "COMPRA DE MERCANCIA");
+            var GastosOtros = GastosGenerales.Where(d => d.Descripcion == "OTROS GASTOS");
+
+            Rental = (decimal)(GastosRenta.Count() == 0 ? 0 : GastosRenta.Sum(g => g.Monto));
+            ElectricityCosts = (decimal)(GastosElectricidad.Count() == 0 ? 0 : GastosElectricidad.Sum(g => g.Monto));
+            Mantainment = (decimal)(GastosMantenimiento.Count() == 0 ? 0 : GastosMantenimiento.Sum(g => g.Monto));
+            Merchandise = (decimal)(GastosMercancia.Count() == 0 ? 0 : GastosMercancia.Sum(g => g.Monto));
+            Others = (decimal)(GastosOtros.Count() == 0 ? 0 : GastosOtros.Sum(g => g.Monto));
+
+            NetBalance = (decimal)(MembershipIncome + WarmupIncome + SalesIncome - EmployeesPayment - Rental - ElectricityCosts - Mantainment - Merchandise - Others);
         }
     }
 }
