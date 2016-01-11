@@ -66,7 +66,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbxDeposito = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -440,18 +439,6 @@
             this.label19.TabIndex = 29;
             this.label19.Text = "XXXX";
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(464, 28);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(432, 31);
-            this.label20.TabIndex = 30;
-            this.label20.Text = "Personas pendientes de cobro: XX";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
@@ -505,6 +492,7 @@
             this.bntCobrar.TabIndex = 32;
             this.bntCobrar.Text = "Cobrar";
             this.bntCobrar.UseVisualStyleBackColor = false;
+            this.bntCobrar.Click += new System.EventHandler(this.bntCobrar_Click);
             // 
             // button1
             // 
@@ -528,7 +516,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bntCobrar);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox2);
@@ -592,7 +579,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox tbxDeposito;
         private System.Windows.Forms.Label label22;
